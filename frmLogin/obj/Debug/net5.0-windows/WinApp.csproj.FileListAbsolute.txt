@@ -251,5 +251,5 @@ D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\refint\WinApp.
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.pdb
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cache
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\ref\WinApp.dll
-D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDoctorDetail.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDoctorDetailDoctor.resources
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDentistDetail.resources
