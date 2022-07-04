@@ -34,7 +34,7 @@ namespace WinApp
 
         }
 
-     
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -53,18 +53,25 @@ namespace WinApp
         {
             try
             {
+                if (!ValidateAll())
+                {
+                    MessageBox.Show("Error input.", isInsert ? "Add new customer" : "Update Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult = DialogResult.None;
+                    return;
+                }
                 string phone = txtPhone.Text.Trim();
                 string tmp = "";
-                for(int i = 0; i < phone.Length; i++)
+                for (int i = 0; i < phone.Length; i++)
                 {
                     if ("0123456789".Contains(phone[i]))
                     {
                         tmp += phone[i];
                     }
                 }
+
                 Customer newCustomer = new Customer()
                 {
-                    Name = txtCustomerID.Text.Trim(),
+                    Name = txtCustomerName.Text.Trim(),
                     Gender = cbGender.Text.Trim() == "Male",
                     Dob = DateTime.Parse(txtDateOfBirth.Text.Trim()),
                     Phone = tmp,
@@ -75,6 +82,7 @@ namespace WinApp
                 }
                 else
                 {
+                    newCustomer.Id = CustomerInfo.Id;
                     CustomerRepository.UpdateCustomer(newCustomer);
                 }
 
@@ -84,6 +92,102 @@ namespace WinApp
                 MessageBox.Show(ex.Message, isInsert ? "Add new customer" : "update customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult = DialogResult.None;
             }
+        }
+
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            if (isInsert)
+            {
+                txtPhone.Text = String.Empty;
+                txtCustomerName.Text = String.Empty;
+                txtDateOfBirth.Text = String.Empty;
+                txtDateOfBirth.Text = String.Empty;
+            }
+            else
+            {
+                txtCustomerID.Text = CustomerInfo.Id.ToString();
+                txtPhone.Text = CustomerInfo.Phone;
+                txtCustomerName.Text = CustomerInfo.Name;
+                txtDateOfBirth.Text = CustomerInfo.Dob.ToString();
+                txtDateOfBirth.Text = CustomerInfo.Gender ? "Male" : "Female";
+            }
+        }
+
+        private void frmCustomerDetailStaff_Load(object sender, EventArgs e)
+        {
+            if (isInsert)
+            {
+                txtPhone.Text = String.Empty;
+                txtCustomerName.Text = String.Empty;
+                txtDateOfBirth.Text = String.Empty;
+                txtDateOfBirth.Text = String.Empty;
+                btnSave.Text = "Add";
+            }
+            else
+            {
+                txtCustomerID.Text = CustomerInfo.Id.ToString();
+                txtPhone.Text = CustomerInfo.Phone;
+                txtCustomerName.Text = CustomerInfo.Name;
+                txtDateOfBirth.Text = CustomerInfo.Dob.ToString("MM/dd/yyyy");
+                cbGender.Text = CustomerInfo.Gender ? "Male" : "Female";
+            }
+        }
+
+        private bool ValidateAll()
+        {
+            bool flag = true;
+            if (txtCustomerName.Text.Length < 8 || txtCustomerName.Text.Length > 50)
+            {
+                flag = false;
+                errorName.Text = "Length of name must be from 8 to 50 characters.";
+                errorName.Visible = true;
+            }
+
+            try
+            {
+                DateTime.Parse(txtDateOfBirth.Text);
+            }
+            catch
+            {
+                flag = false;
+                errorDateOfBirth.Text = "Please choose date of birth.";
+                errorDateOfBirth.Visible = true;
+            }
+
+            try
+            {
+                DateTime.Parse(txtDateOfBirth.Text);
+            }
+            catch
+            {
+                flag = false;
+                errorDateOfBirth.Text = "Please choose date of birth.";
+                errorDateOfBirth.Visible = true;
+            }
+
+            string phone = txtPhone.Text.Trim();
+            string tmp = "";
+            for (int i = 0; i < phone.Length; i++)
+            {
+                if ("0123456789".Contains(phone[i]))
+                {
+                    tmp += phone[i];
+                }
+            }
+
+            if(tmp.Length != 10)
+            {
+                errorPhone.Text = "Phone length must be 8.";
+                errorPhone.Visible = true;
+            }
+
+            if(cbGender.Text != "Male" && cbGender.Text != "Female")
+            {
+                errorGender.Text = "Please choose gender";
+                errorGender.Visible = true;
+            }
+
+            return flag;
         }
     }
 }

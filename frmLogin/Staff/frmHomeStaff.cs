@@ -21,6 +21,8 @@ namespace WinApp
         IAppointmentRepository appointmentRepository = new AppointmentRepository();
 
         BindingSource source;
+
+        private static Customer customer;
         public frmHomeStaff()
         {
             InitializeComponent();
@@ -31,6 +33,21 @@ namespace WinApp
         {
             source = new BindingSource();
             source.DataSource = list;
+            dataGridViewCustomer.DataSource = source;
+            customer = list[0];
+
+            if(dataGridViewCustomer.Columns["Appointments"] != null)
+            {
+                dataGridViewCustomer.Columns["Appointments"].Visible = false;
+            }
+
+            if (dataGridViewCustomer.Columns["Dob"] != null)
+            {
+                dataGridViewCustomer.Columns["Dob"].HeaderText = "Date of birth";
+            }
+
+            
+            
         }
 
         private void buttonAppointment_Click(object sender, EventArgs e)
@@ -47,6 +64,7 @@ namespace WinApp
             panelAppointment.SendToBack();
             buttonAppointment.BackColor = Color.Lavender;
             buttonCustomer.BackColor = Color.LightBlue;
+            LoadListCustomer(customerRepository.GetAll());  
         }
 
         private void buttonService_Click(object sender, EventArgs e)
@@ -68,7 +86,12 @@ namespace WinApp
         private void frmHome_Load(object sender, EventArgs e)
         {
             panelAppointment.BringToFront();
+<<<<<<< HEAD
             LoadAppointmentList();
+=======
+            LoadListCustomer(customerRepository.GetAll());
+            
+>>>>>>> f3b1726510f630ca0d3fa4b89ad9f2a2494a2814
         }
 
         private void buttonFindAppointment_Click(object sender, EventArgs e)
@@ -86,6 +109,7 @@ namespace WinApp
 
         }
 
+<<<<<<< HEAD
         private void buttonAppointmentUpdate_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridViewAppointment.SelectedRows[0].Cells[0].Value.ToString());
@@ -100,6 +124,93 @@ namespace WinApp
             Hide();
             Enabled = false;
             frmAppointmentDetailstaff.ShowDialog();
+=======
+        private void buttonCustomerAdd_Click(object sender, EventArgs e)
+        {
+            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
+            {
+                CustomerRepository = customerRepository,
+                isInsert = true,
+                Text = "Add new Customer",
+            };
+            if(frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
+            {
+                LoadListCustomer(customerRepository.GetAll());
+            }
+        }
+
+        private void buttonCustomerUpdate_Click(object sender, EventArgs e)
+        {
+            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
+            {
+                CustomerRepository = customerRepository,
+                isInsert = false,
+                Text = "Update new Customer",
+                CustomerInfo = customer,
+            };
+            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
+            {
+                LoadListCustomer(customerRepository.GetAll());
+            }
+        }
+
+        private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+            
+            customer = customerRepository.GetById(id);
+        }
+
+        private void dataGridViewCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+
+            customer = customerRepository.GetById(id);
+        }
+
+        private void dataGridViewCustomer_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
+            {
+                CustomerRepository = customerRepository,
+                isInsert = false,
+                Text = "Update new Customer",
+                CustomerInfo = customer,
+            };
+            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
+            {
+                LoadListCustomer(customerRepository.GetAll());
+            }
+        }
+
+        private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
+            {
+                CustomerRepository = customerRepository,
+                isInsert = false,
+                Text = "Update new Customer",
+                CustomerInfo = customer,
+            };
+            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
+            {
+                LoadListCustomer(customerRepository.GetAll());
+            }
+        }
+
+        private void buttonCustomerFind_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = textBoxCustomerName.Text;
+                string phone = textBoxCustomerPhone.Text;
+
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Search customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+>>>>>>> f3b1726510f630ca0d3fa4b89ad9f2a2494a2814
         }
     }
 }

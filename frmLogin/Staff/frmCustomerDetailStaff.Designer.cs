@@ -42,6 +42,10 @@
             this.txtDateOfBirth = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDentist = new System.Windows.Forms.Label();
+            this.errorName = new System.Windows.Forms.Label();
+            this.errorGender = new System.Windows.Forms.Label();
+            this.errorPhone = new System.Windows.Forms.Label();
+            this.errorDateOfBirth = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClose
@@ -63,10 +67,12 @@
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.MistyRose;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Location = new System.Drawing.Point(316, 373);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 29);
@@ -117,6 +123,8 @@
             // 
             // txtCustomerID
             // 
+            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtCustomerID.Enabled = false;
             this.txtCustomerID.Location = new System.Drawing.Point(291, 80);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(151, 27);
@@ -125,6 +133,7 @@
             // txtCustomerName
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(291, 128);
+            this.txtCustomerName.MaxLength = 50;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(469, 27);
             this.txtCustomerName.TabIndex = 14;
@@ -179,12 +188,60 @@
             this.labelDentist.TabIndex = 30;
             this.labelDentist.Text = "Customer Detail";
             // 
+            // errorName
+            // 
+            this.errorName.AutoSize = true;
+            this.errorName.ForeColor = System.Drawing.Color.Red;
+            this.errorName.Location = new System.Drawing.Point(291, 158);
+            this.errorName.Name = "errorName";
+            this.errorName.Size = new System.Drawing.Size(284, 20);
+            this.errorName.TabIndex = 31;
+            this.errorName.Text = "Length of name must from 8..50 character";
+            this.errorName.Visible = false;
+            // 
+            // errorGender
+            // 
+            this.errorGender.AutoSize = true;
+            this.errorGender.ForeColor = System.Drawing.Color.Red;
+            this.errorGender.Location = new System.Drawing.Point(291, 226);
+            this.errorGender.Name = "errorGender";
+            this.errorGender.Size = new System.Drawing.Size(284, 20);
+            this.errorGender.TabIndex = 31;
+            this.errorGender.Text = "Length of name must from 8..50 character";
+            this.errorGender.Visible = false;
+            // 
+            // errorPhone
+            // 
+            this.errorPhone.AutoSize = true;
+            this.errorPhone.ForeColor = System.Drawing.Color.Red;
+            this.errorPhone.Location = new System.Drawing.Point(291, 293);
+            this.errorPhone.Name = "errorPhone";
+            this.errorPhone.Size = new System.Drawing.Size(284, 20);
+            this.errorPhone.TabIndex = 31;
+            this.errorPhone.Text = "Length of name must from 8..50 character";
+            this.errorPhone.Visible = false;
+            // 
+            // errorDateOfBirth
+            // 
+            this.errorDateOfBirth.AutoSize = true;
+            this.errorDateOfBirth.ForeColor = System.Drawing.Color.Red;
+            this.errorDateOfBirth.Location = new System.Drawing.Point(609, 293);
+            this.errorDateOfBirth.Name = "errorDateOfBirth";
+            this.errorDateOfBirth.Size = new System.Drawing.Size(284, 20);
+            this.errorDateOfBirth.TabIndex = 31;
+            this.errorDateOfBirth.Text = "Length of name must from 8..50 character";
+            this.errorDateOfBirth.Visible = false;
+            // 
             // frmCustomerDetailStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(947, 450);
+            this.Controls.Add(this.errorDateOfBirth);
+            this.Controls.Add(this.errorPhone);
+            this.Controls.Add(this.errorGender);
+            this.Controls.Add(this.errorName);
             this.Controls.Add(this.labelDentist);
             this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.label1);
@@ -201,6 +258,7 @@
             this.Controls.Add(this.txtCustomerName);
             this.Name = "frmCustomerDetailStaff";
             this.Text = "frmCustomerDetail";
+            this.Load += new System.EventHandler(this.frmCustomerDetailStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +280,9 @@
         private System.Windows.Forms.MaskedTextBox txtDateOfBirth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDentist;
+        private System.Windows.Forms.Label errorName;
+        private System.Windows.Forms.Label errorGender;
+        private System.Windows.Forms.Label errorPhone;
+        private System.Windows.Forms.Label errorDateOfBirth;
     }
 }
