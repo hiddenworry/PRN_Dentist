@@ -86,12 +86,8 @@ namespace WinApp
         private void frmHome_Load(object sender, EventArgs e)
         {
             panelAppointment.BringToFront();
-<<<<<<< HEAD
             LoadAppointmentList();
-=======
             LoadListCustomer(customerRepository.GetAll());
-            
->>>>>>> f3b1726510f630ca0d3fa4b89ad9f2a2494a2814
         }
 
         private void buttonFindAppointment_Click(object sender, EventArgs e)
@@ -109,7 +105,6 @@ namespace WinApp
 
         }
 
-<<<<<<< HEAD
         private void buttonAppointmentUpdate_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridViewAppointment.SelectedRows[0].Cells[0].Value.ToString());
@@ -124,7 +119,7 @@ namespace WinApp
             Hide();
             Enabled = false;
             frmAppointmentDetailstaff.ShowDialog();
-=======
+        }
         private void buttonCustomerAdd_Click(object sender, EventArgs e)
         {
             frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
@@ -210,7 +205,6 @@ namespace WinApp
             {
                 MessageBox.Show(ex.Message, "Search customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
->>>>>>> f3b1726510f630ca0d3fa4b89ad9f2a2494a2814
         }
     }
 }
