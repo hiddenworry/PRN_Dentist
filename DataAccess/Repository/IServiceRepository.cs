@@ -15,6 +15,7 @@ namespace DataAccess
         void UpdateService(Service service);
 
         List<Service> GetServiceFromServiceType(int ServiceTypeId);
+        List<Service> GetActiveServiceList();
     }
 
 }

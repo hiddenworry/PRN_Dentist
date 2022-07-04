@@ -18,5 +18,8 @@ namespace DataAccess
         {
             return AppointmentDAO.Instance.GetAppointmentList(date, phone, dentistId, status);
         }
+        //public List<string> GetTimeOptionByDate(DateTime time){
+
+        //}
     }
 }

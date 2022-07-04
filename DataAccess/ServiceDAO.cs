@@ -8,9 +8,21 @@ using System.Threading.Tasks;
 namespace DataAccess
 {
     public class ServiceDAO { 
+        private static ServiceDAO instance;
+        private static readonly object instancelock = new object();
+        private ServiceDAO() { }
+        public static ServiceDAO Instance { 
+            get {
+                lock (instancelock) {
+                    if (instance == null) { 
+                        instance = new ServiceDAO();
+                    }
+                    return instance;
+                }
+            }
+        }
 
-
-         public static List<Service> GetServices()
+         public List<Service> GetServices()
     {
         var ServiceList = new List<Service>();
         try
@@ -28,7 +40,7 @@ namespace DataAccess
         return ServiceList;
     }
 
-        public static List<Service> GetServiceFromServiceType(int ServiceTypeId)
+        public List<Service> GetServiceFromServiceType(int ServiceTypeId)
         {
             var ServiceList = new List<Service>();
             try
@@ -47,7 +59,7 @@ namespace DataAccess
 
         }
 
-    public static void SaveService(Service service)
+    public void SaveService(Service service)
     {
 
         try
@@ -67,7 +79,7 @@ namespace DataAccess
 
     }
 
-    public static void UpdateService(Service service)
+    public void UpdateService(Service service)
     {
 
         try
@@ -83,5 +95,19 @@ namespace DataAccess
 
 
     }
-}
+
+        public List<Service> GetActiveServiceList()
+        {
+            try
+            {
+                using (var Context = new DBSContext())
+                {
+                    return Context.Services.Where(s => s.Status == 1).ToList();
+                }
+            }
+            catch (Exception ex) { 
+                throw new Exception(ex.Message);
+            }
+        }
+    }
 }
