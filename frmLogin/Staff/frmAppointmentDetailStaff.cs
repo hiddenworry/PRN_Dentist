@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,29 @@ namespace WinApp
 {
     public partial class frmAppointmentDetailStaff : Form
     {
+        public IAppointmentRepository appointmentRepository;
+        public ICustomerRepository customerRepository;
+        public IAppointmentServiceRepository appointmentServiceRepository = new AppointmentServiceRepository();
+        public Appointment appointment;
+        public bool InsertUpdateFlag;
         public frmAppointmentDetailStaff()
         {
             InitializeComponent();
+        }
+
+        private void frmAppointmentDetailStaff_Load(object sender, EventArgs e)
+        {
+            if (InsertUpdateFlag)
+            {
+
+            }
+            else
+            {
+                dateTimePickerTime.Value = appointment.Time;
+                comboBoxWorkingHour.Text = appointment.WorkingHour;
+                
+                dataGridViewDetail.DataSource = appointmentServiceRepository.GetAppointmentServiceListByAppointmentId(appointment.Id);
+            }
         }
     }
 }

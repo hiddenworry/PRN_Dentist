@@ -40,7 +40,6 @@
             this.dateTimePickerAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxAppointmentDentist = new System.Windows.Forms.ComboBox();
-            this.buttonAppointmentDetail = new System.Windows.Forms.Button();
             this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
             this.buttonAppointmentAdd = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
@@ -72,7 +71,6 @@
             this.panelAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAppointment.Controls.Add(this.labelAppointment);
             this.panelAppointment.Controls.Add(this.groupBoxFilter);
-            this.panelAppointment.Controls.Add(this.buttonAppointmentDetail);
             this.panelAppointment.Controls.Add(this.buttonAppointmentUpdate);
             this.panelAppointment.Controls.Add(this.buttonAppointmentAdd);
             this.panelAppointment.Controls.Add(this.dataGridViewAppointment);
@@ -186,27 +184,19 @@
             this.comboBoxAppointmentDentist.Size = new System.Drawing.Size(127, 28);
             this.comboBoxAppointmentDentist.TabIndex = 0;
             // 
-            // buttonAppointmentDetail
-            // 
-            this.buttonAppointmentDetail.Location = new System.Drawing.Point(336, 164);
-            this.buttonAppointmentDetail.Name = "buttonAppointmentDetail";
-            this.buttonAppointmentDetail.Size = new System.Drawing.Size(139, 29);
-            this.buttonAppointmentDetail.TabIndex = 9;
-            this.buttonAppointmentDetail.Text = "Detail";
-            this.buttonAppointmentDetail.UseVisualStyleBackColor = true;
-            // 
             // buttonAppointmentUpdate
             // 
-            this.buttonAppointmentUpdate.Location = new System.Drawing.Point(191, 164);
+            this.buttonAppointmentUpdate.Location = new System.Drawing.Point(265, 164);
             this.buttonAppointmentUpdate.Name = "buttonAppointmentUpdate";
             this.buttonAppointmentUpdate.Size = new System.Drawing.Size(139, 29);
             this.buttonAppointmentUpdate.TabIndex = 8;
-            this.buttonAppointmentUpdate.Text = "Update";
+            this.buttonAppointmentUpdate.Text = "Detail";
             this.buttonAppointmentUpdate.UseVisualStyleBackColor = true;
+            this.buttonAppointmentUpdate.Click += new System.EventHandler(this.buttonAppointmentUpdate_Click);
             // 
             // buttonAppointmentAdd
             // 
-            this.buttonAppointmentAdd.Location = new System.Drawing.Point(46, 164);
+            this.buttonAppointmentAdd.Location = new System.Drawing.Point(120, 164);
             this.buttonAppointmentAdd.Name = "buttonAppointmentAdd";
             this.buttonAppointmentAdd.Size = new System.Drawing.Size(139, 29);
             this.buttonAppointmentAdd.TabIndex = 5;
@@ -402,7 +392,6 @@
         private System.Windows.Forms.TextBox textBoxAppointmentPhone;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
         private System.Windows.Forms.Button buttonAppointmentAdd;
-        private System.Windows.Forms.Button buttonAppointmentDetail;
         private System.Windows.Forms.Button buttonAppointmentUpdate;
         private System.Windows.Forms.Button buttonFindAppointment;
         private System.Windows.Forms.GroupBox groupBoxFilter;

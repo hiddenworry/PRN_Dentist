@@ -17,7 +17,8 @@ namespace WinApp
         List<Panel> panelList = new List<Panel>();
         public Account accountLogin { get; set; }
 
-        ICustomerRepository customerRepository;
+        ICustomerRepository customerRepository = new CustomerRepository();
+        IAppointmentRepository appointmentRepository = new AppointmentRepository();
 
         BindingSource source;
         public frmHomeStaff()
@@ -67,6 +68,7 @@ namespace WinApp
         private void frmHome_Load(object sender, EventArgs e)
         {
             panelAppointment.BringToFront();
+            LoadAppointmentList();
         }
 
         private void buttonFindAppointment_Click(object sender, EventArgs e)
@@ -76,12 +78,28 @@ namespace WinApp
 
         public void LoadAppointmentList()
         {
-
+            dataGridViewAppointment.DataSource = appointmentRepository.GetAppointmentList(new DateTime().Date, "", 0, 0);
         }
 
         private void buttonAppointmentAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAppointmentUpdate_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewAppointment.SelectedRows[0].Cells[0].Value.ToString());
+            Appointment appointment = appointmentRepository.GetAppointmentById(id);
+            frmAppointmentDetailStaff frmAppointmentDetailstaff = new frmAppointmentDetailStaff
+            {
+                appointmentRepository = appointmentRepository,
+                customerRepository = customerRepository,
+                appointment = appointment,
+                InsertUpdateFlag = false,
+            };
+            Hide();
+            Enabled = false;
+            frmAppointmentDetailstaff.ShowDialog();
         }
     }
 }

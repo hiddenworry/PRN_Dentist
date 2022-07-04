@@ -9,7 +9,7 @@ namespace DataAccess
 {
     public class AppointmentDAO
     {
-        private static AppointmentDAO instance = null;
+        private static AppointmentDAO instance;
         private static readonly object instanceLock = new object();
         private AppointmentDAO() { }
         public static AppointmentDAO Instance
@@ -43,6 +43,21 @@ namespace DataAccess
                             (a.Status == status || status == 0)
                         select a
                     ).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Appointment GetAppointmentById(int id)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    return DBSContext.Appointments.FirstOrDefault(c => c.Id == id);
                 }
             }
             catch (Exception ex)
