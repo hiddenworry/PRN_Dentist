@@ -24,4 +24,28 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Doctor\frmAppointmentDetailDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Doctor\frmCustomerDetailDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Doctor\frmDentistDetailDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Doctor\frmHomeDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\frmAppointmentDetailStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\frmCustomerDetailStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Staff\frmHomeStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\frmLogin\\WinApp.csproj": {}
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\frmLogin\\WinApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\obj\\",
+        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -100,8 +100,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj"
+              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -152,14 +152,14 @@
         }
       }
     },
-    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\frmLogin\\WinApp.csproj": {
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\frmLogin\\WinApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\frmLogin\\WinApp.csproj",
+        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\frmLogin\\WinApp.csproj",
         "projectName": "WinApp",
-        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\frmLogin\\WinApp.csproj",
+        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\frmLogin\\WinApp.csproj",
         "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\frmLogin\\obj\\",
+        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\frmLogin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -176,11 +176,11 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\BusinessObject\\BusinessObject.csproj"
+              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\BusinessObject\\BusinessObject.csproj"
               },
-              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\PRN_Dentist-main\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\master\\DataAccess\\DataAccess.csproj"
               }
             }
           }
