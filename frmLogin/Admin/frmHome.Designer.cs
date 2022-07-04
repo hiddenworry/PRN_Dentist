@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelService = new System.Windows.Forms.Panel();
+            this.btnServiceLoad = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelServiceStatus = new System.Windows.Forms.Label();
@@ -105,6 +106,7 @@
             // 
             this.panelService.BackColor = System.Drawing.Color.LightBlue;
             this.panelService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelService.Controls.Add(this.btnServiceLoad);
             this.panelService.Controls.Add(this.labelService);
             this.panelService.Controls.Add(this.groupBox2);
             this.panelService.Controls.Add(this.buttonServiceDetail);
@@ -115,6 +117,17 @@
             this.panelService.Name = "panelService";
             this.panelService.Size = new System.Drawing.Size(775, 450);
             this.panelService.TabIndex = 14;
+            this.panelService.Paint += new System.Windows.Forms.PaintEventHandler(this.panelService_Paint);
+            // 
+            // btnServiceLoad
+            // 
+            this.btnServiceLoad.Location = new System.Drawing.Point(17, 416);
+            this.btnServiceLoad.Name = "btnServiceLoad";
+            this.btnServiceLoad.Size = new System.Drawing.Size(139, 29);
+            this.btnServiceLoad.TabIndex = 13;
+            this.btnServiceLoad.Text = "Load";
+            this.btnServiceLoad.UseVisualStyleBackColor = true;
+            this.btnServiceLoad.Click += new System.EventHandler(this.btnServiceLoad_Click);
             // 
             // labelService
             // 
@@ -204,7 +217,7 @@
             // 
             // buttonServiceDetail
             // 
-            this.buttonServiceDetail.Location = new System.Drawing.Point(340, 141);
+            this.buttonServiceDetail.Location = new System.Drawing.Point(307, 141);
             this.buttonServiceDetail.Name = "buttonServiceDetail";
             this.buttonServiceDetail.Size = new System.Drawing.Size(139, 29);
             this.buttonServiceDetail.TabIndex = 9;
@@ -213,16 +226,17 @@
             // 
             // buttonServiceUpdate
             // 
-            this.buttonServiceUpdate.Location = new System.Drawing.Point(195, 141);
+            this.buttonServiceUpdate.Location = new System.Drawing.Point(162, 141);
             this.buttonServiceUpdate.Name = "buttonServiceUpdate";
             this.buttonServiceUpdate.Size = new System.Drawing.Size(139, 29);
             this.buttonServiceUpdate.TabIndex = 8;
             this.buttonServiceUpdate.Text = "Update";
             this.buttonServiceUpdate.UseVisualStyleBackColor = true;
+            this.buttonServiceUpdate.Click += new System.EventHandler(this.buttonServiceUpdate_Click);
             // 
             // buttonServiceAdd
             // 
-            this.buttonServiceAdd.Location = new System.Drawing.Point(50, 141);
+            this.buttonServiceAdd.Location = new System.Drawing.Point(17, 141);
             this.buttonServiceAdd.Name = "buttonServiceAdd";
             this.buttonServiceAdd.Size = new System.Drawing.Size(139, 29);
             this.buttonServiceAdd.TabIndex = 5;
@@ -235,10 +249,13 @@
             this.dataGridViewService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewService.Location = new System.Drawing.Point(3, 176);
             this.dataGridViewService.Name = "dataGridViewService";
+            this.dataGridViewService.ReadOnly = true;
             this.dataGridViewService.RowHeadersWidth = 51;
             this.dataGridViewService.RowTemplate.Height = 29;
-            this.dataGridViewService.Size = new System.Drawing.Size(754, 261);
+            this.dataGridViewService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewService.Size = new System.Drawing.Size(754, 235);
             this.dataGridViewService.TabIndex = 7;
+            this.dataGridViewService.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewService_CellDoubleClick);
             // 
             // panelDentist
             // 
@@ -784,5 +801,6 @@
         private System.Windows.Forms.Button buttonAppointmentUpdate;
         private System.Windows.Forms.Button buttonAppointmentAdd;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
+        private System.Windows.Forms.Button btnServiceLoad;
     }
 }

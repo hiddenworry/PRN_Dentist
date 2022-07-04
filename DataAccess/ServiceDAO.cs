@@ -75,6 +75,7 @@ namespace DataAccess
             using (var Context = new DBSContext())
             {
                 Context.Entry<Service>(service).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    Context.SaveChanges();
 
             }
 

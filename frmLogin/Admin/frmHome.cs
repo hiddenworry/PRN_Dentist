@@ -91,7 +91,63 @@ namespace WinApp
 
         private void buttonServiceAdd_Click(object sender, EventArgs e)
         {
+            frmServiceDetail frmServiceDetail = new frmServiceDetail
+            {
+                ServiceRepository = this.ServiceRepository,
+                Insert = true
+            };
+            frmServiceDetail.Show();
 
+        }
+
+        private void buttonServiceUpdate_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewService.CurrentRow != null)
+            {
+                Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+                frmServiceDetail frmService = new frmServiceDetail
+                {
+                    ServiceRepository = this.ServiceRepository,
+                    serviceData = service,
+                    Insert = false
+
+
+                };
+                frmService.Show();
+            }
+        }
+
+        private void panelService_Paint(object sender, PaintEventArgs e)
+        {
+           
+          
+            dataGridViewService.DataSource = ServiceRepository.GetServices();
+            dataGridViewService.CellDoubleClick += dataGridViewService_CellDoubleClick;
+        }
+
+        private void dataGridViewService_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewService.CurrentRow != null)
+            {
+                Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+                frmServiceDetail frmService = new frmServiceDetail
+                {
+                    ServiceRepository = this.ServiceRepository,
+                    serviceData = service,
+                    Insert = false
+
+
+                };
+               if (frmService.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void btnServiceLoad_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }
