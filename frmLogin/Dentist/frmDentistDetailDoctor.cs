@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinApp
 {
-    public partial class frmDentistDetailDoctor : Form
+    public partial class frmDoctorDetailDoctor : Form
     {
-        public frmDentistDetailDoctor()
+        public frmDoctorDetailDoctor()
         {
             InitializeComponent();
         }

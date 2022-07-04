@@ -65,6 +65,7 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
+                    throw new Exception(newCustomer.Dob.ToString());
                     context.Customers.Add(newCustomer);
                     context.SaveChanges();
                 }

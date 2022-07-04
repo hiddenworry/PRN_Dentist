@@ -231,12 +231,10 @@ D:\Session_5\PRN211\project-dbs\frmLogin\bin\Debug\net5.0-windows\DataAccess.pdb
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.csproj.AssemblyReference.cache
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmAppointmentDetail.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmCustomerDetail.resources
-D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDentistDetail.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmHome.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmServiceDetail.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmAppointmentDetailDoctor.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmCustomerDetailDoctor.resources
-D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDentistDetailDoctor.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmHomeDoctor.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\frmLogin.frmLogin.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmAppointmentDetailStaff.resources
@@ -253,3 +251,5 @@ D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\refint\WinApp.
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.pdb
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cache
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\ref\WinApp.dll
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDoctorDetail.resources
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmDoctorDetailDoctor.resources
