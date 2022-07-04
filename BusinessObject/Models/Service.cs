@@ -16,6 +16,7 @@ namespace BusinessObject.Models
         public int ServiceTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public double EstimatedTime { get; set; }
         public decimal Status { get; set; }
 
         public virtual ServiceType ServiceType { get; set; }

@@ -91,23 +91,28 @@ namespace BusinessObject.Models
                     .HasColumnType("date")
                     .HasColumnName("time");
 
+                entity.Property(e => e.WorkingHour)
+                    .IsRequired()
+                    .HasMaxLength(15)
+                    .HasColumnName("working_hour");
+
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Appointments)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Appointme__custo__3D5E1FD2");
+                    .HasConstraintName("FK__Appointme__custo__2E1BDC42");
 
                 entity.HasOne(d => d.Doctor)
                     .WithMany(p => p.Appointments)
                     .HasForeignKey(d => d.DoctorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Appointme__docto__3E52440B");
+                    .HasConstraintName("FK__Appointme__docto__2F10007B");
             });
 
             modelBuilder.Entity<AppointmentService>(entity =>
             {
                 entity.HasKey(e => new { e.AppointmentId, e.ServiceId })
-                    .HasName("PK__Appointm__46E8F376423DFD49");
+                    .HasName("PK__Appointm__46E8F37633637F67");
 
                 entity.ToTable("Appointment_Service");
 
@@ -119,13 +124,13 @@ namespace BusinessObject.Models
                     .WithMany(p => p.AppointmentServices)
                     .HasForeignKey(d => d.AppointmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Appointme__appoi__4222D4EF");
+                    .HasConstraintName("FK__Appointme__appoi__300424B4");
 
                 entity.HasOne(d => d.Service)
                     .WithMany(p => p.AppointmentServices)
                     .HasForeignKey(d => d.ServiceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Appointme__servi__4316F928");
+                    .HasConstraintName("FK__Appointme__servi__30F848ED");
             });
 
             modelBuilder.Entity<Customer>(entity =>
@@ -163,6 +168,8 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.Description).HasColumnName("description");
 
+                entity.Property(e => e.EstimatedTime).HasColumnName("estimated_time");
+
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(30)
@@ -193,10 +200,6 @@ namespace BusinessObject.Models
                     .IsRequired()
                     .HasMaxLength(30)
                     .HasColumnName("name");
-
-                entity.Property(e => e.Status)
-                    .HasColumnType("decimal(1, 0)")
-                    .HasColumnName("status");
             });
 
             OnModelCreatingPartial(modelBuilder);
