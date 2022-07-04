@@ -57,7 +57,9 @@ namespace BusinessObject.Models
                     .HasMaxLength(30)
                     .HasColumnName("password");
 
-                entity.Property(e => e.Role).HasColumnName("role");
+                entity.Property(e => e.Role)
+                    .HasColumnType("decimal(1, 0)")
+                    .HasColumnName("role");
 
                 entity.Property(e => e.Status)
                     .HasColumnType("decimal(1, 0)")
@@ -112,7 +114,7 @@ namespace BusinessObject.Models
             modelBuilder.Entity<AppointmentService>(entity =>
             {
                 entity.HasKey(e => new { e.AppointmentId, e.ServiceId })
-                    .HasName("PK__Appointm__46E8F37633637F67");
+                    .HasName("PK__Appointm__46E8F3763B26B30D");
 
                 entity.ToTable("Appointment_Service");
 

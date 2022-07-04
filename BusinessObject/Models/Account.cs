@@ -17,7 +17,7 @@ namespace BusinessObject.Models
         public string Password { get; set; }
         public string Name { get; set; }
         public bool Gender { get; set; }
-        public bool Role { get; set; }
+        public decimal Role { get; set; }
         public decimal Status { get; set; }
 
         public virtual ICollection<Appointment> Appointments { get; set; }
