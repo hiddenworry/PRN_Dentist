@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace WinApp
 {
     public partial class frmServiceDetail : Form
     {
+        IServiceTypeRepository ServiceTypeRepository = new ServiceTypeRepository();
         public frmServiceDetail()
         {
             InitializeComponent();
@@ -26,6 +28,10 @@ namespace WinApp
 
         private void frmServiceDetail_Load(object sender, EventArgs e)
         {
+            cbServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
+            cbServiceType.DisplayMember = "name";
+            cbServiceType.ValueMember = "id";
+            
 
         }
     }
