@@ -53,12 +53,21 @@ namespace WinApp
         {
             try
             {
+                string phone = txtPhone.Text.Trim();
+                string tmp = "";
+                for(int i = 0; i < phone.Length; i++)
+                {
+                    if ("0123456789".Contains(phone[i]))
+                    {
+                        tmp += phone[i];
+                    }
+                }
                 Customer newCustomer = new Customer()
                 {
                     Name = txtCustomerID.Text.Trim(),
                     Gender = cbGender.Text.Trim() == "Male",
                     Dob = DateTime.Parse(txtDateOfBirth.Text.Trim()),
-                    Phone = txtPhone.Text.Trim(),
+                    Phone = tmp,
                 };
                 if (isInsert)
                 {
