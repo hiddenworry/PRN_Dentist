@@ -134,6 +134,7 @@
             this.buttonFindAppointment.TabIndex = 10;
             this.buttonFindAppointment.Text = "Find";
             this.buttonFindAppointment.UseVisualStyleBackColor = true;
+            this.buttonFindAppointment.Click += new System.EventHandler(this.buttonFindAppointment_Click);
             // 
             // textBoxAppointmentPhone
             // 
@@ -211,6 +212,7 @@
             this.buttonAppointmentAdd.TabIndex = 5;
             this.buttonAppointmentAdd.Text = "Add";
             this.buttonAppointmentAdd.UseVisualStyleBackColor = true;
+            this.buttonAppointmentAdd.Click += new System.EventHandler(this.buttonAppointmentAdd_Click);
             // 
             // dataGridViewAppointment
             // 
@@ -328,7 +330,6 @@
             this.buttonCustomerAdd.TabIndex = 5;
             this.buttonCustomerAdd.Text = "Add";
             this.buttonCustomerAdd.UseVisualStyleBackColor = true;
-            this.buttonCustomerAdd.Click += new System.EventHandler(this.buttonCustomerAdd_Click_1);
             // 
             // dataGridViewCustomer
             // 

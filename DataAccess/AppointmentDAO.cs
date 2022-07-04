@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,28 @@ namespace DataAccess
             }
         }
 
-
+        public List<Appointment> GetAppointmentList(DateTime date, string phone, int dentistId, int status)
+        {
+            try
+            {
+                using(DBSContext DBSContext = new DBSContext())
+                {
+                    return (
+                        from a in DBSContext.Appointments
+                        join c in DBSContext.Customers on a.CustomerId equals c.Id
+                        where 
+                            a.Time == date && 
+                            c.Phone.Contains(phone) && 
+                            (a.DentistId == dentistId || dentistId == 0) && 
+                            (a.Status == status || status == 0)
+                        select a
+                    ).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
