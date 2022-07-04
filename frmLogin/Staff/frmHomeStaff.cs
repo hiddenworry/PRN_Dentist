@@ -20,24 +20,10 @@ namespace WinApp
         ICustomerRepository customerRepository;
 
         BindingSource source;
-        int index;
         public frmHomeStaff()
         {
             InitializeComponent();
             customerRepository = new CustomerRepository();
-        }
-
-        private bool CheckAccountLogin()
-        {
-            if (accountLogin != null)
-            {
-                if (accountLogin.Role == 2)
-                {
-                    return true;
-                }
-            }
-            return false;
-
         }
 
         private void LoadListCustomer(List<Customer> list)
@@ -83,12 +69,12 @@ namespace WinApp
             panelAppointment.BringToFront();
         }
 
-        private void panelDentist_Paint(object sender, PaintEventArgs e)
+        private void buttonFindAppointment_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void labelService_Click(object sender, EventArgs e)
+        public void LoadAppointmentList()
         {
 
         }
@@ -96,24 +82,6 @@ namespace WinApp
         private void buttonAppointmentAdd_Click(object sender, EventArgs e)
         {
 
-        }
-
-
-        private void buttonCustomerAdd_Click_1(object sender, EventArgs e)
-        {
-            if (CheckAccountLogin())
-            {
-                frmCustomerDetailStaff form = new frmCustomerDetailStaff()
-                {
-                    Text = "Add new customer",
-                    CustomerRepository = customerRepository,
-                    isInsert = true,
-                };
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    LoadListCustomer(customerRepository.GetAll());
-                }
-            }
         }
     }
 }
