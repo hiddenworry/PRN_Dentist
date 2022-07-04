@@ -16,5 +16,5 @@ namespace DataAccess
 
         List<Service> GetServiceFromServiceType(int ServiceTypeId);
     }
-}
+
 }

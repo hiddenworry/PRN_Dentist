@@ -40,70 +40,71 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbEstimatedTime = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(403, 55);
+            this.textBox3.Location = new System.Drawing.Point(447, 28);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(204, 27);
             this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 55);
+            this.textBox1.Location = new System.Drawing.Point(143, 28);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(54, 27);
             this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // lbServiceDetailID
             // 
             this.lbServiceDetailID.AutoSize = true;
             this.lbServiceDetailID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbServiceDetailID.Location = new System.Drawing.Point(29, 62);
+            this.lbServiceDetailID.Location = new System.Drawing.Point(29, 28);
             this.lbServiceDetailID.Name = "lbServiceDetailID";
             this.lbServiceDetailID.Size = new System.Drawing.Size(25, 20);
             this.lbServiceDetailID.TabIndex = 4;
             this.lbServiceDetailID.Text = "ID";
-            this.lbServiceDetailID.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(312, 62);
+            this.label2.Location = new System.Drawing.Point(312, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cbServiceType
             // 
+            this.cbServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbServiceType.FormattingEnabled = true;
-            this.cbServiceType.Location = new System.Drawing.Point(143, 118);
+            this.cbServiceType.Location = new System.Drawing.Point(143, 82);
             this.cbServiceType.Name = "cbServiceType";
             this.cbServiceType.Size = new System.Drawing.Size(151, 28);
             this.cbServiceType.TabIndex = 6;
-            this.cbServiceType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lbServiceType
             // 
             this.lbServiceType.AutoSize = true;
             this.lbServiceType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbServiceType.Location = new System.Drawing.Point(29, 126);
+            this.lbServiceType.Location = new System.Drawing.Point(29, 90);
             this.lbServiceType.Name = "lbServiceType";
             this.lbServiceType.Size = new System.Drawing.Size(96, 20);
             this.lbServiceType.TabIndex = 7;
             this.lbServiceType.Text = "Service Type";
-            this.lbServiceType.Click += new System.EventHandler(this.label3_Click);
             // 
             // cbStatus
             // 
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(403, 118);
+            this.cbStatus.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cbStatus.Location = new System.Drawing.Point(447, 82);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(151, 28);
             this.cbStatus.TabIndex = 8;
@@ -112,12 +113,11 @@
             // 
             this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbStatus.Location = new System.Drawing.Point(312, 126);
+            this.lbStatus.Location = new System.Drawing.Point(312, 82);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(53, 20);
             this.lbStatus.TabIndex = 9;
             this.lbStatus.Text = "Status";
-            this.lbStatus.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtDescription
             // 
@@ -135,6 +135,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnReset
             // 
@@ -154,12 +155,42 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(312, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Estimated Time";
+            // 
+            // cbEstimatedTime
+            // 
+            this.cbEstimatedTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstimatedTime.FormattingEnabled = true;
+            this.cbEstimatedTime.Items.AddRange(new object[] {
+            "0.5",
+            "1",
+            "1.5",
+            "2",
+            "2.5",
+            "3",
+            "3.5",
+            "4"});
+            this.cbEstimatedTime.Location = new System.Drawing.Point(447, 129);
+            this.cbEstimatedTime.Name = "cbEstimatedTime";
+            this.cbEstimatedTime.Size = new System.Drawing.Size(151, 28);
+            this.cbEstimatedTime.TabIndex = 14;
+            // 
             // frmServiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(667, 465);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbEstimatedTime);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSave);
@@ -193,5 +224,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbEstimatedTime;
     }
 }
