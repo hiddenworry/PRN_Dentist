@@ -1,6 +1,5 @@
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\bin\Debug\net5.0\BusinessObject.dll
-C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\bin\Debug\net5.0\ref\BusinessObject.dll
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\bin\Debug\net5.0\BusinessObject.pdb
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.AssemblyReference.cache
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\obj\Debug\net5.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
@@ -13,3 +12,4 @@ C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessOb
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.dev.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\PRN_Dentist-main\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
