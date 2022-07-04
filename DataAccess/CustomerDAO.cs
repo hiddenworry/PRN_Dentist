@@ -65,7 +65,6 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-                    throw new Exception(newCustomer.Dob.ToString());
                     context.Customers.Add(newCustomer);
                     context.SaveChanges();
                 }
@@ -84,6 +83,49 @@ namespace DataAccess
                 {
                     return context.Customers.ToList();
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Customer> GetCustomerByName(string name)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Customers.Where(x => x.Name.Contains(name)).ToList();
+                }
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Customer> GetCustomerByPhone(string phone)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Customers.Where(x => x.Phone.Contains(phone)).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Customer> GetCustomerByNameAndPhone(string name, string phone)
+        {
+            try
+            {
+                var listName = GetCustomerByName(name);
+                var listPhone = GetCustomerByPhone(phone);
+                return listName.Where(x => x.Phone.Contains(phone)).ToList();
             }
             catch (Exception ex)
             {
