@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessObject.Models;
 
 namespace WinApp
 {
     public partial class frmHomeDoctor : Form
     {
         List<Panel> panelList = new List<Panel>();
+
+        public Account accountLogin { get; set; }
         int index;
         public frmHomeDoctor()
         {

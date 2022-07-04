@@ -31,6 +31,8 @@
             this.panelAppointment = new System.Windows.Forms.Panel();
             this.labelAppointment = new System.Windows.Forms.Label();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonFindAppointment = new System.Windows.Forms.Button();
             this.textBoxAppointmentPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.buttonAppointment = new System.Windows.Forms.Button();
             this.buttonCustomer = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelAppointment.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).BeginInit();
@@ -108,6 +108,23 @@
             this.groupBoxFilter.TabIndex = 11;
             this.groupBoxFilter.TabStop = false;
             this.groupBoxFilter.Text = "Filter";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Status";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(77, 126);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 28);
+            this.comboBox1.TabIndex = 11;
             // 
             // buttonFindAppointment
             // 
@@ -311,6 +328,7 @@
             this.buttonCustomerAdd.TabIndex = 5;
             this.buttonCustomerAdd.Text = "Add";
             this.buttonCustomerAdd.UseVisualStyleBackColor = true;
+            this.buttonCustomerAdd.Click += new System.EventHandler(this.buttonCustomerAdd_Click_1);
             // 
             // dataGridViewCustomer
             // 
@@ -342,23 +360,6 @@
             this.buttonCustomer.Text = "Customer";
             this.buttonCustomer.UseVisualStyleBackColor = true;
             this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Status";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 28);
-            this.comboBox1.TabIndex = 11;
             // 
             // frmHomeStaff
             // 

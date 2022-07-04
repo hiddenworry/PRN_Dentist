@@ -1,8 +1,9 @@
 ﻿using System;
-
+using BusinessObject.Models;
 namespace DataAccess
 {
-    public class IAccountRepository
+    public interface IAccountRepository
     {
+        Account CheckLogin(string username, string password);
     }
 }

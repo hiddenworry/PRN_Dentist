@@ -39,7 +39,7 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtDateOfBirth = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDentist = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // lbCustomerGender
             // 
@@ -147,15 +148,15 @@
             this.cbGender.Size = new System.Drawing.Size(151, 28);
             this.cbGender.TabIndex = 27;
             // 
-            // maskedTextBox1
+            // txtDateOfBirth
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(609, 266);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(151, 27);
-            this.maskedTextBox1.TabIndex = 29;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.txtDateOfBirth.Location = new System.Drawing.Point(609, 266);
+            this.txtDateOfBirth.Mask = "00/00/0000";
+            this.txtDateOfBirth.Name = "txtDateOfBirth";
+            this.txtDateOfBirth.Size = new System.Drawing.Size(151, 27);
+            this.txtDateOfBirth.TabIndex = 29;
+            this.txtDateOfBirth.ValidatingType = typeof(System.DateTime);
+            this.txtDateOfBirth.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // label1
             // 
@@ -178,14 +179,14 @@
             this.labelDentist.TabIndex = 30;
             this.labelDentist.Text = "Customer Detail";
             // 
-            // frmCustomerDetail
+            // frmCustomerDetailStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(947, 450);
             this.Controls.Add(this.labelDentist);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtDateOfBirth);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.txtPhone);
@@ -198,7 +199,7 @@
             this.Controls.Add(this.lbCustomerlID);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.txtCustomerName);
-            this.Name = "frmCustomerDetail";
+            this.Name = "frmCustomerDetailStaff";
             this.Text = "frmCustomerDetail";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,7 +219,7 @@
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.ComboBox cbGender;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtDateOfBirth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDentist;
     }
