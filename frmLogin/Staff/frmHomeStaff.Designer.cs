@@ -39,7 +39,7 @@
             this.labelPhone = new System.Windows.Forms.Label();
             this.dateTimePickerAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxAppointmentService = new System.Windows.Forms.ComboBox();
+            this.comboBoxAppointmentDentist = new System.Windows.Forms.ComboBox();
             this.buttonAppointmentDetail = new System.Windows.Forms.Button();
             this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
             this.buttonAppointmentAdd = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@
             this.panelAppointment.Controls.Add(this.buttonAppointmentUpdate);
             this.panelAppointment.Controls.Add(this.buttonAppointmentAdd);
             this.panelAppointment.Controls.Add(this.dataGridViewAppointment);
-            this.panelAppointment.Location = new System.Drawing.Point(3, 48);
+            this.panelAppointment.Location = new System.Drawing.Point(3, 47);
             this.panelAppointment.Name = "panelAppointment";
             this.panelAppointment.Size = new System.Drawing.Size(775, 450);
             this.panelAppointment.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.groupBoxFilter.Controls.Add(this.labelPhone);
             this.groupBoxFilter.Controls.Add(this.dateTimePickerAppointmentDate);
             this.groupBoxFilter.Controls.Add(this.label1);
-            this.groupBoxFilter.Controls.Add(this.comboBoxAppointmentService);
+            this.groupBoxFilter.Controls.Add(this.comboBoxAppointmentDentist);
             this.groupBoxFilter.Location = new System.Drawing.Point(501, 4);
             this.groupBoxFilter.Name = "groupBoxFilter";
             this.groupBoxFilter.Size = new System.Drawing.Size(225, 195);
@@ -175,15 +175,15 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Service";
+            this.label1.Text = "Dentist";
             // 
-            // comboBoxAppointmentService
+            // comboBoxAppointmentDentist
             // 
-            this.comboBoxAppointmentService.FormattingEnabled = true;
-            this.comboBoxAppointmentService.Location = new System.Drawing.Point(77, 92);
-            this.comboBoxAppointmentService.Name = "comboBoxAppointmentService";
-            this.comboBoxAppointmentService.Size = new System.Drawing.Size(127, 28);
-            this.comboBoxAppointmentService.TabIndex = 0;
+            this.comboBoxAppointmentDentist.FormattingEnabled = true;
+            this.comboBoxAppointmentDentist.Location = new System.Drawing.Point(77, 92);
+            this.comboBoxAppointmentDentist.Name = "comboBoxAppointmentDentist";
+            this.comboBoxAppointmentDentist.Size = new System.Drawing.Size(127, 28);
+            this.comboBoxAppointmentDentist.TabIndex = 0;
             // 
             // buttonAppointmentDetail
             // 
@@ -394,7 +394,7 @@
         private System.Windows.Forms.Button buttonAppointment;
         private System.Windows.Forms.Button buttonCustomer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxAppointmentService;
+        private System.Windows.Forms.ComboBox comboBoxAppointmentDentist;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.DateTimePicker dateTimePickerAppointmentDate;

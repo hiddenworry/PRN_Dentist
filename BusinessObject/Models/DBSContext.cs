@@ -77,9 +77,9 @@ namespace BusinessObject.Models
 
                 entity.Property(e => e.CustomerId).HasColumnName("customer_id");
 
-                entity.Property(e => e.Description).HasColumnName("description");
+                entity.Property(e => e.DentistId).HasColumnName("dentist_id");
 
-                entity.Property(e => e.DoctorId).HasColumnName("doctor_id");
+                entity.Property(e => e.Description).HasColumnName("description");
 
                 entity.Property(e => e.Status)
                     .HasColumnType("decimal(1, 0)")
@@ -100,17 +100,17 @@ namespace BusinessObject.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Appointme__custo__2E1BDC42");
 
-                entity.HasOne(d => d.Doctor)
+                entity.HasOne(d => d.Dentist)
                     .WithMany(p => p.Appointments)
-                    .HasForeignKey(d => d.DoctorId)
+                    .HasForeignKey(d => d.DentistId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Appointme__docto__2F10007B");
+                    .HasConstraintName("FK__Appointme__denti__2F10007B");
             });
 
             modelBuilder.Entity<AppointmentService>(entity =>
             {
                 entity.HasKey(e => new { e.AppointmentId, e.ServiceId })
-                    .HasName("PK__Appointm__46E8F376938D2761");
+                    .HasName("PK__Appointm__46E8F376D4B620EB");
 
                 entity.ToTable("Appointment_Service");
 
