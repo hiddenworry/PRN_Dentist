@@ -8,10 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessObject.Models;
+using DataAccess;
+
 namespace WinApp
 {
     public partial class frmHome : Form
     {
+        IServiceRepository ServiceRepository = new ServiceRepository();
+        IAppointmentRepository AppointmentRepository = new AppointmentRepository();
+        ICustomerRepository CustomerRepository = new CustomerRepository();
         List<Panel> panelList = new List<Panel>();
         public Account accountLogin { get; set; }
 
@@ -80,6 +85,11 @@ namespace WinApp
         }
 
         private void labelService_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonServiceAdd_Click(object sender, EventArgs e)
         {
 
         }

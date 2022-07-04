@@ -74,6 +74,11 @@ namespace WinApp
 
         }
 
+        public void LoadAppointmentList()
+        {
+
+        }
+
         private void buttonAppointmentAdd_Click(object sender, EventArgs e)
         {
 

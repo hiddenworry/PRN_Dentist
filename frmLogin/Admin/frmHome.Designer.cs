@@ -228,6 +228,7 @@
             this.buttonServiceAdd.TabIndex = 5;
             this.buttonServiceAdd.Text = "Add";
             this.buttonServiceAdd.UseVisualStyleBackColor = true;
+            this.buttonServiceAdd.Click += new System.EventHandler(this.buttonServiceAdd_Click);
             // 
             // dataGridViewService
             // 
