@@ -41,9 +41,7 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Account");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Gender).HasColumnName("gender");
 
@@ -75,9 +73,7 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Appointment");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CustomerId).HasColumnName("customer_id");
 
@@ -114,7 +110,7 @@ namespace BusinessObject.Models
             modelBuilder.Entity<AppointmentService>(entity =>
             {
                 entity.HasKey(e => new { e.AppointmentId, e.ServiceId })
-                    .HasName("PK__Appointm__46E8F3763B26B30D");
+                    .HasName("PK__Appointm__46E8F376938D2761");
 
                 entity.ToTable("Appointment_Service");
 
@@ -139,9 +135,7 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Customer");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Dob)
                     .HasColumnType("date")
@@ -164,9 +158,7 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Service");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Description).HasColumnName("description");
 
@@ -194,9 +186,7 @@ namespace BusinessObject.Models
             {
                 entity.ToTable("Service_Type");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Name)
                     .IsRequired()

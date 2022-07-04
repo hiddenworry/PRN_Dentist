@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class IAppointmentServiceRepository
+    public interface IAppointmentServiceRepository
     {
     }
 }

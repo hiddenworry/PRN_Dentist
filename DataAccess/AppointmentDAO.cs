@@ -6,7 +6,26 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    internal class AppointmentDAO
+    public class AppointmentDAO
     {
+        private static AppointmentDAO instance = null;
+        private static readonly object instanceLock = new object();
+        private AppointmentDAO() { }
+        public static AppointmentDAO Instance
+        {
+            get
+            {
+                lock (instanceLock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new AppointmentDAO();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+
     }
 }
