@@ -81,7 +81,7 @@ namespace WinApp
                 service.Id = int.Parse(txtServiceID.Text);
             }
             service.Name = txtServiceName.Text;
-            service.Status = int.Parse(cbStatus.Text);
+            service.Status = Int32.Parse(cbStatus.SelectedValue.ToString());
             service.EstimatedTime = float.Parse(cbEstimatedTime.Text);
             service.ServiceTypeId = Int32.Parse(cbServiceType.SelectedValue.ToString());
             service.Description = txtDescription.Text;
@@ -91,6 +91,14 @@ namespace WinApp
 
         private void frmServiceDetail_Load(object sender, EventArgs e)
         {
+
+            var StatusDictionary = new Dictionary<int, string>();
+            StatusDictionary.Add(1, "Active");
+            StatusDictionary.Add(2, "Inactive");
+
+            cbStatus.DataSource = StatusDictionary.ToList();
+            cbStatus.DisplayMember = "Value";
+            cbStatus.ValueMember = "Key";
             // load service type
             cbServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
             cbServiceType.DisplayMember = "name";

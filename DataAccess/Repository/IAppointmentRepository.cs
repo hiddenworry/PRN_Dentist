@@ -13,5 +13,7 @@ namespace DataAccess
         List<Appointment> GetAppointmentByStatus( int status);
         Appointment GetAppointmentById(int id);
         List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList);
+
+        List<Appointment> GetAppointmentsForAdmin();
     }
 }

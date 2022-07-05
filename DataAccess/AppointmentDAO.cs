@@ -95,5 +95,22 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+
+        public List<Appointment> GetAppointmentsForAdmin()
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    return DBSContext.Appointments.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
     }
 }

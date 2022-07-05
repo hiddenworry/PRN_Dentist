@@ -39,7 +39,7 @@
             this.buttonServiceFind = new System.Windows.Forms.Button();
             this.textBoxServiceName = new System.Windows.Forms.TextBox();
             this.labelServicename = new System.Windows.Forms.Label();
-            this.buttonServiceDetail = new System.Windows.Forms.Button();
+            this.buttonServiceDisable = new System.Windows.Forms.Button();
             this.buttonServiceUpdate = new System.Windows.Forms.Button();
             this.buttonServiceAdd = new System.Windows.Forms.Button();
             this.dataGridViewService = new System.Windows.Forms.DataGridView();
@@ -57,6 +57,7 @@
             this.buttonDentistAdd = new System.Windows.Forms.Button();
             this.dataGridViewDentist = new System.Windows.Forms.DataGridView();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.btnCustomerLoad = new System.Windows.Forms.Button();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
@@ -73,6 +74,7 @@
             this.buttonService = new System.Windows.Forms.Button();
             this.buttonDentist = new System.Windows.Forms.Button();
             this.panelAppointment = new System.Windows.Forms.Panel();
+            this.btnLoadAppointmentList = new System.Windows.Forms.Button();
             this.labelAppointment = new System.Windows.Forms.Label();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -109,7 +111,7 @@
             this.panelService.Controls.Add(this.btnServiceLoad);
             this.panelService.Controls.Add(this.labelService);
             this.panelService.Controls.Add(this.groupBoxFilterService);
-            this.panelService.Controls.Add(this.buttonServiceDetail);
+            this.panelService.Controls.Add(this.buttonServiceDisable);
             this.panelService.Controls.Add(this.buttonServiceUpdate);
             this.panelService.Controls.Add(this.buttonServiceAdd);
             this.panelService.Controls.Add(this.dataGridViewService);
@@ -169,9 +171,6 @@
             // 
             this.comboBoxServiceStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxServiceStatus.FormattingEnabled = true;
-            this.comboBoxServiceStatus.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.comboBoxServiceStatus.Location = new System.Drawing.Point(85, 89);
             this.comboBoxServiceStatus.Name = "comboBoxServiceStatus";
             this.comboBoxServiceStatus.Size = new System.Drawing.Size(127, 28);
@@ -221,14 +220,15 @@
             this.labelServicename.TabIndex = 4;
             this.labelServicename.Text = "Name";
             // 
-            // buttonServiceDetail
+            // buttonServiceDisable
             // 
-            this.buttonServiceDetail.Location = new System.Drawing.Point(307, 141);
-            this.buttonServiceDetail.Name = "buttonServiceDetail";
-            this.buttonServiceDetail.Size = new System.Drawing.Size(139, 29);
-            this.buttonServiceDetail.TabIndex = 9;
-            this.buttonServiceDetail.Text = "Detail";
-            this.buttonServiceDetail.UseVisualStyleBackColor = true;
+            this.buttonServiceDisable.Location = new System.Drawing.Point(307, 141);
+            this.buttonServiceDisable.Name = "buttonServiceDisable";
+            this.buttonServiceDisable.Size = new System.Drawing.Size(139, 29);
+            this.buttonServiceDisable.TabIndex = 9;
+            this.buttonServiceDisable.Text = "Disable";
+            this.buttonServiceDisable.UseVisualStyleBackColor = true;
+            this.buttonServiceDisable.Click += new System.EventHandler(this.buttonServiceDisable_Click);
             // 
             // buttonServiceUpdate
             // 
@@ -396,6 +396,7 @@
             // 
             this.panelCustomer.BackColor = System.Drawing.Color.LightBlue;
             this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCustomer.Controls.Add(this.btnCustomerLoad);
             this.panelCustomer.Controls.Add(this.labelCustomer);
             this.panelCustomer.Controls.Add(this.groupBox1);
             this.panelCustomer.Controls.Add(this.buttonDetailCustomer);
@@ -406,6 +407,17 @@
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(775, 450);
             this.panelCustomer.TabIndex = 13;
+            this.panelCustomer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCustomer_Paint);
+            // 
+            // btnCustomerLoad
+            // 
+            this.btnCustomerLoad.Location = new System.Drawing.Point(55, 411);
+            this.btnCustomerLoad.Name = "btnCustomerLoad";
+            this.btnCustomerLoad.Size = new System.Drawing.Size(139, 29);
+            this.btnCustomerLoad.TabIndex = 14;
+            this.btnCustomerLoad.Text = "Load";
+            this.btnCustomerLoad.UseVisualStyleBackColor = true;
+            this.btnCustomerLoad.Click += new System.EventHandler(this.btnCustomerLoad_Click);
             // 
             // labelCustomer
             // 
@@ -455,6 +467,7 @@
             this.buttonCustomerFind.TabIndex = 10;
             this.buttonCustomerFind.Text = "Find";
             this.buttonCustomerFind.UseVisualStyleBackColor = true;
+            this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
             // 
             // textBoxCustomerName
             // 
@@ -506,7 +519,7 @@
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 29;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 229);
             this.dataGridViewCustomer.TabIndex = 7;
             // 
             // buttonAppointment
@@ -554,6 +567,7 @@
             // 
             this.panelAppointment.BackColor = System.Drawing.Color.LightBlue;
             this.panelAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAppointment.Controls.Add(this.btnLoadAppointmentList);
             this.panelAppointment.Controls.Add(this.labelAppointment);
             this.panelAppointment.Controls.Add(this.groupBoxFilter);
             this.panelAppointment.Controls.Add(this.buttonAppointmentDetail);
@@ -564,6 +578,17 @@
             this.panelAppointment.Name = "panelAppointment";
             this.panelAppointment.Size = new System.Drawing.Size(775, 450);
             this.panelAppointment.TabIndex = 16;
+            this.panelAppointment.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAppointment_Paint);
+            // 
+            // btnLoadAppointmentList
+            // 
+            this.btnLoadAppointmentList.Location = new System.Drawing.Point(36, 416);
+            this.btnLoadAppointmentList.Name = "btnLoadAppointmentList";
+            this.btnLoadAppointmentList.Size = new System.Drawing.Size(139, 29);
+            this.btnLoadAppointmentList.TabIndex = 15;
+            this.btnLoadAppointmentList.Text = "Load";
+            this.btnLoadAppointmentList.UseVisualStyleBackColor = true;
+            this.btnLoadAppointmentList.Click += new System.EventHandler(this.btnLoadAppointmentList_Click);
             // 
             // labelAppointment
             // 
@@ -703,7 +728,7 @@
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
-            this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
+            this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 206);
             this.dataGridViewAppointment.TabIndex = 7;
             // 
             // frmHome
@@ -771,7 +796,7 @@
         private System.Windows.Forms.Button buttonServiceFind;
         private System.Windows.Forms.TextBox textBoxServiceName;
         private System.Windows.Forms.Label labelServicename;
-        private System.Windows.Forms.Button buttonServiceDetail;
+        private System.Windows.Forms.Button buttonServiceDisable;
         private System.Windows.Forms.Button buttonServiceUpdate;
         private System.Windows.Forms.Button buttonServiceAdd;
         private System.Windows.Forms.DataGridView dataGridViewService;
@@ -808,5 +833,7 @@
         private System.Windows.Forms.Button buttonAppointmentAdd;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
         private System.Windows.Forms.Button btnServiceLoad;
+        private System.Windows.Forms.Button btnCustomerLoad;
+        private System.Windows.Forms.Button btnLoadAppointmentList;
     }
 }

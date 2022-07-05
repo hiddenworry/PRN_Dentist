@@ -57,5 +57,58 @@ namespace DataAccess
                 throw new Exception();
             }
         }
+
+        public List<Account> GetALLDentistList()
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Accounts.Where(a => a.Role == 3).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
+        public void AddDentistAccount(Account account)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    account.Role = 3;
+                    context.Add(account);
+                    context.SaveChanges();
+
+                }
+
+            } catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
+        public void UpdateDentistAccount(Account account)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    account.Role = 3;
+                    context.Entry<Account>(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    context.SaveChanges();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
     }
 }

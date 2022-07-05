@@ -64,5 +64,8 @@ namespace DataAccess
             }
             return availableOptions;
         }
+
+        public List<Appointment> GetAppointmentsForAdmin() => AppointmentDAO.Instance.GetAppointmentsForAdmin();
+      
     }
 }

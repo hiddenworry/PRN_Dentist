@@ -21,7 +21,7 @@ namespace frmLogin
 
             Application.Run(new frmHome());
 
-            Application.Run(new frmHomeDoctor());
+            
 
         }
     }
