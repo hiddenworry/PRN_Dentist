@@ -53,7 +53,7 @@ namespace WinApp
                     txtNameUpdate.Enabled = false;
                     cboGenderUpdate.Enabled = false;
                     cboStatusUpdate.Enabled = true;
-                    cboRoleUpdate.Enabled = true;
+                    cboRoleUpdate.Enabled = false;
 
                     panelUpdateProfile.Visible = true;
                     panelUpdateProfile.BringToFront();
@@ -152,7 +152,8 @@ namespace WinApp
                         };
 
                         AccountRepository.UpdateAccount(account);
-                        
+                        Application.Exit();
+                        Application.Restart();
                     }
                 }
                 else
@@ -164,11 +165,7 @@ namespace WinApp
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Update profile", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } finally
-            {
-                Application.Exit();
-                Application.Restart();
-            }
+            } 
 
         }
 
