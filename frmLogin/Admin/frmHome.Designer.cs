@@ -31,7 +31,7 @@
             this.panelService = new System.Windows.Forms.Panel();
             this.btnServiceLoad = new System.Windows.Forms.Button();
             this.labelService = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxFilterService = new System.Windows.Forms.GroupBox();
             this.labelServiceStatus = new System.Windows.Forms.Label();
             this.comboBoxServiceStatus = new System.Windows.Forms.ComboBox();
             this.comboBoxServiceType = new System.Windows.Forms.ComboBox();
@@ -89,7 +89,7 @@
             this.buttonAppointmentAdd = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
             this.panelService.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxFilterService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).BeginInit();
             this.panelDentist.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,7 +108,7 @@
             this.panelService.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelService.Controls.Add(this.btnServiceLoad);
             this.panelService.Controls.Add(this.labelService);
-            this.panelService.Controls.Add(this.groupBox2);
+            this.panelService.Controls.Add(this.groupBoxFilterService);
             this.panelService.Controls.Add(this.buttonServiceDetail);
             this.panelService.Controls.Add(this.buttonServiceUpdate);
             this.panelService.Controls.Add(this.buttonServiceAdd);
@@ -140,21 +140,21 @@
             this.labelService.Text = "Service Management";
             this.labelService.Click += new System.EventHandler(this.labelService_Click);
             // 
-            // groupBox2
+            // groupBoxFilterService
             // 
-            this.groupBox2.Controls.Add(this.labelServiceStatus);
-            this.groupBox2.Controls.Add(this.comboBoxServiceStatus);
-            this.groupBox2.Controls.Add(this.comboBoxServiceType);
-            this.groupBox2.Controls.Add(this.labelServiceType);
-            this.groupBox2.Controls.Add(this.buttonServiceFind);
-            this.groupBox2.Controls.Add(this.textBoxServiceName);
-            this.groupBox2.Controls.Add(this.labelServicename);
-            this.groupBox2.Location = new System.Drawing.Point(501, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(225, 166);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filter";
+            this.groupBoxFilterService.Controls.Add(this.labelServiceStatus);
+            this.groupBoxFilterService.Controls.Add(this.comboBoxServiceStatus);
+            this.groupBoxFilterService.Controls.Add(this.comboBoxServiceType);
+            this.groupBoxFilterService.Controls.Add(this.labelServiceType);
+            this.groupBoxFilterService.Controls.Add(this.buttonServiceFind);
+            this.groupBoxFilterService.Controls.Add(this.textBoxServiceName);
+            this.groupBoxFilterService.Controls.Add(this.labelServicename);
+            this.groupBoxFilterService.Location = new System.Drawing.Point(501, 4);
+            this.groupBoxFilterService.Name = "groupBoxFilterService";
+            this.groupBoxFilterService.Size = new System.Drawing.Size(225, 166);
+            this.groupBoxFilterService.TabIndex = 11;
+            this.groupBoxFilterService.TabStop = false;
+            this.groupBoxFilterService.Text = "Filter";
             // 
             // labelServiceStatus
             // 
@@ -167,7 +167,11 @@
             // 
             // comboBoxServiceStatus
             // 
+            this.comboBoxServiceStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxServiceStatus.FormattingEnabled = true;
+            this.comboBoxServiceStatus.Items.AddRange(new object[] {
+            "1",
+            "2"});
             this.comboBoxServiceStatus.Location = new System.Drawing.Point(85, 89);
             this.comboBoxServiceStatus.Name = "comboBoxServiceStatus";
             this.comboBoxServiceStatus.Size = new System.Drawing.Size(127, 28);
@@ -175,6 +179,7 @@
             // 
             // comboBoxServiceType
             // 
+            this.comboBoxServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxServiceType.FormattingEnabled = true;
             this.comboBoxServiceType.Location = new System.Drawing.Point(85, 55);
             this.comboBoxServiceType.Name = "comboBoxServiceType";
@@ -198,6 +203,7 @@
             this.buttonServiceFind.TabIndex = 10;
             this.buttonServiceFind.Text = "Find";
             this.buttonServiceFind.UseVisualStyleBackColor = true;
+            this.buttonServiceFind.Click += new System.EventHandler(this.buttonServiceFind_Click);
             // 
             // textBoxServiceName
             // 
@@ -719,8 +725,8 @@
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelService.ResumeLayout(false);
             this.panelService.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxFilterService.ResumeLayout(false);
+            this.groupBoxFilterService.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).EndInit();
             this.panelDentist.ResumeLayout(false);
             this.panelDentist.PerformLayout();
@@ -760,7 +766,7 @@
         private System.Windows.Forms.Label labelCustomerPhone;
         private System.Windows.Forms.Panel panelService;
         private System.Windows.Forms.Label labelService;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxFilterService;
         private System.Windows.Forms.Label labelServiceType;
         private System.Windows.Forms.Button buttonServiceFind;
         private System.Windows.Forms.TextBox textBoxServiceName;

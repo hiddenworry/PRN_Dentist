@@ -32,37 +32,44 @@ namespace WinApp
             try
             {
                 Service service = LoadData();
-                if (Insert)
+                if (validate(service))
                 {
-                    DialogResult result = MessageBox.Show("Do You Want to Save?", "Add", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    if (result.Equals(DialogResult.OK))
+                    if (Insert)
                     {
-                        ServiceRepository.SaveService(service);
-                        this.DialogResult = DialogResult.OK;
+                        DialogResult result = MessageBox.Show("Do You Want to Save?", "Add", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (result.Equals(DialogResult.OK))
+                        {
+                            ServiceRepository.SaveService(service);
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+
+                        }
 
                     }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("Do You Want to Save?", "Update", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (result.Equals(DialogResult.OK))
+                        {
+                            ServiceRepository.UpdateService(service);
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
 
+
+                        }
+
+                    }
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Do You Want to Save?", "Update", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    if (result.Equals(DialogResult.OK))
-                    {
-                        ServiceRepository.UpdateService(service);
-                        this.DialogResult = DialogResult.OK;
-
-
-                    }
-
+                    MessageBox.Show("Validate error");
                 }
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            finally {
-                this.Close();
-            }
-            
+           
+
 
         }
 
@@ -95,6 +102,7 @@ namespace WinApp
             {
                 lbServiceDetailID.Visible = false;
                 txtServiceID.Visible = false;
+                Reset();
                
             }
             else
@@ -110,19 +118,37 @@ namespace WinApp
             
 
         }
-
-        private void btnReset_Click(object sender, EventArgs e)
+        private void Reset()
         {
             txtServiceName.Text = string.Empty;
             txtDescription.Text = string.Empty;
             cbEstimatedTime.SelectedIndex = 1;
-            cbServiceType.SelectedIndex = 1;
+            cbServiceType.SelectedIndex = 0;
             cbStatus.SelectedIndex = 1;
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool validate(Service service)
+        {
+            bool check = true;
+            if(string.IsNullOrEmpty(service.Name))
+             
+            {
+                check = false;
+
+            }
+            return check;
+
         }
     }
 }
