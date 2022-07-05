@@ -12,7 +12,11 @@ namespace DataAccess
         List<Appointment> GetAppointmentList(DateTime date, string phone, int dentistId, int status);
         List<Appointment> GetAppointmentByStatus( int status);
         Appointment GetAppointmentById(int id);
+<<<<<<< HEAD
 
 
+=======
+        List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList);
+>>>>>>> dd33db4f67fbbcd4500a87398a61ad183128d1e6
     }
 }

@@ -109,5 +109,26 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<Service> GetServiceListByAppointmentId(int id)
+        {
+            try
+            {
+                using (var Context = new DBSContext())
+                {
+                    return (
+                        from s in Context.Services
+                        join ad in Context.AppointmentServices on s.Id equals ad.ServiceId
+                        where
+                            ad.AppointmentId == id
+                        select s
+                    ).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
