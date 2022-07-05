@@ -125,7 +125,10 @@ namespace DataAccess
             {
                 var listName = GetCustomerByName(name);
                 var listPhone = GetCustomerByPhone(phone);
-                return listName.Where(x => x.Phone.Contains(phone)).ToList();
+                return (from n in listName
+                        join p in listPhone
+                        on n.Id equals p.Id 
+                        select n).ToList();
             }
             catch (Exception ex)
             {

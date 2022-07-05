@@ -43,26 +43,26 @@
             this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
             this.buttonAppointmentAdd = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
-            this.panelCustomer = new System.Windows.Forms.Panel();
-            this.labelCustomer = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
-            this.labelCustomerPhone = new System.Windows.Forms.Label();
-            this.buttonCustomerFind = new System.Windows.Forms.Button();
-            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
-            this.labelNameCustomer = new System.Windows.Forms.Label();
-            this.buttonDetailCustomer = new System.Windows.Forms.Button();
-            this.buttonCustomerUpdate = new System.Windows.Forms.Button();
-            this.buttonCustomerAdd = new System.Windows.Forms.Button();
-            this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.buttonAppointment = new System.Windows.Forms.Button();
             this.buttonCustomer = new System.Windows.Forms.Button();
+            this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
+            this.buttonCustomerAdd = new System.Windows.Forms.Button();
+            this.buttonCustomerUpdate = new System.Windows.Forms.Button();
+            this.buttonDetailCustomer = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelNameCustomer = new System.Windows.Forms.Label();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
+            this.buttonCustomerFind = new System.Windows.Forms.Button();
+            this.labelCustomerPhone = new System.Windows.Forms.Label();
+            this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
+            this.labelCustomer = new System.Windows.Forms.Label();
+            this.panelCustomer = new System.Windows.Forms.Panel();
             this.panelAppointment.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).BeginInit();
-            this.panelCustomer.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.panelCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAppointment
@@ -216,133 +216,6 @@
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
             // 
-            // panelCustomer
-            // 
-            this.panelCustomer.BackColor = System.Drawing.Color.LightBlue;
-            this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCustomer.Controls.Add(this.labelCustomer);
-            this.panelCustomer.Controls.Add(this.groupBox1);
-            this.panelCustomer.Controls.Add(this.buttonDetailCustomer);
-            this.panelCustomer.Controls.Add(this.buttonCustomerUpdate);
-            this.panelCustomer.Controls.Add(this.buttonCustomerAdd);
-            this.panelCustomer.Controls.Add(this.dataGridViewCustomer);
-            this.panelCustomer.Location = new System.Drawing.Point(802, 48);
-            this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(775, 450);
-            this.panelCustomer.TabIndex = 13;
-            // 
-            // labelCustomer
-            // 
-            this.labelCustomer.AutoSize = true;
-            this.labelCustomer.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCustomer.Location = new System.Drawing.Point(108, 59);
-            this.labelCustomer.Name = "labelCustomer";
-            this.labelCustomer.Size = new System.Drawing.Size(319, 37);
-            this.labelCustomer.TabIndex = 12;
-            this.labelCustomer.Text = "Customer Management";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBoxCustomerPhone);
-            this.groupBox1.Controls.Add(this.labelCustomerPhone);
-            this.groupBox1.Controls.Add(this.buttonCustomerFind);
-            this.groupBox1.Controls.Add(this.textBoxCustomerName);
-            this.groupBox1.Controls.Add(this.labelNameCustomer);
-            this.groupBox1.Location = new System.Drawing.Point(501, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 166);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
-            // 
-            // textBoxCustomerPhone
-            // 
-            this.textBoxCustomerPhone.Location = new System.Drawing.Point(85, 64);
-            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
-            this.textBoxCustomerPhone.Size = new System.Drawing.Size(127, 27);
-            this.textBoxCustomerPhone.TabIndex = 12;
-            // 
-            // labelCustomerPhone
-            // 
-            this.labelCustomerPhone.AutoSize = true;
-            this.labelCustomerPhone.Location = new System.Drawing.Point(18, 67);
-            this.labelCustomerPhone.Name = "labelCustomerPhone";
-            this.labelCustomerPhone.Size = new System.Drawing.Size(50, 20);
-            this.labelCustomerPhone.TabIndex = 11;
-            this.labelCustomerPhone.Text = "Phone";
-            // 
-            // buttonCustomerFind
-            // 
-            this.buttonCustomerFind.Location = new System.Drawing.Point(73, 122);
-            this.buttonCustomerFind.Name = "buttonCustomerFind";
-            this.buttonCustomerFind.Size = new System.Drawing.Size(139, 29);
-            this.buttonCustomerFind.TabIndex = 10;
-            this.buttonCustomerFind.Text = "Find";
-            this.buttonCustomerFind.UseVisualStyleBackColor = true;
-            this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
-            // 
-            // textBoxCustomerName
-            // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(85, 31);
-            this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(127, 27);
-            this.textBoxCustomerName.TabIndex = 6;
-            // 
-            // labelNameCustomer
-            // 
-            this.labelNameCustomer.AutoSize = true;
-            this.labelNameCustomer.Location = new System.Drawing.Point(18, 34);
-            this.labelNameCustomer.Name = "labelNameCustomer";
-            this.labelNameCustomer.Size = new System.Drawing.Size(49, 20);
-            this.labelNameCustomer.TabIndex = 4;
-            this.labelNameCustomer.Text = "Name";
-            // 
-            // buttonDetailCustomer
-            // 
-            this.buttonDetailCustomer.Location = new System.Drawing.Point(340, 141);
-            this.buttonDetailCustomer.Name = "buttonDetailCustomer";
-            this.buttonDetailCustomer.Size = new System.Drawing.Size(139, 29);
-            this.buttonDetailCustomer.TabIndex = 9;
-            this.buttonDetailCustomer.Text = "Detail";
-            this.buttonDetailCustomer.UseVisualStyleBackColor = true;
-            // 
-            // buttonCustomerUpdate
-            // 
-            this.buttonCustomerUpdate.Location = new System.Drawing.Point(195, 141);
-            this.buttonCustomerUpdate.Name = "buttonCustomerUpdate";
-            this.buttonCustomerUpdate.Size = new System.Drawing.Size(139, 29);
-            this.buttonCustomerUpdate.TabIndex = 8;
-            this.buttonCustomerUpdate.Text = "Update";
-            this.buttonCustomerUpdate.UseVisualStyleBackColor = true;
-            this.buttonCustomerUpdate.Click += new System.EventHandler(this.buttonCustomerUpdate_Click);
-            // 
-            // buttonCustomerAdd
-            // 
-            this.buttonCustomerAdd.Location = new System.Drawing.Point(50, 141);
-            this.buttonCustomerAdd.Name = "buttonCustomerAdd";
-            this.buttonCustomerAdd.Size = new System.Drawing.Size(139, 29);
-            this.buttonCustomerAdd.TabIndex = 5;
-            this.buttonCustomerAdd.Text = "Add";
-            this.buttonCustomerAdd.UseVisualStyleBackColor = true;
-            this.buttonCustomerAdd.Click += new System.EventHandler(this.buttonCustomerAdd_Click);
-            // 
-            // dataGridViewCustomer
-            // 
-            this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 176);
-            this.dataGridViewCustomer.Name = "dataGridViewCustomer";
-            this.dataGridViewCustomer.ReadOnly = true;
-            this.dataGridViewCustomer.RowHeadersWidth = 51;
-            this.dataGridViewCustomer.RowTemplate.Height = 29;
-            this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
-            this.dataGridViewCustomer.TabIndex = 7;
-            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
-            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
-            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
-            this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
-            // 
             // buttonAppointment
             // 
             this.buttonAppointment.BackColor = System.Drawing.Color.LightBlue;
@@ -364,6 +237,134 @@
             this.buttonCustomer.UseVisualStyleBackColor = true;
             this.buttonCustomer.Click += new System.EventHandler(this.buttonCustomer_Click);
             // 
+            // dataGridViewCustomer
+            // 
+            this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 176);
+            this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
+            this.dataGridViewCustomer.RowHeadersWidth = 51;
+            this.dataGridViewCustomer.RowTemplate.Height = 29;
+            this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
+            this.dataGridViewCustomer.TabIndex = 7;
+            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
+            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
+            this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
+            this.dataGridViewCustomer.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewCustomer_CellFormatting);
+            // 
+            // buttonCustomerAdd
+            // 
+            this.buttonCustomerAdd.Location = new System.Drawing.Point(50, 141);
+            this.buttonCustomerAdd.Name = "buttonCustomerAdd";
+            this.buttonCustomerAdd.Size = new System.Drawing.Size(139, 29);
+            this.buttonCustomerAdd.TabIndex = 5;
+            this.buttonCustomerAdd.Text = "Add";
+            this.buttonCustomerAdd.UseVisualStyleBackColor = true;
+            this.buttonCustomerAdd.Click += new System.EventHandler(this.buttonCustomerAdd_Click);
+            // 
+            // buttonCustomerUpdate
+            // 
+            this.buttonCustomerUpdate.Location = new System.Drawing.Point(195, 141);
+            this.buttonCustomerUpdate.Name = "buttonCustomerUpdate";
+            this.buttonCustomerUpdate.Size = new System.Drawing.Size(139, 29);
+            this.buttonCustomerUpdate.TabIndex = 8;
+            this.buttonCustomerUpdate.Text = "Update";
+            this.buttonCustomerUpdate.UseVisualStyleBackColor = true;
+            this.buttonCustomerUpdate.Click += new System.EventHandler(this.buttonCustomerUpdate_Click);
+            // 
+            // buttonDetailCustomer
+            // 
+            this.buttonDetailCustomer.Location = new System.Drawing.Point(340, 141);
+            this.buttonDetailCustomer.Name = "buttonDetailCustomer";
+            this.buttonDetailCustomer.Size = new System.Drawing.Size(139, 29);
+            this.buttonDetailCustomer.TabIndex = 9;
+            this.buttonDetailCustomer.Text = "Detail";
+            this.buttonDetailCustomer.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBoxCustomerPhone);
+            this.groupBox1.Controls.Add(this.labelCustomerPhone);
+            this.groupBox1.Controls.Add(this.buttonCustomerFind);
+            this.groupBox1.Controls.Add(this.textBoxCustomerName);
+            this.groupBox1.Controls.Add(this.labelNameCustomer);
+            this.groupBox1.Location = new System.Drawing.Point(501, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(225, 166);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter";
+            // 
+            // labelNameCustomer
+            // 
+            this.labelNameCustomer.AutoSize = true;
+            this.labelNameCustomer.Location = new System.Drawing.Point(18, 34);
+            this.labelNameCustomer.Name = "labelNameCustomer";
+            this.labelNameCustomer.Size = new System.Drawing.Size(49, 20);
+            this.labelNameCustomer.TabIndex = 4;
+            this.labelNameCustomer.Text = "Name";
+            // 
+            // textBoxCustomerName
+            // 
+            this.textBoxCustomerName.Location = new System.Drawing.Point(85, 31);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(127, 27);
+            this.textBoxCustomerName.TabIndex = 6;
+            // 
+            // buttonCustomerFind
+            // 
+            this.buttonCustomerFind.Location = new System.Drawing.Point(73, 122);
+            this.buttonCustomerFind.Name = "buttonCustomerFind";
+            this.buttonCustomerFind.Size = new System.Drawing.Size(139, 29);
+            this.buttonCustomerFind.TabIndex = 10;
+            this.buttonCustomerFind.Text = "Find";
+            this.buttonCustomerFind.UseVisualStyleBackColor = true;
+            this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
+            // 
+            // labelCustomerPhone
+            // 
+            this.labelCustomerPhone.AutoSize = true;
+            this.labelCustomerPhone.Location = new System.Drawing.Point(18, 67);
+            this.labelCustomerPhone.Name = "labelCustomerPhone";
+            this.labelCustomerPhone.Size = new System.Drawing.Size(50, 20);
+            this.labelCustomerPhone.TabIndex = 11;
+            this.labelCustomerPhone.Text = "Phone";
+            // 
+            // textBoxCustomerPhone
+            // 
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(85, 64);
+            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
+            this.textBoxCustomerPhone.Size = new System.Drawing.Size(127, 27);
+            this.textBoxCustomerPhone.TabIndex = 12;
+            // 
+            // labelCustomer
+            // 
+            this.labelCustomer.AutoSize = true;
+            this.labelCustomer.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCustomer.Location = new System.Drawing.Point(108, 59);
+            this.labelCustomer.Name = "labelCustomer";
+            this.labelCustomer.Size = new System.Drawing.Size(319, 37);
+            this.labelCustomer.TabIndex = 12;
+            this.labelCustomer.Text = "Customer Management";
+            // 
+            // panelCustomer
+            // 
+            this.panelCustomer.BackColor = System.Drawing.Color.LightBlue;
+            this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCustomer.Controls.Add(this.labelCustomer);
+            this.panelCustomer.Controls.Add(this.groupBox1);
+            this.panelCustomer.Controls.Add(this.buttonDetailCustomer);
+            this.panelCustomer.Controls.Add(this.buttonCustomerUpdate);
+            this.panelCustomer.Controls.Add(this.buttonCustomerAdd);
+            this.panelCustomer.Controls.Add(this.dataGridViewCustomer);
+            this.panelCustomer.Location = new System.Drawing.Point(802, 48);
+            this.panelCustomer.Name = "panelCustomer";
+            this.panelCustomer.Size = new System.Drawing.Size(775, 450);
+            this.panelCustomer.TabIndex = 13;
+            // 
             // frmHomeStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -382,11 +383,11 @@
             this.groupBoxFilter.ResumeLayout(false);
             this.groupBoxFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).EndInit();
-            this.panelCustomer.ResumeLayout(false);
-            this.panelCustomer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
+            this.panelCustomer.ResumeLayout(false);
+            this.panelCustomer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,19 +409,19 @@
         private System.Windows.Forms.Button buttonFindAppointment;
         private System.Windows.Forms.GroupBox groupBoxFilter;
         private System.Windows.Forms.Label labelAppointment;
-        private System.Windows.Forms.Panel panelCustomer;
-        private System.Windows.Forms.Label labelCustomer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridViewCustomer;
+        private System.Windows.Forms.Button buttonCustomerAdd;
+        private System.Windows.Forms.Button buttonCustomerUpdate;
+        private System.Windows.Forms.Button buttonDetailCustomer;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBoxCustomerPhone;
+        private System.Windows.Forms.Label labelCustomerPhone;
         private System.Windows.Forms.Button buttonCustomerFind;
         private System.Windows.Forms.TextBox textBoxCustomerName;
         private System.Windows.Forms.Label labelNameCustomer;
-        private System.Windows.Forms.Button buttonDetailCustomer;
-        private System.Windows.Forms.Button buttonCustomerUpdate;
-        private System.Windows.Forms.Button buttonCustomerAdd;
-        private System.Windows.Forms.DataGridView dataGridViewCustomer;
-        private System.Windows.Forms.TextBox textBoxCustomerPhone;
-        private System.Windows.Forms.Label labelCustomerPhone;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label labelCustomer;
+        private System.Windows.Forms.Panel panelCustomer;
     }
 }

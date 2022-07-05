@@ -66,6 +66,20 @@ namespace DataAccess
             }
         }
 
+        public List<Appointment> GetAppointmentByStatus(int status)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Appointments.Where(c => c.Status == status).ToList();
+                }
+
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            } }
+
         public List<string> GetWorkingTimeListByDateAndDentist(DateTime time, int dentistId)
         {
             try

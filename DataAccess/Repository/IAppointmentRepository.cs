@@ -10,6 +10,7 @@ namespace DataAccess
     public interface IAppointmentRepository
     {
         List<Appointment> GetAppointmentList(DateTime date, string phone, int dentistId, int status);
+        List<Appointment> GetAppointmentByStatus( int status);
         Appointment GetAppointmentById(int id);
         List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList);
     }
