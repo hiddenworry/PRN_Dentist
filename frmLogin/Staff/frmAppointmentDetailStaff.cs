@@ -42,8 +42,18 @@ namespace WinApp
                 dateTimePickerTime.Value = appointment.Time;
                 comboBoxWorkingHour.Text = appointment.WorkingHour;
                 textBoxPhone.Text = customerRepository.GetById(appointment.Id).Phone;
-                dataGridViewDetail.DataSource = appointmentServiceRepository.GetAppointmentServiceListByAppointmentId(appointment.Id);
+                dataGridViewDetail.DataSource = serviceRepository.GetServiceListByAppointmentId(appointment.Id);
             }
+        }
+
+        private void comboBoxService_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            MessageBox.Show("aaaaaaa");
+        }
+
+        private void dataGridViewDetail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            buttonDeleteService.Enabled = true;
         }
     }
 }

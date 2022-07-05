@@ -95,6 +95,7 @@
             this.comboBoxService.Name = "comboBoxService";
             this.comboBoxService.Size = new System.Drawing.Size(201, 28);
             this.comboBoxService.TabIndex = 5;
+            this.comboBoxService.SelectionChangeCommitted += new System.EventHandler(this.comboBoxService_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -111,11 +112,14 @@
             this.dataGridViewDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDetail.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewDetail.Location = new System.Drawing.Point(24, 170);
+            this.dataGridViewDetail.MultiSelect = false;
             this.dataGridViewDetail.Name = "dataGridViewDetail";
             this.dataGridViewDetail.RowHeadersWidth = 51;
             this.dataGridViewDetail.RowTemplate.Height = 29;
-            this.dataGridViewDetail.Size = new System.Drawing.Size(589, 199);
+            this.dataGridViewDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.dataGridViewDetail.Size = new System.Drawing.Size(589, 143);
             this.dataGridViewDetail.TabIndex = 7;
+            this.dataGridViewDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetail_CellClick);
             // 
             // label4
             // 
@@ -137,6 +141,7 @@
             // 
             // buttonDeleteService
             // 
+            this.buttonDeleteService.Enabled = false;
             this.buttonDeleteService.Location = new System.Drawing.Point(24, 130);
             this.buttonDeleteService.Name = "buttonDeleteService";
             this.buttonDeleteService.Size = new System.Drawing.Size(152, 34);
@@ -146,7 +151,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(461, 375);
+            this.buttonSave.Location = new System.Drawing.Point(461, 319);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(152, 34);
             this.buttonSave.TabIndex = 11;
@@ -158,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(641, 408);
+            this.ClientSize = new System.Drawing.Size(641, 366);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonDeleteService);
             this.Controls.Add(this.label4);

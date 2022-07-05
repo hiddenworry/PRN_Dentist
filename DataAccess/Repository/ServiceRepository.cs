@@ -22,7 +22,7 @@ namespace DataAccess
 
         public void UpdateService(Service service) => ServiceDAO.Instance.UpdateService(service);
 
-
+        public List<Service> GetServiceListByAppointmentId(int id) => ServiceDAO.Instance.GetServiceListByAppointmentId(id);
 
     }
 }

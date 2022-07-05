@@ -111,43 +111,58 @@ namespace DataAccess
             }
         }
 
-        // return Context.Services.Where(s => ((s.Name.Contains(service.Name) || service.Name.Equals("") || service.Name == null))
-         //                                              && ((s.ServiceTypeId == service.ServiceTypeId || service.ServiceTypeId == null))
-         //                                              && (s.Status == service.Status || service.Status == null)
-           //                                            ));
-          //      }
+
 
     public List<Service> FilterService(Service service)
 
         {
             List<Service> filterList = new List<Service>();
+
+
             try
             {
                 using (var Context = new DBSContext())
                 {
+
                     var query = from s in Context.Services select s;
                     if (!string.IsNullOrEmpty(service.Name))
                     {
-                        query =  query.Where(s => s.Name.Contains(service.Name));
+                        query = query.Where(s => s.Name.Contains(service.Name));
                     }
                     if (service.ServiceTypeId != null)
                     {
-                        query =  query.Where(s => s.ServiceTypeId == service.ServiceTypeId);
+                        query = query.Where(s => s.ServiceTypeId == service.ServiceTypeId);
                     }
                     if (service.Status != null)
                     {
-                       query =  query.Where(s => s.Status == service.Status);
+                        query = query.Where(s => s.Status == service.Status);
                     }
                     filterList = query.ToList();
-
-
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+
             return filterList;
+
+        }
+        public List<Service> GetServiceListByAppointmentId(int id)
+        {
+            using (var Context = new DBSContext())
+            {
+
+
+                return (
+                    from s in Context.Services
+                    join ad in Context.AppointmentServices on s.Id equals ad.ServiceId
+                    where
+                        ad.AppointmentId == id
+                    select s
+                ).ToList();
+
+            }
         }
     }
 }
