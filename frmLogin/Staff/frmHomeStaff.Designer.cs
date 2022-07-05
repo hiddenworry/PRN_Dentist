@@ -208,9 +208,11 @@
             // 
             this.dataGridViewAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
+            this.dataGridViewAppointment.MultiSelect = false;
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
+            this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
             // 

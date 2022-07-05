@@ -21,6 +21,7 @@ namespace WinApp
         IAppointmentRepository appointmentRepository = new AppointmentRepository();
 
         BindingSource source;
+        BindingSource sourceAppointment;
 
         private static Customer customer;
         public frmHomeStaff()
@@ -108,7 +109,7 @@ namespace WinApp
 
         public void LoadAppointmentList()
         {
-            dataGridViewAppointment.DataSource = appointmentRepository.GetAppointmentList(new DateTime().Date, "", 0, 0);
+            dataGridViewAppointment.DataSource = appointmentRepository.GetAppointmentList(DateTime.Now.Date, "", 0, 0);
         }
 
         private void buttonAppointmentAdd_Click(object sender, EventArgs e)

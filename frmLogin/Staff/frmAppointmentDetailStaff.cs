@@ -16,16 +16,23 @@ namespace WinApp
     {
         public IAppointmentRepository appointmentRepository;
         public ICustomerRepository customerRepository;
-        public IAppointmentServiceRepository appointmentServiceRepository = new AppointmentServiceRepository();
+        public IAppointmentServiceRepository appointmentServiceRepository;
+        public IServiceRepository serviceRepository;
+
         public Appointment appointment;
         public bool InsertUpdateFlag;
         public frmAppointmentDetailStaff()
         {
             InitializeComponent();
+            appointmentServiceRepository = new AppointmentServiceRepository();
+            serviceRepository = new ServiceRepository();
         }
 
         private void frmAppointmentDetailStaff_Load(object sender, EventArgs e)
         {
+            comboBoxService.DataSource = serviceRepository.GetServices();
+            comboBoxService.DisplayMember = "Name";
+            comboBoxService.ValueMember = "Id";
             if (InsertUpdateFlag)
             {
 
@@ -34,7 +41,7 @@ namespace WinApp
             {
                 dateTimePickerTime.Value = appointment.Time;
                 comboBoxWorkingHour.Text = appointment.WorkingHour;
-                
+                textBoxPhone.Text = customerRepository.GetById(appointment.Id).Phone;
                 dataGridViewDetail.DataSource = appointmentServiceRepository.GetAppointmentServiceListByAppointmentId(appointment.Id);
             }
         }
