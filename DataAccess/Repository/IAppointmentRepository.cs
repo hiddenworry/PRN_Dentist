@@ -14,6 +14,14 @@ namespace DataAccess
         Appointment GetAppointmentById(int id);
         List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList);
 
+
         List<Appointment> GetAppointmentsForAdmin();
+
+        Appointment GetAppointmentNearest();
+
+        void UpdateAppointment(Appointment appointment);
+
+        List<Appointment> Get10FistappointmentDoneCustomerById(int id);
+
     }
 }

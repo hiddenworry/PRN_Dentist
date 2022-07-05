@@ -50,13 +50,15 @@
             this.buttonCustomerUpdate = new System.Windows.Forms.Button();
             this.buttonDetailCustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelNameCustomer = new System.Windows.Forms.Label();
-            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
-            this.buttonCustomerFind = new System.Windows.Forms.Button();
-            this.labelCustomerPhone = new System.Windows.Forms.Label();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
+            this.labelCustomerPhone = new System.Windows.Forms.Label();
+            this.buttonCustomerFind = new System.Windows.Forms.Button();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
+            this.labelNameCustomer = new System.Windows.Forms.Label();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.txtLinkLabelNameAccountLogin = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelAppointment.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).BeginInit();
@@ -298,21 +300,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
             // 
-            // labelNameCustomer
+            // textBoxCustomerPhone
             // 
-            this.labelNameCustomer.AutoSize = true;
-            this.labelNameCustomer.Location = new System.Drawing.Point(18, 34);
-            this.labelNameCustomer.Name = "labelNameCustomer";
-            this.labelNameCustomer.Size = new System.Drawing.Size(49, 20);
-            this.labelNameCustomer.TabIndex = 4;
-            this.labelNameCustomer.Text = "Name";
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(85, 64);
+            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
+            this.textBoxCustomerPhone.Size = new System.Drawing.Size(127, 27);
+            this.textBoxCustomerPhone.TabIndex = 12;
             // 
-            // textBoxCustomerName
+            // labelCustomerPhone
             // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(85, 31);
-            this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(127, 27);
-            this.textBoxCustomerName.TabIndex = 6;
+            this.labelCustomerPhone.AutoSize = true;
+            this.labelCustomerPhone.Location = new System.Drawing.Point(18, 67);
+            this.labelCustomerPhone.Name = "labelCustomerPhone";
+            this.labelCustomerPhone.Size = new System.Drawing.Size(50, 20);
+            this.labelCustomerPhone.TabIndex = 11;
+            this.labelCustomerPhone.Text = "Phone";
             // 
             // buttonCustomerFind
             // 
@@ -324,21 +326,21 @@
             this.buttonCustomerFind.UseVisualStyleBackColor = true;
             this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
             // 
-            // labelCustomerPhone
+            // textBoxCustomerName
             // 
-            this.labelCustomerPhone.AutoSize = true;
-            this.labelCustomerPhone.Location = new System.Drawing.Point(18, 67);
-            this.labelCustomerPhone.Name = "labelCustomerPhone";
-            this.labelCustomerPhone.Size = new System.Drawing.Size(50, 20);
-            this.labelCustomerPhone.TabIndex = 11;
-            this.labelCustomerPhone.Text = "Phone";
+            this.textBoxCustomerName.Location = new System.Drawing.Point(85, 31);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(127, 27);
+            this.textBoxCustomerName.TabIndex = 6;
             // 
-            // textBoxCustomerPhone
+            // labelNameCustomer
             // 
-            this.textBoxCustomerPhone.Location = new System.Drawing.Point(85, 64);
-            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
-            this.textBoxCustomerPhone.Size = new System.Drawing.Size(127, 27);
-            this.textBoxCustomerPhone.TabIndex = 12;
+            this.labelNameCustomer.AutoSize = true;
+            this.labelNameCustomer.Location = new System.Drawing.Point(18, 34);
+            this.labelNameCustomer.Name = "labelNameCustomer";
+            this.labelNameCustomer.Size = new System.Drawing.Size(49, 20);
+            this.labelNameCustomer.TabIndex = 4;
+            this.labelNameCustomer.Text = "Name";
             // 
             // labelCustomer
             // 
@@ -365,12 +367,37 @@
             this.panelCustomer.Size = new System.Drawing.Size(775, 450);
             this.panelCustomer.TabIndex = 13;
             // 
+            // txtLinkLabelNameAccountLogin
+            // 
+            this.txtLinkLabelNameAccountLogin.AutoSize = true;
+            this.txtLinkLabelNameAccountLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(665, 12);
+            this.txtLinkLabelNameAccountLogin.Name = "txtLinkLabelNameAccountLogin";
+            this.txtLinkLabelNameAccountLogin.Size = new System.Drawing.Size(90, 25);
+            this.txtLinkLabelNameAccountLogin.TabIndex = 25;
+            this.txtLinkLabelNameAccountLogin.TabStop = true;
+            this.txtLinkLabelNameAccountLogin.Text = "linkLabel1";
+            this.txtLinkLabelNameAccountLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtLinkLabelNameAccountLogin_LinkClicked);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(582, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 25);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Welcome, ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
             // frmHomeStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1581, 510);
+            this.Controls.Add(this.txtLinkLabelNameAccountLogin);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.buttonCustomer);
             this.Controls.Add(this.buttonAppointment);
@@ -389,6 +416,7 @@
             this.panelCustomer.ResumeLayout(false);
             this.panelCustomer.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -423,5 +451,7 @@
         private System.Windows.Forms.Label labelNameCustomer;
         private System.Windows.Forms.Label labelCustomer;
         private System.Windows.Forms.Panel panelCustomer;
+        private System.Windows.Forms.LinkLabel txtLinkLabelNameAccountLogin;
+        private System.Windows.Forms.Label label8;
     }
 }
