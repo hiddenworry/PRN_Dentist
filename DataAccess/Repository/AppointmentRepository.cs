@@ -19,12 +19,10 @@ namespace DataAccess
         {
             return AppointmentDAO.Instance.GetAppointmentList(date, phone, dentistId, status);
         }
-<<<<<<< HEAD
 
 
         List<Appointment> IAppointmentRepository.GetAppointmentByStatus(int status) => AppointmentDAO.Instance.GetAppointmentByStatus(status);
 
-=======
         public List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList)
         {
             double totalTime = 0;
@@ -66,6 +64,5 @@ namespace DataAccess
             }
             return availableOptions;
         }
->>>>>>> dd33db4f67fbbcd4500a87398a61ad183128d1e6
     }
 }

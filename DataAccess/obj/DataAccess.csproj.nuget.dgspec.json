@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
-        "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\obj\\",
+        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,25 +72,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
-        "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,8 +100,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
+              "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -156,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }
