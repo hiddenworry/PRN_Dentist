@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbServiceDetailID = new System.Windows.Forms.Label();
+            this.txtServiceName = new System.Windows.Forms.TextBox();
+            this.txtServiceID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbServiceType = new System.Windows.Forms.ComboBox();
             this.lbServiceType = new System.Windows.Forms.Label();
@@ -42,37 +41,28 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbEstimatedTime = new System.Windows.Forms.ComboBox();
+            this.lbServiceDetailID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox3
+            // txtServiceName
             // 
-            this.textBox3.Location = new System.Drawing.Point(447, 28);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 27);
-            this.textBox3.TabIndex = 2;
+            this.txtServiceName.Location = new System.Drawing.Point(112, 75);
+            this.txtServiceName.Name = "txtServiceName";
+            this.txtServiceName.Size = new System.Drawing.Size(207, 27);
+            this.txtServiceName.TabIndex = 2;
             // 
-            // textBox1
+            // txtServiceID
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(54, 27);
-            this.textBox1.TabIndex = 3;
-            // 
-            // lbServiceDetailID
-            // 
-            this.lbServiceDetailID.AutoSize = true;
-            this.lbServiceDetailID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbServiceDetailID.Location = new System.Drawing.Point(29, 28);
-            this.lbServiceDetailID.Name = "lbServiceDetailID";
-            this.lbServiceDetailID.Size = new System.Drawing.Size(25, 20);
-            this.lbServiceDetailID.TabIndex = 4;
-            this.lbServiceDetailID.Text = "ID";
+            this.txtServiceID.Location = new System.Drawing.Point(112, 21);
+            this.txtServiceID.Name = "txtServiceID";
+            this.txtServiceID.Size = new System.Drawing.Size(54, 27);
+            this.txtServiceID.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(312, 35);
+            this.label2.Location = new System.Drawing.Point(29, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 5;
@@ -82,7 +72,7 @@
             // 
             this.cbServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbServiceType.FormattingEnabled = true;
-            this.cbServiceType.Location = new System.Drawing.Point(143, 82);
+            this.cbServiceType.Location = new System.Drawing.Point(447, 28);
             this.cbServiceType.Name = "cbServiceType";
             this.cbServiceType.Size = new System.Drawing.Size(151, 28);
             this.cbServiceType.TabIndex = 6;
@@ -91,7 +81,7 @@
             // 
             this.lbServiceType.AutoSize = true;
             this.lbServiceType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbServiceType.Location = new System.Drawing.Point(29, 90);
+            this.lbServiceType.Location = new System.Drawing.Point(334, 36);
             this.lbServiceType.Name = "lbServiceType";
             this.lbServiceType.Size = new System.Drawing.Size(96, 20);
             this.lbServiceType.TabIndex = 7;
@@ -113,7 +103,7 @@
             // 
             this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbStatus.Location = new System.Drawing.Point(312, 82);
+            this.lbStatus.Location = new System.Drawing.Point(367, 82);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(53, 20);
             this.lbStatus.TabIndex = 9;
@@ -145,6 +135,7 @@
             this.btnReset.TabIndex = 12;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnClose
             // 
@@ -154,6 +145,7 @@
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -183,6 +175,16 @@
             this.cbEstimatedTime.Size = new System.Drawing.Size(151, 28);
             this.cbEstimatedTime.TabIndex = 14;
             // 
+            // lbServiceDetailID
+            // 
+            this.lbServiceDetailID.AutoSize = true;
+            this.lbServiceDetailID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbServiceDetailID.Location = new System.Drawing.Point(29, 28);
+            this.lbServiceDetailID.Name = "lbServiceDetailID";
+            this.lbServiceDetailID.Size = new System.Drawing.Size(25, 20);
+            this.lbServiceDetailID.TabIndex = 4;
+            this.lbServiceDetailID.Text = "ID";
+            // 
             // frmServiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -201,8 +203,8 @@
             this.Controls.Add(this.cbServiceType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbServiceDetailID);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtServiceID);
+            this.Controls.Add(this.txtServiceName);
             this.Name = "frmServiceDetail";
             this.Text = "frmServiceDetail";
             this.Load += new System.EventHandler(this.frmServiceDetail_Load);
@@ -212,9 +214,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbServiceDetailID;
+        private System.Windows.Forms.TextBox txtServiceName;
+        private System.Windows.Forms.TextBox txtServiceID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbServiceType;
         private System.Windows.Forms.Label lbServiceType;
@@ -226,5 +227,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbEstimatedTime;
+        private System.Windows.Forms.Label lbServiceDetailID;
     }
 }
