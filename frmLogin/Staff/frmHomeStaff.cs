@@ -31,12 +31,25 @@ namespace WinApp
 
         private void LoadListCustomer(List<Customer> list)
         {
+            List<CustomerChange> changeList = new List<CustomerChange>();
+            foreach (Customer customer in list)
+            {
+                CustomerChange change = new CustomerChange()
+                {
+                    Id = customer.Id,
+                    Name = customer.Name,
+                    Phone = customer.Phone,
+                    Gender = customer.Gender ?"Male":"Female",
+                    Dob = customer.Dob,
+                };
+                changeList.Add(change);
+            }
             source = new BindingSource();
-            source.DataSource = list;
+            source.DataSource = changeList;
             dataGridViewCustomer.DataSource = source;
             customer = list[0];
 
-            if(dataGridViewCustomer.Columns["Appointments"] != null)
+            if (dataGridViewCustomer.Columns["Appointments"] != null)
             {
                 dataGridViewCustomer.Columns["Appointments"].Visible = false;
             }
@@ -46,8 +59,6 @@ namespace WinApp
                 dataGridViewCustomer.Columns["Dob"].HeaderText = "Date of birth";
             }
 
-            
-            
         }
 
         private void buttonAppointment_Click(object sender, EventArgs e)
@@ -64,7 +75,7 @@ namespace WinApp
             panelAppointment.SendToBack();
             buttonAppointment.BackColor = Color.Lavender;
             buttonCustomer.BackColor = Color.LightBlue;
-            LoadListCustomer(customerRepository.GetAll());  
+            LoadListCustomer(customerRepository.GetAll());
         }
 
         private void buttonService_Click(object sender, EventArgs e)
@@ -128,7 +139,7 @@ namespace WinApp
                 isInsert = true,
                 Text = "Add new Customer",
             };
-            if(frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
+            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
             {
                 LoadListCustomer(customerRepository.GetAll());
             }
@@ -152,7 +163,7 @@ namespace WinApp
         private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
-            
+
             customer = customerRepository.GetById(id);
         }
 
@@ -197,14 +208,57 @@ namespace WinApp
         {
             try
             {
-                string name = textBoxCustomerName.Text;
-                string phone = textBoxCustomerPhone.Text;
+                string name = textBoxCustomerName.Text.Trim();
+                string phone = textBoxCustomerPhone.Text.Trim();
+                if (name.Length != 0 && phone.Length != 0)
+                {
+                    LoadListCustomer(customerRepository.SearchCustomerByNameAndPhone(name, phone));
+                }
+                else
+                {
+                    if (phone.Length != 0)
+                    {
+                        LoadListCustomer(customerRepository.SearchCustomerByPhone(phone));
 
+                    }
+                    else if (name.Length != 0)
+                    {
+                        LoadListCustomer(customerRepository.SearchCustomerByName(name));
+                    } else
+                    {
+                        LoadListCustomer(customerRepository.GetAll());
+                    }
+                }
 
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Search customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dataGridViewCustomer_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //var grid = (DataGridView)sender;
+
+            //if (grid.Columns[e.ColumnIndex].Name == "Gender")
+            //{
+            //    bool x = (bool)e.Value;
+            //    e.Value  = x ? "yes" : "no";
+
+            //    e.FormattingApplied = true;
+            //}
+
+
+        }
     }
+}
+
+public class CustomerChange
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Phone { get; set; }
+    public string Gender{ get; set; }
+    public DateTime Dob { get; set; }
 }

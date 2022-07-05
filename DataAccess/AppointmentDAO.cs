@@ -65,5 +65,20 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<Appointment> GetAppointmentByStatus(int status)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Appointments.Where(c => c.Status == status).ToList();
+                }
+
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

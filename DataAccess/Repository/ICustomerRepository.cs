@@ -14,5 +14,10 @@ namespace DataAccess
         void UpdateCustomer(Customer customer);
 
         List<Customer> GetAll();
+        List<Customer> SearchCustomerByName(string name);
+        List<Customer> SearchCustomerByPhone(string phone);
+        List<Customer> SearchCustomerByNameAndPhone(string name, string phone);
+
+        
     }
 }

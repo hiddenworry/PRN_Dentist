@@ -156,7 +156,15 @@ namespace WinApp
 
             try
             {
-                DateTime.Parse(txtDateOfBirth.Text);
+                DateTime input = DateTime.Parse(txtDateOfBirth.Text);
+                DateTime now = DateTime.Now;
+               
+                if( !(input.Year <= (now.Year - 4) && input.Year >= (now.Year - 120) ) )
+                {
+                    errorDateOfBirth.Text = "Please choose right date of birth.";
+                    errorDateOfBirth.Visible = true;
+                    flag = false;
+                } 
             }
             catch
             {
@@ -177,7 +185,7 @@ namespace WinApp
 
             if(tmp.Length != 10)
             {
-                errorPhone.Text = "Phone length must be 8.";
+                errorPhone.Text = "Phone length must be 10 character";
                 errorPhone.Visible = true;
             }
 

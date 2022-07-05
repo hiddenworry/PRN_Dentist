@@ -14,6 +14,12 @@ namespace DataAccess
 
         Customer ICustomerRepository.GetById(int id) => CustomerDAO.Instance.GetCustomerById(id);
 
+        List<Customer> ICustomerRepository.SearchCustomerByName(string name) => CustomerDAO.Instance.GetCustomerByName(name);
+
+        List<Customer> ICustomerRepository.SearchCustomerByNameAndPhone(string name, string phone) => CustomerDAO.Instance.GetCustomerByNameAndPhone(name, phone);
+
+        List<Customer> ICustomerRepository.SearchCustomerByPhone(string phone) => CustomerDAO.Instance.GetCustomerByPhone(phone);
+
         void ICustomerRepository.UpdateCustomer(Customer customer) => CustomerDAO.Instance.UpdateCustomer(customer);
     }
 }
