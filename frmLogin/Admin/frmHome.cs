@@ -15,8 +15,10 @@ namespace WinApp
     public partial class frmHome : Form
     {
         IServiceRepository ServiceRepository = new ServiceRepository();
+        IServiceTypeRepository ServiceTypeRepository = new ServiceTypeRepository();
         IAppointmentRepository AppointmentRepository = new AppointmentRepository();
         ICustomerRepository CustomerRepository = new CustomerRepository();
+        BindingSource source;
         List<Panel> panelList = new List<Panel>();
         public Account accountLogin { get; set; }
 
@@ -74,6 +76,13 @@ namespace WinApp
             buttonCustomer.BackColor = Color.Lavender;
         }
 
+        private void loadServiceList(List<Service> services)
+        {
+            source = new BindingSource();
+            source.DataSource = services;
+            dataGridViewService.DataSource = source;
+        }
+
         private void frmHome_Load(object sender, EventArgs e)
         {
             panelAppointment.BringToFront();
@@ -91,7 +100,82 @@ namespace WinApp
 
         private void buttonServiceAdd_Click(object sender, EventArgs e)
         {
+            frmServiceDetail frmServiceDetail = new frmServiceDetail
+            {
+                ServiceRepository = this.ServiceRepository,
+                Insert = true
+            };
+            frmServiceDetail.Show();
 
         }
+
+        private void buttonServiceUpdate_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewService.CurrentRow != null)
+            {
+                Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+                frmServiceDetail frmService = new frmServiceDetail
+                {
+                    ServiceRepository = this.ServiceRepository,
+                    serviceData = service,
+                    Insert = false
+
+
+                };
+                frmService.Show();
+            }
+        }
+
+        private void panelService_Paint(object sender, PaintEventArgs e)
+        {
+           
+          
+            dataGridViewService.DataSource = ServiceRepository.GetServices();
+            comboBoxServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
+            comboBoxServiceType.DisplayMember = "name";
+            comboBoxServiceType.ValueMember = "id";
+
+        }
+
+        private void dataGridViewService_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewService.CurrentRow != null)
+            {
+                Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+                frmServiceDetail frmService = new frmServiceDetail
+                {
+                    ServiceRepository = this.ServiceRepository,
+                    serviceData = service,
+                    Insert = false
+
+
+                };
+               if (frmService.ShowDialog() == DialogResult.OK)
+                {
+                    this.Refresh();
+                }
+            }
+        }
+
+        private void btnServiceLoad_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
+        }
+
+        private void buttonServiceFind_Click(object sender, EventArgs e)
+        {
+            Service service = new Service();
+            if (!string.IsNullOrEmpty(textBoxServiceName.Text))
+                service.Name = textBoxServiceName.Text;
+            if(!string.IsNullOrEmpty(comboBoxServiceStatus.Text))
+                service.Status = int.Parse(comboBoxServiceStatus.Text);
+            if (!string.IsNullOrEmpty(comboBoxServiceType.Text))
+                service.ServiceTypeId = Int32.Parse(comboBoxServiceType.SelectedValue.ToString());
+            dataGridViewService.DataSource = 
+                ServiceRepository.FilterService(service);
+            MessageBox.Show(ServiceRepository.FilterService(service).Count.ToString());
+        }
+
+       
     }
 }

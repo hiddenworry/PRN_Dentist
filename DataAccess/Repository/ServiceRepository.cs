@@ -9,6 +9,8 @@ namespace DataAccess
 {
     public class ServiceRepository : IServiceRepository
     {
+        public List<Service> FilterService(Service service) => ServiceDAO.Instance.FilterService(service);
+       
         public List<Service> GetActiveServiceList() => ServiceDAO.Instance.GetActiveServiceList();
 
         public List<Service> GetServiceFromServiceType(int ServiceTypeId) => ServiceDAO.Instance.GetServiceFromServiceType(ServiceTypeId);
