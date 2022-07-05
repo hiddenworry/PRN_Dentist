@@ -1,6 +1,7 @@
 ﻿using System;
 using BusinessObject.Models;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace DataAccess
 {
@@ -34,6 +35,21 @@ namespace DataAccess
                 {
                     var account = context.Accounts.SingleOrDefault(x => x.Username == username && x.Password == password);
                     return account;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
+        public List<Account> GetActiveDentistList()
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Accounts.Where(a => a.Role == 3 && a.Status == 1).ToList();
                 }
             }
             catch (Exception ex)

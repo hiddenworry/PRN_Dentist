@@ -9,6 +9,7 @@ namespace DataAccess
 {
     public interface IAppointmentRepository
     {
-        List<Appointment> GetAppointmentList(DateTime date, string phone, string dentistName, string status);
+        List<Appointment> GetAppointmentList(DateTime date, string phone, int dentistId, int status);
+        Appointment GetAppointmentById(int id);
     }
 }

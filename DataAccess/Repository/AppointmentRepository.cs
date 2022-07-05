@@ -9,9 +9,17 @@ namespace DataAccess
 {
     public class AppointmentRepository : IAppointmentRepository
     {
-        public List<Appointment> GetAppointmentList(DateTime date, string phone, string dentistName, string status)
+        public Appointment GetAppointmentById(int id)
         {
-            throw new NotImplementedException();
+            return AppointmentDAO.Instance.GetAppointmentById(id);
         }
+
+        public List<Appointment> GetAppointmentList(DateTime date, string phone, int dentistId, int status)
+        {
+            return AppointmentDAO.Instance.GetAppointmentList(date, phone, dentistId, status);
+        }
+        //public List<string> GetTimeOptionByDate(DateTime time){
+
+        //}
     }
 }

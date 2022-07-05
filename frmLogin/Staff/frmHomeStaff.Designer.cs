@@ -40,7 +40,6 @@
             this.dateTimePickerAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxAppointmentDentist = new System.Windows.Forms.ComboBox();
-            this.buttonAppointmentDetail = new System.Windows.Forms.Button();
             this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
             this.buttonAppointmentAdd = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
@@ -72,7 +71,6 @@
             this.panelAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAppointment.Controls.Add(this.labelAppointment);
             this.panelAppointment.Controls.Add(this.groupBoxFilter);
-            this.panelAppointment.Controls.Add(this.buttonAppointmentDetail);
             this.panelAppointment.Controls.Add(this.buttonAppointmentUpdate);
             this.panelAppointment.Controls.Add(this.buttonAppointmentAdd);
             this.panelAppointment.Controls.Add(this.dataGridViewAppointment);
@@ -186,27 +184,19 @@
             this.comboBoxAppointmentDentist.Size = new System.Drawing.Size(127, 28);
             this.comboBoxAppointmentDentist.TabIndex = 0;
             // 
-            // buttonAppointmentDetail
-            // 
-            this.buttonAppointmentDetail.Location = new System.Drawing.Point(336, 164);
-            this.buttonAppointmentDetail.Name = "buttonAppointmentDetail";
-            this.buttonAppointmentDetail.Size = new System.Drawing.Size(139, 29);
-            this.buttonAppointmentDetail.TabIndex = 9;
-            this.buttonAppointmentDetail.Text = "Detail";
-            this.buttonAppointmentDetail.UseVisualStyleBackColor = true;
-            // 
             // buttonAppointmentUpdate
             // 
-            this.buttonAppointmentUpdate.Location = new System.Drawing.Point(191, 164);
+            this.buttonAppointmentUpdate.Location = new System.Drawing.Point(265, 164);
             this.buttonAppointmentUpdate.Name = "buttonAppointmentUpdate";
             this.buttonAppointmentUpdate.Size = new System.Drawing.Size(139, 29);
             this.buttonAppointmentUpdate.TabIndex = 8;
-            this.buttonAppointmentUpdate.Text = "Update";
+            this.buttonAppointmentUpdate.Text = "Detail";
             this.buttonAppointmentUpdate.UseVisualStyleBackColor = true;
+            this.buttonAppointmentUpdate.Click += new System.EventHandler(this.buttonAppointmentUpdate_Click);
             // 
             // buttonAppointmentAdd
             // 
-            this.buttonAppointmentAdd.Location = new System.Drawing.Point(46, 164);
+            this.buttonAppointmentAdd.Location = new System.Drawing.Point(120, 164);
             this.buttonAppointmentAdd.Name = "buttonAppointmentAdd";
             this.buttonAppointmentAdd.Size = new System.Drawing.Size(139, 29);
             this.buttonAppointmentAdd.TabIndex = 5;
@@ -218,9 +208,11 @@
             // 
             this.dataGridViewAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
+            this.dataGridViewAppointment.MultiSelect = false;
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
+            this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
             // 
@@ -287,6 +279,7 @@
             this.buttonCustomerFind.TabIndex = 10;
             this.buttonCustomerFind.Text = "Find";
             this.buttonCustomerFind.UseVisualStyleBackColor = true;
+            this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
             // 
             // textBoxCustomerName
             // 
@@ -321,6 +314,7 @@
             this.buttonCustomerUpdate.TabIndex = 8;
             this.buttonCustomerUpdate.Text = "Update";
             this.buttonCustomerUpdate.UseVisualStyleBackColor = true;
+            this.buttonCustomerUpdate.Click += new System.EventHandler(this.buttonCustomerUpdate_Click);
             // 
             // buttonCustomerAdd
             // 
@@ -330,16 +324,24 @@
             this.buttonCustomerAdd.TabIndex = 5;
             this.buttonCustomerAdd.Text = "Add";
             this.buttonCustomerAdd.UseVisualStyleBackColor = true;
+            this.buttonCustomerAdd.Click += new System.EventHandler(this.buttonCustomerAdd_Click);
             // 
             // dataGridViewCustomer
             // 
+            this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 176);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 29;
+            this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
             this.dataGridViewCustomer.TabIndex = 7;
+            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
+            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
+            this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
             // 
             // buttonAppointment
             // 
@@ -402,7 +404,6 @@
         private System.Windows.Forms.TextBox textBoxAppointmentPhone;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
         private System.Windows.Forms.Button buttonAppointmentAdd;
-        private System.Windows.Forms.Button buttonAppointmentDetail;
         private System.Windows.Forms.Button buttonAppointmentUpdate;
         private System.Windows.Forms.Button buttonFindAppointment;
         private System.Windows.Forms.GroupBox groupBoxFilter;
