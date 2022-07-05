@@ -252,6 +252,21 @@ namespace WinApp
 
 
         }
+
+        private void txtLinkLabelNameAccountLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmProfile frmProfile = new frmProfile()
+            {
+                accountInfo = accountLogin,
+                AccountLogin = accountLogin,
+            };
+            frmProfile.ShowDialog();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

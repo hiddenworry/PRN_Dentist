@@ -87,6 +87,8 @@
             this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
             this.buttonAppointmentAdd = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
+            this.txtLinkLabelNameAccountLogin = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelService.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).BeginInit();
@@ -683,12 +685,37 @@
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
             // 
+            // txtLinkLabelNameAccountLogin
+            // 
+            this.txtLinkLabelNameAccountLogin.AutoSize = true;
+            this.txtLinkLabelNameAccountLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(1399, 16);
+            this.txtLinkLabelNameAccountLogin.Name = "txtLinkLabelNameAccountLogin";
+            this.txtLinkLabelNameAccountLogin.Size = new System.Drawing.Size(90, 25);
+            this.txtLinkLabelNameAccountLogin.TabIndex = 27;
+            this.txtLinkLabelNameAccountLogin.TabStop = true;
+            this.txtLinkLabelNameAccountLogin.Text = "linkLabel1";
+            this.txtLinkLabelNameAccountLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtLinkLabelNameAccountLogin_LinkClicked);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(1316, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Welcome, ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1616, 1022);
+            this.Controls.Add(this.txtLinkLabelNameAccountLogin);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panelAppointment);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelDentist);
@@ -721,6 +748,7 @@
             this.groupBoxFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -784,5 +812,7 @@
         private System.Windows.Forms.Button buttonAppointmentUpdate;
         private System.Windows.Forms.Button buttonAppointmentAdd;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
+        private System.Windows.Forms.LinkLabel txtLinkLabelNameAccountLogin;
+        private System.Windows.Forms.Label label8;
     }
 }

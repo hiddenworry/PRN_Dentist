@@ -64,5 +64,24 @@ namespace DataAccess
             }
             return availableOptions;
         }
+
+        public Appointment GetAppointmentNearest() => AppointmentDAO.Instance.GetAppointmentNearest();
+
+        public void UpdateAppointment(Appointment appointment) => AppointmentDAO.Instance.UpdateAppointment(appointment);
+
+        public List<Appointment> Get10FistappointmentDoneCustomerById(int id)
+        {
+            List<Appointment> appointmentList = new List<Appointment>();
+            var list = AppointmentDAO.Instance.GetListAppointmentByCustomerId(id);
+            for(int i = 0; i < list.Count(); i++)
+            {
+                if(i == 10)
+                {
+                    return appointmentList;
+                }
+                appointmentList.Add(list[i]);
+            }
+            return appointmentList;
+        }
     }
 }

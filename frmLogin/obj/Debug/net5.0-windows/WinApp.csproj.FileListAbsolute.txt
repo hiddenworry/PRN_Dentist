@@ -397,3 +397,5 @@ E:\GroupPRNPROJECT\frmLogin\bin\Debug\net5.0-windows\DataAccess.pdb
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.csproj.CopyComplete
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cache
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\ref\WinApp.dll
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources
