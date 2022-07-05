@@ -359,7 +359,7 @@
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.buttonCustomer);
             this.Controls.Add(this.buttonAppointment);
-            this.Name = "frmHomeDoctor";
+            //this.Name = "frmHomeDoctor";
             this.Text = "frmHome";
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelCustomer.ResumeLayout(false);
