@@ -1,22 +1,3 @@
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.dll
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.pdb
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\BusinessObject.dll
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.dll
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.pdb
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
-C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
-<<<<<<< HEAD
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
@@ -35,23 +16,3 @@ C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\ne
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
-=======
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\DataAccess.dll
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\DataAccess.pdb
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\BusinessObject.dll
-D:\Session_5\PRN211\project-dbs\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.dll
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.pdb
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
-D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
->>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b

@@ -193,8 +193,8 @@ namespace WinApp
 
           
 
-            if (dataGridViewService.Columns["ServiceType"] != null)
-                dataGridViewService.Columns["ServiceType"].Visible = false;
+            if (dataGridViewService.Columns["ServiceTypeId"] != null)
+                dataGridViewService.Columns["ServiceTypeId"].Visible = false;
 
             if (dataGridViewService.Columns["AppointmentServices"] != null)
                 dataGridViewService.Columns["AppointmentServices"].Visible = false;
@@ -263,7 +263,7 @@ namespace WinApp
             Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
           
             service.Status = 2;
-            DialogResult result = MessageBox.Show("Do you want to disable this service?", "Yes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Sure to disable this service?", "Disable service", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result.Equals(DialogResult.OK))
             {
                 ServiceRepository.UpdateService(service);
@@ -333,6 +333,7 @@ namespace WinApp
         {
             LoadAppointmentList( AppointmentRepository.GetAppointmentsForAdmin());
 
+
         }
         private void LoadAppointmentList(List<Appointment> appointments)
         {
@@ -376,11 +377,11 @@ namespace WinApp
 
             }
 
-            if (dataGridViewAppointment.Columns["Customer"] != null)
-                dataGridViewAppointment.Columns["Customer"].Visible = false;
+            if (dataGridViewAppointment.Columns["CustomerId"] != null)
+                dataGridViewAppointment.Columns["CustomerId"].Visible = false;
 
-            if (dataGridViewAppointment.Columns["Dentist"] != null)
-                dataGridViewAppointment.Columns["Dentist"].Visible = false;
+            if (dataGridViewAppointment.Columns["DentistId"] != null)
+                dataGridViewAppointment.Columns["DentistId"].Visible = false;
 
             if (dataGridViewAppointment.Columns["AppointmentServices"] != null)
                 dataGridViewAppointment.Columns["AppointmentServices"].Visible = false;
@@ -540,7 +541,7 @@ namespace WinApp
             Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
 
             account.Status = 2;
-            DialogResult result = MessageBox.Show("Do you want to disable doctor?", "Yes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show("Sure to disable doctor?", "Disable doctor", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result.Equals(DialogResult.OK))
             {
                 AccountRepository.UpdateAccount(account);
@@ -609,5 +610,6 @@ namespace WinApp
                 
             } catch(Exception ex) { }
             }
+
     }
 }

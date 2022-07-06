@@ -13,7 +13,7 @@ using DataAccess;
 using WinApp.Dentist;
 namespace WinApp
 {
-    public partial class frmHomeDoctor : Form
+    public partial class frmHomeDentist : Form
     {
         List<Panel> panelList = new List<Panel>();
 
@@ -30,7 +30,7 @@ namespace WinApp
         public static AppointmentChange AppointmentChange { get; set; }
         public Account accountLogin { get; set; }
         int index;
-        public frmHomeDoctor()
+        public frmHomeDentist()
         {
             InitializeComponent();
             customerRepository = new CustomerRepository();
@@ -319,7 +319,7 @@ namespace WinApp
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure to submit?", "Submit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Sure to finish this appointment?", "Finish", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result != DialogResult.Yes)
             {
                 return;
@@ -341,7 +341,7 @@ namespace WinApp
                 appointmentRepository.UpdateAppointmentByDoctor(appointmentInfo);
                 panelUpdateAppointment.SendToBack();
                 panelAppointment.BringToFront();
-                MessageBox.Show("Update successfully!!!", "Submit", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Finish successfully", "Finish appointment", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             catch (Exception ex)
             {
@@ -404,7 +404,7 @@ namespace WinApp
                 return;
             }
 
-            frmAppointmentDetailDoctor frmAppointmentDetailDoctor = new frmAppointmentDetailDoctor()
+            frmAppointmentDetailDentist frmAppointmentDetailDoctor = new frmAppointmentDetailDentist()
             {
                 appointmentChange = AppointmentChange,
                 listServiccInAppointment = serviceRepository.GetServiceListByAppointmentId(AppointmentChange.Id),
@@ -454,7 +454,7 @@ namespace WinApp
                 return;
             }
 
-            DialogResult dialogResult = MessageBox.Show("Are you to check absent?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dialogResult = MessageBox.Show("Sure to check absent this appointment?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if( dialogResult == DialogResult.Yes)
             {
                 appointmentInfo = new Appointment()

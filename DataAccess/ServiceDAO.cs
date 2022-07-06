@@ -30,7 +30,7 @@ namespace DataAccess
         {
             using (var Context = new DBSContext())
             {
-                ServiceList = Context.Services.ToList();
+                ServiceList = Context.Services.Include(s => s.ServiceType).ToList();
             }
 
         }
@@ -125,7 +125,7 @@ namespace DataAccess
                 using (var Context = new DBSContext())
                 {
 
-                    var query = from s in Context.Services select s;
+                    var query = from s in Context.Services.Include(s => s.ServiceType) select s;
                     if (!string.IsNullOrEmpty(service.Name))
                     {
                         query = query.Where(s => s.Name.Contains(service.Name));
@@ -163,6 +163,15 @@ namespace DataAccess
                         ad.AppointmentId == id
                     select s
                 ).ToList();
+
+            }
+        }
+
+        public Service GetServiceByName(string name)
+        {
+            using (var Context = new DBSContext())
+            {
+                return Context.Services.SingleOrDefault(s => s.Name.Equals(name));
 
             }
         }

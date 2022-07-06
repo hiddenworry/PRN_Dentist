@@ -280,12 +280,12 @@ namespace WinApp
             try
             {
                 DialogResult d;
-                d = MessageBox.Show("Sure to cancel this appointment?", "Confirm deleting", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                d = MessageBox.Show("Sure to cancel this appointment?", "Cancel appointment", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (d == DialogResult.Yes)
                 {
                     appointment.Status = 3;
                     appointmentRepository.UpdateAppointment(appointment);
-                    MessageBox.Show("Cancelled appointment successfully", "Cancel appointment");
+                    MessageBox.Show("Cancelled successfully", "Cancel appointment");
                     Close();
                     DialogResult = DialogResult.OK;
                 }
@@ -293,7 +293,7 @@ namespace WinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Delete product error");
+                MessageBox.Show(ex.Message, "Cancel appointment error");
             }
         }
     }

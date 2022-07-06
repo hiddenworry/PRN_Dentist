@@ -325,13 +325,10 @@ namespace WinApp
             }
         }
 
-<<<<<<< HEAD
         private void dataGridViewAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridViewAppointment.SelectedRows.Count != 0)
-                buttonAppointmentUpdate.Enabled = true;
-
-=======
+            if (dataGridViewAppointment.SelectedRows.Count != 0)
+                buttonAppointmentUpdate.Enabled = true; }
         private void dataGridViewCustomer_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -375,7 +372,6 @@ namespace WinApp
             catch (Exception ex)
             {
             }
->>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b
         }
     }
 }

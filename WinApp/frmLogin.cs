@@ -50,7 +50,7 @@ namespace frmLogin
                 }
                 else if (accountLogin.Role == 3)
                 {
-                    frmHomeDoctor frmHomeDoctor = new frmHomeDoctor()
+                    frmHomeDentist frmHomeDoctor = new frmHomeDentist()
                     {
                         accountLogin = accountLogin,
                     };
