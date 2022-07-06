@@ -16,6 +16,7 @@ D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\refint\DataAccess.dl
 D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
 D:\Session_5\PRN211\project-dbs\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+<<<<<<< HEAD
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
@@ -34,3 +35,23 @@ C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\refint\Data
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+=======
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.dll
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\BusinessObject.dll
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.dll
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+>>>>>>> 70a8705afb5706722ad71eace4e72984631d0738
