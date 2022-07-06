@@ -39,6 +39,7 @@ namespace WinApp
         private void LoadListCustomer(List<Customer> list)
         {
             List<CustomerChange> changeList = new List<CustomerChange>();
+            
             foreach (Customer customer in list)
             {
                 CustomerChange change = new CustomerChange()
@@ -46,7 +47,7 @@ namespace WinApp
                     Id = customer.Id,
                     Name = customer.Name,
                     Phone = customer.Phone,
-                    Gender = customer.Gender ?"Male":"Female",
+                    Gender = customer.Gender ? "Male" : "Female",
                     Dob = customer.Dob,
                 };
                 changeList.Add(change);
@@ -54,7 +55,14 @@ namespace WinApp
             source = new BindingSource();
             source.DataSource = changeList;
             dataGridViewCustomer.DataSource = source;
-            customer = list[0];
+            if (list.Count() != 0)
+            {
+                customer = list[0];
+            } else
+            {
+                customer = null;
+                buttonCustomerUpdate.Enabled = false;
+            }
 
             if (dataGridViewCustomer.Columns["Appointments"] != null)
             {
@@ -304,16 +312,18 @@ namespace WinApp
 
         private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+            try {
+                int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
 
-            customer = customerRepository.GetById(id);
-            buttonCustomerUpdate_Click(sender, e);
+                customer = customerRepository.GetById(id);
+                buttonCustomerUpdate_Click(sender, e);
+            } catch (Exception ex)
+            {
+
+            }
         }
 
-        private void dataGridViewAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            buttonAppointmentUpdate.Enabled = true;
-        }
+
     }
 }
 

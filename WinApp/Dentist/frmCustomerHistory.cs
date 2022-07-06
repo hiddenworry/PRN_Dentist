@@ -73,7 +73,10 @@ namespace WinApp.Dentist
                 dataGridViewCustomer.DataSource = null;
                 dataGridViewCustomer.DataSource = source;
 
-                
+                if(list.Count > 0)
+                {
+                    LoadListServicesInAppointment(ServiceRepository.GetServiceListByAppointmentId(list[0].Id));
+                }
 
                 txtDescription.DataBindings.Clear();
                 txtDescription.DataBindings.Add("Text", source, "Description");

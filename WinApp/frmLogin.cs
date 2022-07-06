@@ -31,6 +31,7 @@ namespace frmLogin
 
             if (accountLogin != null)
             {
+                this.Hide();
                 if (accountLogin.Role == 1)
                 {
                     frmHome adminHome = new frmHome()
@@ -38,7 +39,6 @@ namespace frmLogin
                         accountLogin = accountLogin,
                     };
                     adminHome.ShowDialog();
-
                 }
                 else if (accountLogin.Role == 2)
                 {
@@ -56,11 +56,22 @@ namespace frmLogin
                     };
                     frmHomeDoctor.ShowDialog();
                 }
-                this.Hide();
+                
             }
             else
             {
                 MessageBox.Show("Invalid username or password", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ckDisplay_CheckedChanged(object sender, EventArgs e)
+        {
+           if (txtPassword.PasswordChar == '\0')
+            {
+                txtPassword.PasswordChar = '*';
+            } else
+            {
+                txtPassword.PasswordChar = '\0';
             }
         }
     }

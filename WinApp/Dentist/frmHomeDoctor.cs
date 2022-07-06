@@ -116,6 +116,9 @@ namespace WinApp
             var listDone = appointmentRepository.GetAppointmentList(DateTime.Now, phone, accountLogin.Id, 2)
                             .OrderBy(o => DateTime.ParseExact(o.WorkingHour.Split('-')[0], "HH:mm", CultureInfo.InvariantCulture))
                             .ToList();
+            var listAbsent = appointmentRepository.GetAppointmentList(DateTime.Now, phone, accountLogin.Id, 3)
+                            .OrderBy(o => DateTime.ParseExact(o.WorkingHour.Split('-')[0], "HH:mm", CultureInfo.InvariantCulture))
+                            .ToList();
             List<AppointmentChange> changeList = new List<AppointmentChange>();
             foreach (Appointment item in listWaitting)
             {
@@ -124,6 +127,7 @@ namespace WinApp
                     Id = item.Id,
                     CustomerId = item.CustomerId,
                     CustomerName = customerRepository.GetById(item.CustomerId).Name,
+                    Phone = customerRepository.GetById(item.CustomerId).Phone,
                     StatusId = item.Status,
                     Status = item.Status == 1 ? "Waitting" :
                              item.Status == 2 ? "Done" :
@@ -140,6 +144,24 @@ namespace WinApp
                     Id = item.Id,
                     CustomerId = item.CustomerId,
                     CustomerName = customerRepository.GetById(item.CustomerId).Name,
+                    Phone = customerRepository.GetById(item.CustomerId).Phone,
+                    StatusId = item.Status,
+                    Status = item.Status == 1 ? "Waitting" :
+                             item.Status == 2 ? "Done" :
+                             item.Status == 3 ? "Cancel" : "",
+                    WorkingHour = item.WorkingHour,
+                };
+
+                changeList.Add(tmp);
+            }
+            foreach (Appointment item in listAbsent)
+            {
+                AppointmentChange tmp = new AppointmentChange()
+                {
+                    Id = item.Id,
+                    CustomerId = item.CustomerId,
+                    CustomerName = customerRepository.GetById(item.CustomerId).Name,
+                    Phone = customerRepository.GetById(item.CustomerId).Phone,
                     StatusId = item.Status,
                     Status = item.Status == 1 ? "Waitting" :
                              item.Status == 2 ? "Done" :
@@ -189,6 +211,9 @@ namespace WinApp
             var listDone = appointmentRepository.GetAppointmentList(DateTime.Now, "", accountLogin.Id, 2)
                             .OrderBy(o => DateTime.ParseExact(o.WorkingHour.Split('-')[0], "HH:mm", CultureInfo.InvariantCulture))
                             .ToList();
+            var listAbsent = appointmentRepository.GetAppointmentList(DateTime.Now, "", accountLogin.Id, 3)
+                            .OrderBy(o => DateTime.ParseExact(o.WorkingHour.Split('-')[0], "HH:mm", CultureInfo.InvariantCulture))
+                            .ToList();
             List<AppointmentChange> changeList = new List<AppointmentChange>();
             foreach (Appointment item in listWaitting)
             {
@@ -197,6 +222,7 @@ namespace WinApp
                     Id = item.Id,
                     CustomerId = item.CustomerId,
                     CustomerName = customerRepository.GetById(item.CustomerId).Name,
+                    Phone = customerRepository.GetById(item.CustomerId).Phone,
                     StatusId = item.Status,
                     Status = item.Status == 1 ? "Waitting" :
                              item.Status == 2 ? "Done" :
@@ -213,6 +239,24 @@ namespace WinApp
                     Id = item.Id,
                     CustomerId = item.CustomerId,
                     CustomerName = customerRepository.GetById(item.CustomerId).Name,
+                    Phone = customerRepository.GetById(item.CustomerId).Phone,
+                    StatusId = item.Status,
+                    Status = item.Status == 1 ? "Waitting" :
+                             item.Status == 2 ? "Done" :
+                             item.Status == 3 ? "Cancel" : "",
+                    WorkingHour = item.WorkingHour,
+                };
+
+                changeList.Add(tmp);
+            }
+            foreach (Appointment item in listAbsent)
+            {
+                AppointmentChange tmp = new AppointmentChange()
+                {
+                    Id = item.Id,
+                    CustomerId = item.CustomerId,
+                    CustomerName = customerRepository.GetById(item.CustomerId).Name,
+                    Phone = customerRepository.GetById(item.CustomerId).Phone,
                     StatusId = item.Status,
                     Status = item.Status == 1 ? "Waitting" :
                              item.Status == 2 ? "Done" :
@@ -283,16 +327,21 @@ namespace WinApp
             try
             {
                 string description = txtDescription.Text.Trim();
-                appointmentInfo = new Appointment()
+                if(description.Length == 0)
                 {
-                    Id = AppointmentChange.Id,
-                    Description = description,
-                    Status = 2,
-                };
+                    MessageBox.Show("Please input description.", "Submit", MessageBoxButtons.YesNo, MessageBoxIcon.None); 
+                    return;
+
+                }
+                
+                appointmentInfo.Id = AppointmentChange.Id;
+                appointmentInfo.Description = description;
+                appointmentInfo.Status = 2;
 
                 appointmentRepository.UpdateAppointmentByDoctor(appointmentInfo);
                 panelUpdateAppointment.SendToBack();
                 panelAppointment.BringToFront();
+                MessageBox.Show("Update successfully!!!", "Submit", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             catch (Exception ex)
             {
@@ -337,45 +386,43 @@ namespace WinApp
         {
             try
             {
+                int id = int.Parse(dataGridViewAppointment.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+                appointmentInfo = appointmentRepository.GetAppointmentById(id);
                 AppointmentChange = new AppointmentChange()
                 {
                     Id = int.Parse(dataGridViewAppointment.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString()),
                     CustomerName = dataGridViewAppointment.Rows[e.RowIndex].Cells["CustomerName"].FormattedValue.ToString(),
+                    Phone = dataGridViewAppointment.Rows[e.RowIndex].Cells["Phone"].FormattedValue.ToString(),
                     CustomerId = int.Parse(dataGridViewAppointment.Rows[e.RowIndex].Cells["CustomerId"].FormattedValue.ToString()),
                     WorkingHour = dataGridViewAppointment.Rows[e.RowIndex].Cells["WorkingHour"].FormattedValue.ToString(),
                     StatusId = int.Parse(dataGridViewAppointment.Rows[e.RowIndex].Cells["StatusId"].FormattedValue.ToString()),
+                    Status = dataGridViewAppointment.Rows[e.RowIndex].Cells["Status"].FormattedValue.ToString(),
                 };
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Get appointment", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            DialogResult dialogResult = AppointmentChange.StatusId == 1 ? MessageBox.Show("Do you want to pick this appointment \n " +
-                                                                         "Customer name: " + AppointmentChange.CustomerName + "\n" +
-                                                                         "Working hour: " + AppointmentChange.WorkingHour,
-                                                                         "Confirm pick appointment", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                                                                            :
-                                                                         MessageBox.Show("Appointment history \n " +
-                                                                         "Customer name: " + AppointmentChange.CustomerName + "\n" +
-                                                                         "Working hour: " + AppointmentChange.WorkingHour,
-                                                                         "Confirm pick appointment", MessageBoxButtons.OK, MessageBoxIcon.None);
-            if (dialogResult == DialogResult.Yes)
-            {
-                if (AppointmentChange.StatusId == 1)
-                {
-                    try
-                    {
-                        panelAppointment.SendToBack();
-                        panelUpdateAppointment.BringToFront();
-                        LoadListServicesInAppointment(serviceRepository.GetServiceListByAppointmentId(AppointmentChange.Id));
-                        customer = customerRepository.GetById(AppointmentChange.CustomerId);
-                        LoadCustomer(customer);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Get next appointment", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
 
+            frmAppointmentDetailDoctor frmAppointmentDetailDoctor = new frmAppointmentDetailDoctor()
+            {
+                appointmentChange = AppointmentChange,
+                listServiccInAppointment = serviceRepository.GetServiceListByAppointmentId(AppointmentChange.Id),
+                Appointment = appointmentInfo,
+            };
+            if(frmAppointmentDetailDoctor.ShowDialog() == DialogResult.Yes)
+            {
+                try
+                {
+                    panelAppointment.SendToBack();
+                    panelUpdateAppointment.BringToFront();
+                    LoadListServicesInAppointment(serviceRepository.GetServiceListByAppointmentId(AppointmentChange.Id));
+                    customer = customerRepository.GetById(AppointmentChange.CustomerId);
+                    LoadCustomer(customer);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Get next appointment", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -426,6 +473,8 @@ public class AppointmentChange
     public int Id { get; set; }
     public int CustomerId { get; set; }
     public string CustomerName { get; set; }
+
+    public string Phone { get; set; }
 
     public string WorkingHour { get; set; }
 

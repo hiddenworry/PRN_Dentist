@@ -223,11 +223,15 @@ namespace WinApp
 
         private void frmCustomerDetailStaff_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult = MessageBox.Show("Are you sure to quit ? All change will be delete.", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (DialogResult != DialogResult.Yes)
+            if(DialogResult != DialogResult.OK)
             {
-                e.Cancel = true;
+                DialogResult result = MessageBox.Show("Are you sure to quit ? All change will be delete.", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
+            
         }
     }
 }

@@ -68,6 +68,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(309, 154);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(195, 27);
             this.txtPassword.TabIndex = 2;
             // 
@@ -90,6 +91,7 @@
             this.ckDisplay.TabIndex = 5;
             this.ckDisplay.Text = "Show password";
             this.ckDisplay.UseVisualStyleBackColor = true;
+            this.ckDisplay.CheckedChanged += new System.EventHandler(this.ckDisplay_CheckedChanged);
             // 
             // labelDentist
             // 
@@ -115,7 +117,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsername);
             this.Name = "frmLogin";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

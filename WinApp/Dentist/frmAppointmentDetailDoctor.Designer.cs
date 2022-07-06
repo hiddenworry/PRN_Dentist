@@ -28,122 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtService = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtWorkingHour = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // txtPhone
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(79, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(146, 27);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(22, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Time";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(359, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 27);
-            this.textBox1.TabIndex = 2;
+            this.txtPhone.AllowDrop = true;
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.Enabled = false;
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtPhone.Location = new System.Drawing.Point(445, 36);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(157, 27);
+            this.txtPhone.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(290, 39);
+            this.label2.Location = new System.Drawing.Point(331, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Phone";
             // 
-            // button1
+            // btnCheck
             // 
-            this.button1.BackColor = System.Drawing.Color.Lavender;
-            this.button1.Location = new System.Drawing.Point(535, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Check";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(202, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(266, 28);
-            this.comboBox1.TabIndex = 5;
+            this.btnCheck.BackColor = System.Drawing.Color.Lavender;
+            this.btnCheck.Location = new System.Drawing.Point(272, 443);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(112, 32);
+            this.btnCheck.TabIndex = 4;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(128, 122);
+            this.label3.Location = new System.Drawing.Point(22, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.Size = new System.Drawing.Size(51, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Service";
+            this.label3.Text = "Name";
             // 
-            // dataGridView1
+            // txtName
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 197);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(589, 199);
-            this.dataGridView1.TabIndex = 7;
+            this.txtName.AllowDrop = true;
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.Enabled = false;
+            this.txtName.ForeColor = System.Drawing.Color.Black;
+            this.txtName.Location = new System.Drawing.Point(128, 36);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(178, 27);
+            this.txtName.TabIndex = 2;
             // 
-            // frmAppointmentDetail
+            // txtService
+            // 
+            this.txtService.AllowDrop = true;
+            this.txtService.BackColor = System.Drawing.Color.White;
+            this.txtService.Enabled = false;
+            this.txtService.ForeColor = System.Drawing.Color.Black;
+            this.txtService.Location = new System.Drawing.Point(128, 149);
+            this.txtService.Multiline = true;
+            this.txtService.Name = "txtService";
+            this.txtService.Size = new System.Drawing.Size(474, 109);
+            this.txtService.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(22, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Service";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.AllowDrop = true;
+            this.txtDescription.BackColor = System.Drawing.Color.White;
+            this.txtDescription.Enabled = false;
+            this.txtDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtDescription.Location = new System.Drawing.Point(128, 281);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(474, 119);
+            this.txtDescription.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(22, 281);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Description";
+            // 
+            // txtWorkingHour
+            // 
+            this.txtWorkingHour.AllowDrop = true;
+            this.txtWorkingHour.BackColor = System.Drawing.Color.White;
+            this.txtWorkingHour.Enabled = false;
+            this.txtWorkingHour.ForeColor = System.Drawing.Color.Black;
+            this.txtWorkingHour.Location = new System.Drawing.Point(445, 89);
+            this.txtWorkingHour.Name = "txtWorkingHour";
+            this.txtWorkingHour.Size = new System.Drawing.Size(157, 27);
+            this.txtWorkingHour.TabIndex = 2;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.AllowDrop = true;
+            this.txtStatus.BackColor = System.Drawing.Color.White;
+            this.txtStatus.Enabled = false;
+            this.txtStatus.ForeColor = System.Drawing.Color.Black;
+            this.txtStatus.Location = new System.Drawing.Point(128, 89);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(178, 27);
+            this.txtStatus.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(331, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Working Hour";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(22, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Status";
+            // 
+            // frmAppointmentDetailDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(641, 408);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(662, 513);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Name = "frmAppointmentDetail";
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCheck);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtService);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtWorkingHour);
+            this.Controls.Add(this.txtPhone);
+            this.Name = "frmAppointmentDetailDoctor";
             this.Text = "frmAppointmentDetail";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmAppointmentDetailDoctor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtService;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtWorkingHour;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
     }
 }

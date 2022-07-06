@@ -132,6 +132,7 @@
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
+            this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(775, 244);
             this.dataGridViewAppointment.TabIndex = 7;
             this.dataGridViewAppointment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellDoubleClick);
@@ -277,6 +278,7 @@
             this.txtDescription.Location = new System.Drawing.Point(383, 243);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescription.Size = new System.Drawing.Size(391, 150);
             this.txtDescription.TabIndex = 13;
             // 

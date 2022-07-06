@@ -28,6 +28,9 @@ namespace WinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+            IsUpdate = true;
+            labelHeader.Text = "Update Profile";
             panelUpdateProfile.Visible = true;
             panelUpdateProfile.BringToFront();
             panelProfile.Visible = false;
@@ -73,7 +76,7 @@ namespace WinApp
                     txtConfirmUpdate.Enabled = true;
                     txtNameUpdate.Enabled = true;
                     cboGenderUpdate.Enabled = true;
-
+                    cboRoleUpdate.Enabled = false;
                 }
                 else
                 { //không là admin nhưng update tài khoản của mình
@@ -88,7 +91,13 @@ namespace WinApp
                     txtConfirmUpdate.Enabled = true;
                     txtNameUpdate.Enabled = true;
                     cboGenderUpdate.Enabled = true;
+                    cboRoleUpdate.Enabled = false;
                 }
+
+                txtPassword.Enabled = false;
+                txtName.Enabled = false;
+                txtUsername.Enabled = false;
+                cboGender.Enabled = false;
 
                 txtName.Text = accountInfo.Name;
                 txtPassword.Text = accountInfo.Password;

@@ -48,7 +48,6 @@
             this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.buttonCustomerAdd = new System.Windows.Forms.Button();
             this.buttonCustomerUpdate = new System.Windows.Forms.Button();
-            this.buttonDetailCustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
             this.labelCustomerPhone = new System.Windows.Forms.Label();
@@ -225,7 +224,6 @@
             this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
-            this.dataGridViewAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellClick);
             // 
             // buttonAppointment
             // 
@@ -281,15 +279,6 @@
             this.buttonCustomerUpdate.Text = "Update";
             this.buttonCustomerUpdate.UseVisualStyleBackColor = true;
             this.buttonCustomerUpdate.Click += new System.EventHandler(this.buttonCustomerUpdate_Click);
-            // 
-            // buttonDetailCustomer
-            // 
-            this.buttonDetailCustomer.Location = new System.Drawing.Point(340, 141);
-            this.buttonDetailCustomer.Name = "buttonDetailCustomer";
-            this.buttonDetailCustomer.Size = new System.Drawing.Size(139, 29);
-            this.buttonDetailCustomer.TabIndex = 9;
-            this.buttonDetailCustomer.Text = "Detail";
-            this.buttonDetailCustomer.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -363,7 +352,6 @@
             this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelCustomer.Controls.Add(this.labelCustomer);
             this.panelCustomer.Controls.Add(this.groupBox1);
-            this.panelCustomer.Controls.Add(this.buttonDetailCustomer);
             this.panelCustomer.Controls.Add(this.buttonCustomerUpdate);
             this.panelCustomer.Controls.Add(this.buttonCustomerAdd);
             this.panelCustomer.Controls.Add(this.dataGridViewCustomer);
@@ -446,7 +434,6 @@
         private System.Windows.Forms.DataGridView dataGridViewCustomer;
         private System.Windows.Forms.Button buttonCustomerAdd;
         private System.Windows.Forms.Button buttonCustomerUpdate;
-        private System.Windows.Forms.Button buttonDetailCustomer;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxCustomerPhone;
         private System.Windows.Forms.Label labelCustomerPhone;
