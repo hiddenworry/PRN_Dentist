@@ -3,6 +3,7 @@
   "restore": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj": {}
   },
   "projects": {
@@ -40,6 +41,19 @@
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\obj\\",
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
+    "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
+        "projectName": "BusinessObject",
+        "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\obj\\",
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -47,8 +61,12 @@
         "configFilePaths": [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
@@ -114,6 +132,7 @@
           },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
@@ -154,6 +173,20 @@
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\obj\\",
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\obj\\",
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -161,8 +194,12 @@
         "configFilePaths": [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
@@ -184,8 +221,13 @@
             "projectReferences": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
+=======
+              "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
               "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
@@ -242,6 +284,7 @@
           },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
@@ -282,6 +325,20 @@
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\obj\\",
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj",
+        "projectName": "WinApp",
+        "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\obj\\",
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -289,8 +346,12 @@
         "configFilePaths": [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
@@ -312,11 +373,19 @@
             "projectReferences": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
               },
               "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj"
+=======
+              "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
+              },
+              "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj"
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
               "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
@@ -382,7 +451,11 @@
           },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750

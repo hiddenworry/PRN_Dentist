@@ -2,6 +2,7 @@
   "version": 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "wXASwCE6FQQDswxfjGLxFW/JN9OSjczZ2bK9+bN9QzcYtxBilo/lXWROETRltJ8bm1n/9WnHJ8uxH10fASxCRQ==",
   "success": true,
   "projectFilePath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
@@ -114,6 +115,12 @@
   "projectFilePath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj",
   "expectedPackageFiles": [
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
+  "dgSpecHash": "OfFQjNhyqO2wgSlKp4Dp+sQWJ/LJgISw0TZVh+Eb71bIsAujSFJrmR9HLHuRiwxUIL1WoA32M1PdBv/HkfJ9ug==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj",
+  "expectedPackageFiles": [
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -212,6 +219,9 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
