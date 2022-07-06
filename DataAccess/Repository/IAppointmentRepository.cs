@@ -23,9 +23,6 @@ namespace DataAccess
 
         List<Appointment> Get10FistappointmentDoneCustomerById(int id);
 
-<<<<<<< HEAD
         void UpdateAppointmentByDoctor(Appointment appointment);
-=======
->>>>>>> 43b51258e91b828289ab9b02db26cb79a26f99dc
     }
 }
