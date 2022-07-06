@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {}
+    "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
-    "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\GroupPRNPROJECT\\BusinessObject\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

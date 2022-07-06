@@ -5841,11 +5841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GroupPRNPROJECT\\frmLogin\\WinApp.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\frmLogin\\WinApp.csproj",
       "projectName": "WinApp",
-      "projectPath": "E:\\GroupPRNPROJECT\\frmLogin\\WinApp.csproj",
+      "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\frmLogin\\WinApp.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\GroupPRNPROJECT\\frmLogin\\obj\\",
+      "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\frmLogin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5862,11 +5862,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
+            "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
             },
-            "E:\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "E:\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj"
             }
           }
         }

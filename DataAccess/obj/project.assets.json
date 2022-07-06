@@ -5821,11 +5821,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "E:\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "E:\\GroupPRNPROJECT\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5842,8 +5842,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
+            "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }
