@@ -94,6 +94,7 @@ namespace WinApp.Dentist
             {
                 int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["IdHistory"].FormattedValue.ToString());
                 LoadListServicesInAppointment(ServiceRepository.GetServiceListByAppointmentId(id));
+                txtDescription.Text = dataGridViewCustomer.Rows[e.RowIndex].Cells["Description"].FormattedValue.ToString();
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Load service", MessageBoxButtons.OK ,MessageBoxIcon.Error);
@@ -132,6 +133,7 @@ namespace WinApp.Dentist
             {
                 int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["IdHistory"].FormattedValue.ToString());
                 LoadListServicesInAppointment(ServiceRepository.GetServiceListByAppointmentId(id));
+                txtDescription.Text = dataGridViewCustomer.Rows[e.RowIndex].Cells["Description"].FormattedValue.ToString();
             }
             catch (Exception ex)
             {

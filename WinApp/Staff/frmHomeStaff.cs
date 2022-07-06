@@ -39,7 +39,7 @@ namespace WinApp
         private void LoadListCustomer(List<Customer> list)
         {
             List<CustomerChange> changeList = new List<CustomerChange>();
-            
+
             foreach (Customer customer in list)
             {
                 CustomerChange change = new CustomerChange()
@@ -58,7 +58,8 @@ namespace WinApp
             if (list.Count() != 0)
             {
                 customer = list[0];
-            } else
+            }
+            else
             {
                 customer = null;
                 buttonCustomerUpdate.Enabled = false;
@@ -115,10 +116,12 @@ namespace WinApp
             LoadAppointmentList();
             LoadListCustomer(customerRepository.GetAll());
             List<Account> dentistList = new List<Account>();
-            dentistList.Add(new Account { 
+            dentistList.Add(new Account
+            {
                 Id = 0,
                 Name = "All"
             });
+            txtLinkLabelNameAccountLogin.Text = accountLogin.Name;
             dentistList.AddRange(accountRepository.GetALLDentistList());
             comboBoxAppointmentDentist.DataSource = dentistList;
             comboBoxAppointmentDentist.DisplayMember = "Name";
@@ -236,34 +239,21 @@ namespace WinApp
 
         private void buttonCustomerUpdate_Click(object sender, EventArgs e)
         {
-            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
+            if (customerRepository != null)
             {
-                CustomerRepository = customerRepository,
-                isInsert = false,
-                Text = "Update new Customer",
-                CustomerInfo = customer,
-            };
-            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
-            {
-                LoadListCustomer(customerRepository.GetAll());
+                frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
+                {
+                    CustomerRepository = customerRepository,
+                    isInsert = false,
+                    Text = "Update new Customer",
+                    CustomerInfo = customer,
+                };
+                if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
+                {
+                    LoadListCustomer(customerRepository.GetAll());
+                }
             }
         }
-
-        private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
-
-            customer = customerRepository.GetById(id);
-        }
-
-        private void dataGridViewCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
-
-            customer = customerRepository.GetById(id);
-        }
-
-     
 
         private void buttonCustomerFind_Click(object sender, EventArgs e)
         {
@@ -285,7 +275,8 @@ namespace WinApp
                     else if (name.Length != 0)
                     {
                         LoadListCustomer(customerRepository.SearchCustomerByName(name));
-                    } else
+                    }
+                    else
                     {
                         LoadListCustomer(customerRepository.GetAll());
                     }
@@ -312,18 +303,72 @@ namespace WinApp
 
         private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try {
+            try
+            {
                 int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
 
-                customer = customerRepository.GetById(id);
-                buttonCustomerUpdate_Click(sender, e);
-            } catch (Exception ex)
-            {
+                if (id != 0)
+                {
+                    customer = customerRepository.GetById(id);
+                }
+                else
+                {
+                    customer = null;
+                }
 
+                if (customer == null) { buttonCustomerUpdate.Enabled = false; return; }
+                else { buttonCustomerUpdate.Enabled = true; }
+                buttonCustomerUpdate_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
             }
         }
 
+        private void dataGridViewCustomer_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
 
+                if (id != 0)
+                {
+                    customer = customerRepository.GetById(id);
+                }
+                else
+                {
+                    customer = null;
+                }
+
+                if (customer == null) buttonCustomerUpdate.Enabled = false;
+                else { buttonCustomerUpdate.Enabled = true; }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void dataGridViewCustomer_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+                if (id != 0)
+                {
+                    customer = customerRepository.GetById(id);
+                }
+                else
+                {
+                    customer = null;
+                }
+
+                if (customer == null) buttonCustomerUpdate.Enabled = false;
+                else { buttonCustomerUpdate.Enabled = true; }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 }
 
@@ -332,6 +377,6 @@ public class CustomerChange
     public int Id { get; set; }
     public string Name { get; set; }
     public string Phone { get; set; }
-    public string Gender{ get; set; }
+    public string Gender { get; set; }
     public DateTime Dob { get; set; }
 }

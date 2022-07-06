@@ -109,7 +109,7 @@ namespace WinApp
             LoadCustomerList(CustomerRepository.GetAll());
             LoadAllAppointmentList();
 
-
+            txtLinkLabelNameAccountLogin.Text = accountLogin.Name;
 
         }
 

@@ -214,6 +214,7 @@
             // 
             // dataGridViewAppointment
             // 
+            this.dataGridViewAppointment.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
             this.dataGridViewAppointment.MultiSelect = false;
@@ -249,6 +250,7 @@
             // dataGridViewCustomer
             // 
             this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 176);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
@@ -258,6 +260,8 @@
             this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
             this.dataGridViewCustomer.TabIndex = 7;
+            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick_1);
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick_1);
             this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
             // 
             // buttonCustomerAdd

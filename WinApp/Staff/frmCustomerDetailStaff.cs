@@ -24,16 +24,6 @@ namespace WinApp
 
         public Customer CustomerInfo { get; set; }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
 
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -57,6 +47,13 @@ namespace WinApp
                 {
                     MessageBox.Show("Error input.", isInsert ? "Add new customer" : "Update Customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DialogResult = DialogResult.None;
+                    return;
+                }
+                DialogResult result = MessageBox.Show("Are you sure to save?", isInsert ? "Add new customer" : "Update Customer", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                
+                if(result == DialogResult.No)
+                {
+                    DialogResult = DialogResult.No;
                     return;
                 }
                 string phone = txtPhone.Text.Trim();
