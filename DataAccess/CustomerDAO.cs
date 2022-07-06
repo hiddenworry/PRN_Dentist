@@ -154,12 +154,17 @@ namespace DataAccess
         {
             try
             {
-                var listName = GetCustomerByName(name);
-                var listPhone = GetCustomerByPhone(phone);
-                return (from n in listName
-                        join p in listPhone
-                        on n.Id equals p.Id 
-                        select n).ToList();
+
+                using (var context = new DBSContext())
+                {
+                    return context.Customers.Where(x => x.Phone.Contains(phone) && x.Name.Contains(name)).ToList();
+                }
+                //var listName = GetCustomerByName(name);
+                //var listPhone = GetCustomerByPhone(phone);
+                //return (from n in listName
+                //        join p in listPhone
+                //        on n.Id equals p.Id 
+                //        select n).ToList();
             }
             catch (Exception ex)
             {

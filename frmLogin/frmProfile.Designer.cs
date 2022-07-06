@@ -43,6 +43,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.panelProfile = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelUpdateProfile = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.labelStatusError = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNameUpdate = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelProfile.SuspendLayout();
             this.panelUpdateProfile.SuspendLayout();
@@ -236,6 +236,16 @@
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(469, 384);
             this.panelProfile.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(210, 224);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panelUpdateProfile
             // 
@@ -556,16 +566,6 @@
             this.txtNameUpdate.Size = new System.Drawing.Size(261, 27);
             this.txtNameUpdate.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(210, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // frmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -577,7 +577,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelProfile);
             this.Name = "frmProfile";
-            this.Text = "frmProfile";
+            this.Text = "Profile ";
             this.Load += new System.EventHandler(this.frmProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panelProfile.ResumeLayout(false);
