@@ -24,5 +24,8 @@ namespace DataAccess
         List<Appointment> Get10FistappointmentDoneCustomerById(int id);
 
         void UpdateAppointmentByDoctor(Appointment appointment);
+
+
+        List<Appointment> FilterAppointmentForAdmin(DateTime time, string phone, int dentistId, int status);
     }
 }

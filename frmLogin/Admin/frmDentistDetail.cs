@@ -47,10 +47,14 @@ namespace WinApp
             if (Insert)
             {
                 txtDentistID.Visible = false;
+                txtDentistID.Enabled = false;
                 lbID.Visible = false;
             } else
             {
+                lbID.Visible = true;
                 txtDentistID.Visible = true;
+                txtDentistID.Enabled = false;
+               
                 lbID.Visible = true;
                 txtDentistID.Text = accountData.Id.ToString();
                 txtDentistName.Text = accountData.Name.ToString();

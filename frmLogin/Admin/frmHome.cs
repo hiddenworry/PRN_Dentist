@@ -159,6 +159,17 @@ namespace WinApp
             comboBoxServiceType.DisplayMember = "name";
             comboBoxServiceType.ValueMember = "id";
 
+            if(dataGridViewService.Rows.Count == 0)
+            {
+                buttonServiceUpdate.Enabled = false;
+                buttonServiceDisable.Enabled = false;
+            }
+            else
+            {
+                buttonServiceUpdate.Enabled = true;
+                buttonServiceDisable.Enabled = true;
+            }
+
             if (dataGridViewService.Columns["ServiceType"] != null)
                 dataGridViewService.Columns["ServiceType"].Visible = false;
 
@@ -276,6 +287,7 @@ namespace WinApp
         {
             source = new BindingSource();
             source.DataSource = appointments;
+            dataGridViewAppointment.DataSource = source;
 
         }
 
@@ -288,6 +300,29 @@ namespace WinApp
 
         private void panelAppointment_Paint(object sender, PaintEventArgs e)
         {
+            var StatusDictionary = new Dictionary<int, string>();
+            StatusDictionary.Add(0, "All");
+            StatusDictionary.Add(1, "Waiting");
+            StatusDictionary.Add(2, "Done");
+            StatusDictionary.Add(3, "Cancel");
+            comboxAppointmentStatus.DataSource = StatusDictionary.ToArray();
+            comboxAppointmentStatus.DisplayMember = "Value";
+            comboxAppointmentStatus.ValueMember = "Key";
+            
+
+            var DentistList = AccountRepository.GetALLDentistList();
+            comboBoxAppointmentDentist.SelectedIndex = -1;
+            if (DentistList.ToList().Count > 0)
+            {
+
+                
+                comboBoxAppointmentDentist.DataSource = AccountRepository.GetALLDentistList();
+                comboBoxAppointmentDentist.DisplayMember = "Name";
+                comboBoxAppointmentDentist.ValueMember = "Id";
+              
+
+            }
+
             if (dataGridViewAppointment.Columns["Customer"] != null)
                 dataGridViewAppointment.Columns["Customer"].Visible = false;
 
@@ -317,6 +352,17 @@ namespace WinApp
                 dataGridViewDentist.Columns["Appointments"].Visible = false;
             if (dataGridViewDentist.Columns["Role"] != null)
                 dataGridViewDentist.Columns["Role"].Visible = false;
+
+            if (dataGridViewDentist.Rows.Count == 0)
+            {
+                buttonDentistUpdate.Enabled = false;
+                btnDisableDentist.Enabled = false;
+            }
+            else
+            {
+                buttonDentistUpdate.Enabled = true;
+                btnDisableDentist.Enabled = true;
+            }
         }
 
         private void buttonDentistAdd_Click(object sender, EventArgs e)
@@ -428,6 +474,31 @@ namespace WinApp
                 AccountRepository.UpdateAccount(account);
             }
             LoadDentistList();
+        }
+
+        private void buttonFindAppointment_Click(object sender, EventArgs e)
+        {
+            DateTime time = dateTimePickerAppointmentDate.Value.Date;
+            string phone = textBoxAppointmentPhone.Text;
+            int dentistId = 0;
+            int status = 0;
+
+            if (!string.IsNullOrEmpty(comboBoxAppointmentDentist.Text)) {
+                dentistId = Int32.Parse(comboBoxAppointmentDentist.SelectedValue.ToString());
+            }
+        
+
+            if (!string.IsNullOrEmpty(comboxAppointmentStatus.Text) || Int32.Parse(comboxAppointmentStatus.SelectedValue.ToString()) != 0){
+                status = Int32.Parse(comboxAppointmentStatus.SelectedValue.ToString());
+            }
+
+           
+            
+          // LoadAppointmentList(AppointmentRepository.GetAppointmentList(time,phone,dentistId, (int)status));
+
+
+            LoadAppointmentList( AppointmentRepository.FilterAppointmentForAdmin(time, phone, dentistId, status));
+
         }
     }
 }
