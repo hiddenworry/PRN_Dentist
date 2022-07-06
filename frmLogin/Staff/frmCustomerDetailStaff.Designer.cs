@@ -57,6 +57,7 @@
             this.btnClose.TabIndex = 25;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // btnReset
             // 
@@ -258,6 +259,7 @@
             this.Controls.Add(this.txtCustomerName);
             this.Name = "frmCustomerDetailStaff";
             this.Text = "frmCustomerDetail";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomerDetailStaff_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomerDetailStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

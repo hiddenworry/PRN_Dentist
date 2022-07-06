@@ -147,5 +147,106 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+
+
+        public List<Appointment> GetAppointmentsForAdmin()
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    return DBSContext.Appointments.ToList();
+                }
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+                    public Appointment GetAppointmentNearest() // lấy ra appointment gần nhất
+                    {
+                        try
+                        {
+                            using (var context = new DBSContext())
+                            {
+                                Appointment nearest = null;
+                                nearest = (from appointment in context.Appointments
+                                           orderby appointment.Id ascending
+                                           where appointment.Status == 2 && appointment.Time.Date == DateTime.Now.Date
+                                                                         && appointment.Time.Month == DateTime.Now.Month
+                                                                         && appointment.Time.Year == DateTime.Now.Year
+                                           select appointment).FirstOrDefault();
+                                if (nearest == null)
+                                {
+                                    throw new Exception("No customer now");
+                                }
+                                nearest.Status = 4;
+                                context.Appointments.Update(nearest);
+                                context.SaveChanges();
+                                return nearest;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exception(ex.Message);
+                        }
+                    }
+                    
+
+                    public void UpdateAppointment(Appointment appointment)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    context.Appointments.Update(appointment);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateAppointmentByDoctor(Appointment appointment)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    var a = context.Appointments.SingleOrDefault(x => x.Id == appointment.Id);
+                    a.Description = appointment.Description;
+                    a.Status = appointment.Status;
+                    context.Appointments.Update(a);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Appointment> GetListAppointmentByCustomerId(int customerId)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                   var list = from appointment in context.Appointments
+                              where appointment.CustomerId == customerId && appointment.Status == 5
+                              select appointment;
+                    return list.ToList();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

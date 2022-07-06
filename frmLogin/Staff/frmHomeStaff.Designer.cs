@@ -57,6 +57,8 @@
             this.labelNameCustomer = new System.Windows.Forms.Label();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.txtLinkLabelNameAccountLogin = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelAppointment.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).BeginInit();
@@ -258,11 +260,7 @@
             this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
             this.dataGridViewCustomer.TabIndex = 7;
-            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
-            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
-            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
             this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
-            this.dataGridViewCustomer.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewCustomer_CellFormatting);
             // 
             // buttonCustomerAdd
             // 
@@ -374,12 +372,36 @@
             this.panelCustomer.Size = new System.Drawing.Size(775, 450);
             this.panelCustomer.TabIndex = 13;
             // 
+            // txtLinkLabelNameAccountLogin
+            // 
+            this.txtLinkLabelNameAccountLogin.AutoSize = true;
+            this.txtLinkLabelNameAccountLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(665, 12);
+            this.txtLinkLabelNameAccountLogin.Name = "txtLinkLabelNameAccountLogin";
+            this.txtLinkLabelNameAccountLogin.Size = new System.Drawing.Size(90, 25);
+            this.txtLinkLabelNameAccountLogin.TabIndex = 25;
+            this.txtLinkLabelNameAccountLogin.TabStop = true;
+            this.txtLinkLabelNameAccountLogin.Text = "linkLabel1";
+            this.txtLinkLabelNameAccountLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtLinkLabelNameAccountLogin_LinkClicked);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(582, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 25);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Welcome, ";
+            // 
             // frmHomeStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1581, 510);
+            this.Controls.Add(this.txtLinkLabelNameAccountLogin);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.buttonCustomer);
             this.Controls.Add(this.buttonAppointment);
@@ -398,6 +420,7 @@
             this.panelCustomer.ResumeLayout(false);
             this.panelCustomer.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -432,5 +455,7 @@
         private System.Windows.Forms.Label labelNameCustomer;
         private System.Windows.Forms.Label labelCustomer;
         private System.Windows.Forms.Panel panelCustomer;
+        private System.Windows.Forms.LinkLabel txtLinkLabelNameAccountLogin;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -34,8 +34,16 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-                    context.Customers.Update(newCustomer);
-                    context.SaveChanges();
+                    var cus = context.Customers.Where(x => x.Phone == newCustomer.Phone && x.Id != newCustomer.Id).FirstOrDefault();
+                    if (cus == null)
+                    {
+                        context.Customers.Update(newCustomer);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("Phone is already in use");
+                    }
                 }
             }
             catch (Exception ex)
@@ -65,8 +73,16 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-                    context.Customers.Add(newCustomer);
-                    context.SaveChanges();
+                    var cus = context.Customers.Where(x => x.Phone == newCustomer.Phone).FirstOrDefault();
+                    if(cus == null)
+                    {
+                        context.Customers.Add(newCustomer);
+                        context.SaveChanges();
+                    } else
+                    {
+                        throw new Exception("Phone is already in use");
+                    }
+                   
                 }
             }
             catch (Exception ex)

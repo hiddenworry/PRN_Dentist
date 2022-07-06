@@ -325,6 +325,7 @@ E:\GroupPRNPROJECT\frmLogin\bin\Debug\net5.0-windows\DataAccess.pdb
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.csproj.CopyComplete
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cache
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\ref\WinApp.dll
+<<<<<<< HEAD
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\bin\Debug\net5.0-windows\WinApp.exe
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\bin\Debug\net5.0-windows\WinApp.deps.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\bin\Debug\net5.0-windows\WinApp.runtimeconfig.json
@@ -397,3 +398,9 @@ C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\obj\Debug\net5
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\obj\Debug\net5.0-windows\WinApp.pdb
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cache
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\obj\Debug\net5.0-windows\ref\WinApp.dll
+=======
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
+D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources
+E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
+E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources
+>>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6

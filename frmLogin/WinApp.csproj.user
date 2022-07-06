@@ -16,6 +16,9 @@
     <Compile Update="Dentist\frmCustomerDetailDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dentist\frmCustomerHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dentist\frmDentistDetailDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,6 +32,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Admin\frmServiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmProfile.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

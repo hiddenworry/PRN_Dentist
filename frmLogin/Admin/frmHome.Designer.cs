@@ -39,17 +39,18 @@
             this.buttonServiceFind = new System.Windows.Forms.Button();
             this.textBoxServiceName = new System.Windows.Forms.TextBox();
             this.labelServicename = new System.Windows.Forms.Label();
-            this.buttonServiceDetail = new System.Windows.Forms.Button();
+            this.buttonServiceDisable = new System.Windows.Forms.Button();
             this.buttonServiceUpdate = new System.Windows.Forms.Button();
             this.buttonServiceAdd = new System.Windows.Forms.Button();
             this.dataGridViewService = new System.Windows.Forms.DataGridView();
             this.panelDentist = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDentistLoad = new System.Windows.Forms.Button();
+            this.btnDisableDentist = new System.Windows.Forms.Button();
             this.labelDentist = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelDentistStatus = new System.Windows.Forms.Label();
             this.comboDentistStatus = new System.Windows.Forms.ComboBox();
-            this.button = new System.Windows.Forms.Button();
+            this.filterDentist = new System.Windows.Forms.Button();
             this.textDentistName = new System.Windows.Forms.TextBox();
             this.labelDentistName = new System.Windows.Forms.Label();
             this.buttonDentistDetail = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.buttonDentistAdd = new System.Windows.Forms.Button();
             this.dataGridViewDentist = new System.Windows.Forms.DataGridView();
             this.panelCustomer = new System.Windows.Forms.Panel();
+            this.btnCustomerLoad = new System.Windows.Forms.Button();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
@@ -73,6 +75,7 @@
             this.buttonService = new System.Windows.Forms.Button();
             this.buttonDentist = new System.Windows.Forms.Button();
             this.panelAppointment = new System.Windows.Forms.Panel();
+            this.btnLoadAppointmentList = new System.Windows.Forms.Button();
             this.labelAppointment = new System.Windows.Forms.Label();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,9 +88,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxAppointmentDentist = new System.Windows.Forms.ComboBox();
             this.buttonAppointmentDetail = new System.Windows.Forms.Button();
-            this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
-            this.buttonAppointmentAdd = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
+            this.txtLinkLabelNameAccountLogin = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonAppointmentUpdate = new System.Windows.Forms.Button();
             this.panelService.SuspendLayout();
             this.groupBoxFilterService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).BeginInit();
@@ -109,7 +113,7 @@
             this.panelService.Controls.Add(this.btnServiceLoad);
             this.panelService.Controls.Add(this.labelService);
             this.panelService.Controls.Add(this.groupBoxFilterService);
-            this.panelService.Controls.Add(this.buttonServiceDetail);
+            this.panelService.Controls.Add(this.buttonServiceDisable);
             this.panelService.Controls.Add(this.buttonServiceUpdate);
             this.panelService.Controls.Add(this.buttonServiceAdd);
             this.panelService.Controls.Add(this.dataGridViewService);
@@ -169,9 +173,6 @@
             // 
             this.comboBoxServiceStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxServiceStatus.FormattingEnabled = true;
-            this.comboBoxServiceStatus.Items.AddRange(new object[] {
-            "1",
-            "2"});
             this.comboBoxServiceStatus.Location = new System.Drawing.Point(85, 89);
             this.comboBoxServiceStatus.Name = "comboBoxServiceStatus";
             this.comboBoxServiceStatus.Size = new System.Drawing.Size(127, 28);
@@ -221,14 +222,15 @@
             this.labelServicename.TabIndex = 4;
             this.labelServicename.Text = "Name";
             // 
-            // buttonServiceDetail
+            // buttonServiceDisable
             // 
-            this.buttonServiceDetail.Location = new System.Drawing.Point(307, 141);
-            this.buttonServiceDetail.Name = "buttonServiceDetail";
-            this.buttonServiceDetail.Size = new System.Drawing.Size(139, 29);
-            this.buttonServiceDetail.TabIndex = 9;
-            this.buttonServiceDetail.Text = "Detail";
-            this.buttonServiceDetail.UseVisualStyleBackColor = true;
+            this.buttonServiceDisable.Location = new System.Drawing.Point(307, 141);
+            this.buttonServiceDisable.Name = "buttonServiceDisable";
+            this.buttonServiceDisable.Size = new System.Drawing.Size(139, 29);
+            this.buttonServiceDisable.TabIndex = 9;
+            this.buttonServiceDisable.Text = "Disable";
+            this.buttonServiceDisable.UseVisualStyleBackColor = true;
+            this.buttonServiceDisable.Click += new System.EventHandler(this.buttonServiceDisable_Click);
             // 
             // buttonServiceUpdate
             // 
@@ -267,7 +269,8 @@
             // 
             this.panelDentist.BackColor = System.Drawing.Color.LightBlue;
             this.panelDentist.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelDentist.Controls.Add(this.button1);
+            this.panelDentist.Controls.Add(this.btnDentistLoad);
+            this.panelDentist.Controls.Add(this.btnDisableDentist);
             this.panelDentist.Controls.Add(this.labelDentist);
             this.panelDentist.Controls.Add(this.groupBox3);
             this.panelDentist.Controls.Add(this.buttonDentistDetail);
@@ -278,15 +281,27 @@
             this.panelDentist.Name = "panelDentist";
             this.panelDentist.Size = new System.Drawing.Size(775, 450);
             this.panelDentist.TabIndex = 15;
+            this.panelDentist.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDentist_Paint_1);
             // 
-            // button1
+            // btnDentistLoad
             // 
-            this.button1.Location = new System.Drawing.Point(372, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 29);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDentistLoad.Location = new System.Drawing.Point(38, 411);
+            this.btnDentistLoad.Name = "btnDentistLoad";
+            this.btnDentistLoad.Size = new System.Drawing.Size(139, 29);
+            this.btnDentistLoad.TabIndex = 14;
+            this.btnDentistLoad.Text = "Load";
+            this.btnDentistLoad.UseVisualStyleBackColor = true;
+            this.btnDentistLoad.Click += new System.EventHandler(this.btnDentistLoad_Click);
+            // 
+            // btnDisableDentist
+            // 
+            this.btnDisableDentist.Location = new System.Drawing.Point(372, 141);
+            this.btnDisableDentist.Name = "btnDisableDentist";
+            this.btnDisableDentist.Size = new System.Drawing.Size(126, 29);
+            this.btnDisableDentist.TabIndex = 13;
+            this.btnDisableDentist.Text = "Remove";
+            this.btnDisableDentist.UseVisualStyleBackColor = true;
+            this.btnDisableDentist.Click += new System.EventHandler(this.btnDisableDentist_Click);
             // 
             // labelDentist
             // 
@@ -302,7 +317,7 @@
             // 
             this.groupBox3.Controls.Add(this.labelDentistStatus);
             this.groupBox3.Controls.Add(this.comboDentistStatus);
-            this.groupBox3.Controls.Add(this.button);
+            this.groupBox3.Controls.Add(this.filterDentist);
             this.groupBox3.Controls.Add(this.textDentistName);
             this.groupBox3.Controls.Add(this.labelDentistName);
             this.groupBox3.Location = new System.Drawing.Point(501, 4);
@@ -329,14 +344,15 @@
             this.comboDentistStatus.Size = new System.Drawing.Size(127, 28);
             this.comboDentistStatus.TabIndex = 13;
             // 
-            // button
+            // filterDentist
             // 
-            this.button.Location = new System.Drawing.Point(77, 123);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(139, 29);
-            this.button.TabIndex = 10;
-            this.button.Text = "Find";
-            this.button.UseVisualStyleBackColor = true;
+            this.filterDentist.Location = new System.Drawing.Point(77, 123);
+            this.filterDentist.Name = "filterDentist";
+            this.filterDentist.Size = new System.Drawing.Size(139, 29);
+            this.filterDentist.TabIndex = 10;
+            this.filterDentist.Text = "Find";
+            this.filterDentist.UseVisualStyleBackColor = true;
+            this.filterDentist.Click += new System.EventHandler(this.filterDentist_Click);
             // 
             // textDentistName
             // 
@@ -371,6 +387,7 @@
             this.buttonDentistUpdate.TabIndex = 8;
             this.buttonDentistUpdate.Text = "Update";
             this.buttonDentistUpdate.UseVisualStyleBackColor = true;
+            this.buttonDentistUpdate.Click += new System.EventHandler(this.buttonDentistUpdate_Click);
             // 
             // buttonDentistAdd
             // 
@@ -380,6 +397,7 @@
             this.buttonDentistAdd.TabIndex = 5;
             this.buttonDentistAdd.Text = "Add";
             this.buttonDentistAdd.UseVisualStyleBackColor = true;
+            this.buttonDentistAdd.Click += new System.EventHandler(this.buttonDentistAdd_Click);
             // 
             // dataGridViewDentist
             // 
@@ -387,15 +405,18 @@
             this.dataGridViewDentist.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewDentist.Location = new System.Drawing.Point(-1, 176);
             this.dataGridViewDentist.Name = "dataGridViewDentist";
+            this.dataGridViewDentist.ReadOnly = true;
             this.dataGridViewDentist.RowHeadersWidth = 51;
             this.dataGridViewDentist.RowTemplate.Height = 29;
-            this.dataGridViewDentist.Size = new System.Drawing.Size(754, 261);
+            this.dataGridViewDentist.Size = new System.Drawing.Size(771, 229);
             this.dataGridViewDentist.TabIndex = 7;
+            this.dataGridViewDentist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDentist_CellDoubleClick);
             // 
             // panelCustomer
             // 
             this.panelCustomer.BackColor = System.Drawing.Color.LightBlue;
             this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCustomer.Controls.Add(this.btnCustomerLoad);
             this.panelCustomer.Controls.Add(this.labelCustomer);
             this.panelCustomer.Controls.Add(this.groupBox1);
             this.panelCustomer.Controls.Add(this.buttonDetailCustomer);
@@ -406,6 +427,17 @@
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(775, 450);
             this.panelCustomer.TabIndex = 13;
+            this.panelCustomer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCustomer_Paint);
+            // 
+            // btnCustomerLoad
+            // 
+            this.btnCustomerLoad.Location = new System.Drawing.Point(55, 411);
+            this.btnCustomerLoad.Name = "btnCustomerLoad";
+            this.btnCustomerLoad.Size = new System.Drawing.Size(139, 29);
+            this.btnCustomerLoad.TabIndex = 14;
+            this.btnCustomerLoad.Text = "Load";
+            this.btnCustomerLoad.UseVisualStyleBackColor = true;
+            this.btnCustomerLoad.Click += new System.EventHandler(this.btnCustomerLoad_Click);
             // 
             // labelCustomer
             // 
@@ -455,6 +487,7 @@
             this.buttonCustomerFind.TabIndex = 10;
             this.buttonCustomerFind.Text = "Find";
             this.buttonCustomerFind.UseVisualStyleBackColor = true;
+            this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
             // 
             // textBoxCustomerName
             // 
@@ -504,9 +537,10 @@
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 176);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 29;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 229);
             this.dataGridViewCustomer.TabIndex = 7;
             // 
             // buttonAppointment
@@ -554,16 +588,27 @@
             // 
             this.panelAppointment.BackColor = System.Drawing.Color.LightBlue;
             this.panelAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAppointment.Controls.Add(this.btnLoadAppointmentList);
             this.panelAppointment.Controls.Add(this.labelAppointment);
             this.panelAppointment.Controls.Add(this.groupBoxFilter);
             this.panelAppointment.Controls.Add(this.buttonAppointmentDetail);
             this.panelAppointment.Controls.Add(this.buttonAppointmentUpdate);
-            this.panelAppointment.Controls.Add(this.buttonAppointmentAdd);
             this.panelAppointment.Controls.Add(this.dataGridViewAppointment);
             this.panelAppointment.Location = new System.Drawing.Point(12, 48);
             this.panelAppointment.Name = "panelAppointment";
             this.panelAppointment.Size = new System.Drawing.Size(775, 450);
             this.panelAppointment.TabIndex = 16;
+            this.panelAppointment.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAppointment_Paint);
+            // 
+            // btnLoadAppointmentList
+            // 
+            this.btnLoadAppointmentList.Location = new System.Drawing.Point(36, 416);
+            this.btnLoadAppointmentList.Name = "btnLoadAppointmentList";
+            this.btnLoadAppointmentList.Size = new System.Drawing.Size(139, 29);
+            this.btnLoadAppointmentList.TabIndex = 15;
+            this.btnLoadAppointmentList.Text = "Load";
+            this.btnLoadAppointmentList.UseVisualStyleBackColor = true;
+            this.btnLoadAppointmentList.Click += new System.EventHandler(this.btnLoadAppointmentList_Click);
             // 
             // labelAppointment
             // 
@@ -671,40 +716,55 @@
             // 
             // buttonAppointmentDetail
             // 
-            this.buttonAppointmentDetail.Location = new System.Drawing.Point(336, 164);
+            this.buttonAppointmentDetail.Location = new System.Drawing.Point(261, 164);
             this.buttonAppointmentDetail.Name = "buttonAppointmentDetail";
             this.buttonAppointmentDetail.Size = new System.Drawing.Size(139, 29);
             this.buttonAppointmentDetail.TabIndex = 9;
             this.buttonAppointmentDetail.Text = "Detail";
             this.buttonAppointmentDetail.UseVisualStyleBackColor = true;
             // 
-            // buttonAppointmentUpdate
-            // 
-            this.buttonAppointmentUpdate.Location = new System.Drawing.Point(191, 164);
-            this.buttonAppointmentUpdate.Name = "buttonAppointmentUpdate";
-            this.buttonAppointmentUpdate.Size = new System.Drawing.Size(139, 29);
-            this.buttonAppointmentUpdate.TabIndex = 8;
-            this.buttonAppointmentUpdate.Text = "Update";
-            this.buttonAppointmentUpdate.UseVisualStyleBackColor = true;
-            // 
-            // buttonAppointmentAdd
-            // 
-            this.buttonAppointmentAdd.Location = new System.Drawing.Point(46, 164);
-            this.buttonAppointmentAdd.Name = "buttonAppointmentAdd";
-            this.buttonAppointmentAdd.Size = new System.Drawing.Size(139, 29);
-            this.buttonAppointmentAdd.TabIndex = 5;
-            this.buttonAppointmentAdd.Text = "Add";
-            this.buttonAppointmentAdd.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewAppointment
             // 
             this.dataGridViewAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
+            this.dataGridViewAppointment.ReadOnly = true;
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
-            this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
+            this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 206);
             this.dataGridViewAppointment.TabIndex = 7;
+            // 
+            // txtLinkLabelNameAccountLogin
+            // 
+            this.txtLinkLabelNameAccountLogin.AutoSize = true;
+            this.txtLinkLabelNameAccountLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(1399, 16);
+            this.txtLinkLabelNameAccountLogin.Name = "txtLinkLabelNameAccountLogin";
+            this.txtLinkLabelNameAccountLogin.Size = new System.Drawing.Size(90, 25);
+            this.txtLinkLabelNameAccountLogin.TabIndex = 27;
+            this.txtLinkLabelNameAccountLogin.TabStop = true;
+            this.txtLinkLabelNameAccountLogin.Text = "linkLabel1";
+            this.txtLinkLabelNameAccountLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtLinkLabelNameAccountLogin_LinkClicked);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(1316, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Welcome, ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // buttonAppointmentUpdate
+            // 
+            this.buttonAppointmentUpdate.Location = new System.Drawing.Point(99, 164);
+            this.buttonAppointmentUpdate.Name = "buttonAppointmentUpdate";
+            this.buttonAppointmentUpdate.Size = new System.Drawing.Size(139, 29);
+            this.buttonAppointmentUpdate.TabIndex = 8;
+            this.buttonAppointmentUpdate.Text = "Update";
+            this.buttonAppointmentUpdate.UseVisualStyleBackColor = true;
             // 
             // frmHome
             // 
@@ -712,6 +772,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1616, 1022);
+            this.Controls.Add(this.txtLinkLabelNameAccountLogin);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panelAppointment);
             this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelDentist);
@@ -744,6 +806,7 @@
             this.groupBoxFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointment)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -771,7 +834,7 @@
         private System.Windows.Forms.Button buttonServiceFind;
         private System.Windows.Forms.TextBox textBoxServiceName;
         private System.Windows.Forms.Label labelServicename;
-        private System.Windows.Forms.Button buttonServiceDetail;
+        private System.Windows.Forms.Button buttonServiceDisable;
         private System.Windows.Forms.Button buttonServiceUpdate;
         private System.Windows.Forms.Button buttonServiceAdd;
         private System.Windows.Forms.DataGridView dataGridViewService;
@@ -783,14 +846,14 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label labelDentistStatus;
         private System.Windows.Forms.ComboBox comboDentistStatus;
-        private System.Windows.Forms.Button button;
+        private System.Windows.Forms.Button filterDentist;
         private System.Windows.Forms.TextBox textDentistName;
         private System.Windows.Forms.Label labelDentistName;
         private System.Windows.Forms.Button buttonDentistDetail;
         private System.Windows.Forms.Button buttonDentistUpdate;
         private System.Windows.Forms.Button buttonDentistAdd;
         private System.Windows.Forms.DataGridView dataGridViewDentist;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDisableDentist;
         private System.Windows.Forms.Panel panelAppointment;
         private System.Windows.Forms.Label labelAppointment;
         private System.Windows.Forms.GroupBox groupBoxFilter;
@@ -804,9 +867,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxAppointmentDentist;
         private System.Windows.Forms.Button buttonAppointmentDetail;
-        private System.Windows.Forms.Button buttonAppointmentUpdate;
-        private System.Windows.Forms.Button buttonAppointmentAdd;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
+        private System.Windows.Forms.LinkLabel txtLinkLabelNameAccountLogin;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnServiceLoad;
+        private System.Windows.Forms.Button btnCustomerLoad;
+        private System.Windows.Forms.Button btnLoadAppointmentList;
+        private System.Windows.Forms.Button btnDentistLoad;
+        private System.Windows.Forms.Button buttonAppointmentUpdate;
     }
 }

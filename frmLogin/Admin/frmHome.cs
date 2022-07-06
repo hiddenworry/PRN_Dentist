@@ -18,6 +18,7 @@ namespace WinApp
         IServiceTypeRepository ServiceTypeRepository = new ServiceTypeRepository();
         IAppointmentRepository AppointmentRepository = new AppointmentRepository();
         ICustomerRepository CustomerRepository = new CustomerRepository();
+        IAccountRepository AccountRepository = new AccountRepository();
         BindingSource source;
         List<Panel> panelList = new List<Panel>();
         public Account accountLogin { get; set; }
@@ -76,9 +77,11 @@ namespace WinApp
             buttonCustomer.BackColor = Color.Lavender;
         }
 
+      
         private void loadServiceList(List<Service> services)
         {
             source = new BindingSource();
+         //   source.DataSource = null;
             source.DataSource = services;
             dataGridViewService.DataSource = source;
         }
@@ -88,10 +91,7 @@ namespace WinApp
             panelAppointment.BringToFront();
         }
 
-        private void panelDentist_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
 
         private void labelService_Click(object sender, EventArgs e)
         {
@@ -109,6 +109,20 @@ namespace WinApp
 
         }
 
+        private void txtLinkLabelNameAccountLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmProfile frmProfile = new frmProfile()
+            {
+                accountInfo = accountLogin,
+                AccountLogin = accountLogin,
+            };
+            frmProfile.ShowDialog();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
         private void buttonServiceUpdate_Click(object sender, EventArgs e)
         {
             if (dataGridViewService.CurrentRow != null)
@@ -122,18 +136,36 @@ namespace WinApp
 
 
                 };
-                frmService.Show();
+                if (frmService.ShowDialog() == DialogResult.OK)
+                {
+                    GetAllServiceList();
+                }
             }
         }
 
         private void panelService_Paint(object sender, PaintEventArgs e)
         {
-           
+
+            var StatusDictionary = new Dictionary<int, string>();
+
+            StatusDictionary.Add(1, "Active");
+            StatusDictionary.Add(2, "Inactive");
           
-            dataGridViewService.DataSource = ServiceRepository.GetServices();
+            comboBoxServiceStatus.DataSource = StatusDictionary.ToList();
+            comboBoxServiceStatus.DisplayMember = "Value";
+            comboBoxServiceStatus.ValueMember = "Key";
+
             comboBoxServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
             comboBoxServiceType.DisplayMember = "name";
             comboBoxServiceType.ValueMember = "id";
+
+            if (dataGridViewService.Columns["ServiceType"] != null)
+                dataGridViewService.Columns["ServiceType"].Visible = false;
+
+            if (dataGridViewService.Columns["AppointmentServices"] != null)
+                dataGridViewService.Columns["AppointmentServices"].Visible = false;
+
+
 
         }
 
@@ -152,14 +184,14 @@ namespace WinApp
                 };
                if (frmService.ShowDialog() == DialogResult.OK)
                 {
-                    this.Refresh();
+                    GetAllServiceList();
                 }
             }
         }
 
         private void btnServiceLoad_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            loadServiceList(ServiceRepository.GetServices());
         }
 
         private void buttonServiceFind_Click(object sender, EventArgs e)
@@ -168,14 +200,234 @@ namespace WinApp
             if (!string.IsNullOrEmpty(textBoxServiceName.Text))
                 service.Name = textBoxServiceName.Text;
             if(!string.IsNullOrEmpty(comboBoxServiceStatus.Text))
-                service.Status = int.Parse(comboBoxServiceStatus.Text);
+                service.Status = Int32.Parse(comboBoxServiceStatus.SelectedValue.ToString());
             if (!string.IsNullOrEmpty(comboBoxServiceType.Text))
                 service.ServiceTypeId = Int32.Parse(comboBoxServiceType.SelectedValue.ToString());
-            dataGridViewService.DataSource = 
-                ServiceRepository.FilterService(service);
-            MessageBox.Show(ServiceRepository.FilterService(service).Count.ToString());
+
+            loadServiceList( ServiceRepository.FilterService(service));
+          
+                
+           
+        }
+        
+        private void GetAllServiceList()
+        {
+            loadServiceList(ServiceRepository.GetServices());
         }
 
-       
+        private void buttonServiceDisable_Click(object sender, EventArgs e)
+        {
+            Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+            service.Status = 2;
+            DialogResult result = MessageBox.Show("Do you want to disable this service?", "Yes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                ServiceRepository.UpdateService(service);
+            }
+            GetAllServiceList();
+        }
+
+
+      
+
+        private void panelCustomer_Paint(object sender, PaintEventArgs e)
+        {
+            if (dataGridViewCustomer.Columns["Appointments"] != null)
+                dataGridViewCustomer.Columns["Appointments"].Visible = false;
+
+          
+
+        }
+
+        // load customer list
+        private void btnCustomerLoad_Click(object sender, EventArgs e)
+        {
+            source = new BindingSource();
+            source.DataSource = CustomerRepository.GetAll();
+            dataGridViewCustomer.DataSource = source;
+        }
+
+        // filter customer by name and phone
+        private void buttonCustomerFind_Click(object sender, EventArgs e)
+        {
+            string CustomerName = textBoxCustomerName.Text;
+            string CustomerPhone = textBoxCustomerPhone.Text;
+            
+
+            if(!string.IsNullOrEmpty(CustomerName) && !string.IsNullOrEmpty(CustomerPhone))
+            {
+                dataGridViewCustomer.DataSource = CustomerRepository.SearchCustomerByNameAndPhone(CustomerName, CustomerPhone);
+            }
+            else  if (string.IsNullOrEmpty(CustomerName) && !string.IsNullOrEmpty(CustomerPhone)) {
+                dataGridViewCustomer.DataSource = CustomerRepository.SearchCustomerByPhone(CustomerPhone);
+            }
+            else if (!string.IsNullOrEmpty(CustomerName) && string.IsNullOrEmpty(CustomerPhone))
+            {
+                dataGridViewCustomer.DataSource = CustomerRepository.SearchCustomerByName(CustomerName);
+            }
+        }
+
+        private void LoadAllAppointmentList()
+        {
+            LoadAppointmentList( AppointmentRepository.GetAppointmentsForAdmin());
+
+        }
+        private void LoadAppointmentList(List<Appointment> appointments)
+        {
+            source = new BindingSource();
+            source.DataSource = appointments;
+
+        }
+
+        // Load appointment list
+
+        private void btnLoadAppointmentList_Click(object sender, EventArgs e)
+        {
+            LoadAllAppointmentList();
+        }
+
+        private void panelAppointment_Paint(object sender, PaintEventArgs e)
+        {
+            if (dataGridViewAppointment.Columns["Customer"] != null)
+                dataGridViewAppointment.Columns["Customer"].Visible = false;
+
+            if (dataGridViewAppointment.Columns["Dentist"] != null)
+                dataGridViewAppointment.Columns["Dentist"].Visible = false;
+
+            if (dataGridViewAppointment.Columns["AppointmentServices"] != null)
+                dataGridViewAppointment.Columns["AppointmentServices"].Visible = false;
+
+        }
+
+
+
+
+        // Dentist
+        private void panelDentist_Paint_1(object sender, PaintEventArgs e)
+        {
+            // LoadDentistList();
+            var StatusDictionary = new Dictionary<decimal, string>();
+            StatusDictionary.Add(1, "Active");
+            StatusDictionary.Add(2, "Inactive");
+            comboDentistStatus.DataSource = StatusDictionary.ToArray();
+            comboDentistStatus.DisplayMember = "Value";
+            comboDentistStatus.ValueMember = "Key";
+
+            if (dataGridViewDentist.Columns["Appointments"] != null)
+                dataGridViewDentist.Columns["Appointments"].Visible = false;
+            if (dataGridViewDentist.Columns["Role"] != null)
+                dataGridViewDentist.Columns["Role"].Visible = false;
+        }
+
+        private void buttonDentistAdd_Click(object sender, EventArgs e)
+        {
+            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            {
+                AccountRepository = this.AccountRepository,
+                Insert = true
+
+            };
+            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadDentistList();
+            }
+        }
+
+        private void btnDentistLoad_Click(object sender, EventArgs e)
+        {
+            LoadDentistList();
+
+        }
+
+        private void GetAllDentists(List<Account> Dentists)
+        {
+            source = new BindingSource();
+            source.DataSource = Dentists;
+            dataGridViewDentist.DataSource = source;
+
+        }
+
+        private void LoadDentistList()
+        {
+
+            GetAllDentists(AccountRepository.GetALLDentistList());
+        }
+
+        private void buttonDentistUpdate_Click(object sender, EventArgs e)
+        {
+            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            {
+                AccountRepository = this.AccountRepository,
+                Insert = false,
+                accountData = account
+
+            };
+            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadDentistList();
+            }
+
+        }
+
+        private void dataGridViewDentist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            {
+                AccountRepository = this.AccountRepository,
+                Insert = false,
+                accountData = account
+
+            };
+            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadDentistList();
+            }
+        }
+
+        private void filterDentist_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string dentistName = textDentistName.Text;
+               
+                List<Account> DentistList = new List<Account>();
+                Account account = new Account();
+
+                if (!string.IsNullOrEmpty(dentistName))
+                {
+                    account.Name = dentistName;
+                }
+                if (!string.IsNullOrEmpty(comboDentistStatus.Text))
+                {
+                    account.Status = decimal.Parse(comboDentistStatus.SelectedValue.ToString());
+                  
+                }
+               
+                DentistList = AccountRepository.filterDentist(account);
+               
+                GetAllDentists(DentistList);
+                
+
+            } catch(Exception ex)
+            {
+                throw new Exception(ex.Data.ToString());
+            }
+         
+        }
+
+        private void btnDisableDentist_Click(object sender, EventArgs e)
+        {
+            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+
+            account.Status = 2;
+            DialogResult result = MessageBox.Show("Do you want to disable doctor?", "Yes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                AccountRepository.UpdateAccount(account);
+            }
+            LoadDentistList();
+        }
     }
 }

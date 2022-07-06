@@ -35,11 +35,15 @@ namespace DataAccess
             DateTime closeTime = DateTime.ParseExact("19:00", "HH:mm", CultureInfo.InvariantCulture);
             DateTime start;
             DateTime end;
-            
+
             List<string> availableOptions = new List<string>();
 
+<<<<<<< HEAD
             //kiểm tra từng nha sĩ
             foreach(Account account in new AccountRepository().GetActiveDentistList())
+=======
+            foreach (Account account in new AccountRepository().GetActiveDentistList())
+>>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6
             {
                 start = openTime;
                 List<string> options = new List<string>();
@@ -117,5 +121,31 @@ namespace DataAccess
         {
             return AppointmentDAO.Instance.GetWaitingAppointmentByCustomerId(id);
         }
+
+
+        public List<Appointment> GetAppointmentsForAdmin() => AppointmentDAO.Instance.GetAppointmentsForAdmin();
+
+
+        public Appointment GetAppointmentNearest() => AppointmentDAO.Instance.GetAppointmentNearest();
+
+        public void UpdateAppointment(Appointment appointment) => AppointmentDAO.Instance.UpdateAppointment(appointment);
+
+        public List<Appointment> Get10FistappointmentDoneCustomerById(int id)
+        {
+            List<Appointment> appointmentList = new List<Appointment>();
+            var list = AppointmentDAO.Instance.GetListAppointmentByCustomerId(id);
+            for (int i = 0; i < list.Count(); i++)
+            {
+                if (i == 10)
+                {
+                    return appointmentList;
+                }
+                appointmentList.Add(list[i]);
+            }
+            return appointmentList;
+        }
+
+        public void UpdateAppointmentByDoctor(Appointment appointment)
+                => AppointmentDAO.Instance.UpdateAppointmentByDoctor(appointment);
     }
 }

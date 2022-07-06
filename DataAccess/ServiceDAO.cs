@@ -130,13 +130,14 @@ namespace DataAccess
                     {
                         query = query.Where(s => s.Name.Contains(service.Name));
                     }
-                    if (service.ServiceTypeId != null)
+                    if (!string.IsNullOrEmpty(service.ServiceTypeId.ToString()))
                     {
                         query = query.Where(s => s.ServiceTypeId == service.ServiceTypeId);
                     }
-                    if (service.Status != null)
+                    if (!string.IsNullOrEmpty(service.Status.ToString()) && service.Status != 0)
                     {
                         query = query.Where(s => s.Status == service.Status);
+                        
                     }
                     filterList = query.ToList();
                 }
