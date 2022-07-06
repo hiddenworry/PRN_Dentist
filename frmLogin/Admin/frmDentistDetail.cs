@@ -31,7 +31,7 @@ namespace WinApp
         {
             var GenderDictionary = new Dictionary<bool, string>();
             GenderDictionary.Add(true, "Male");
-            GenderDictionary.Add(false, "female");
+            GenderDictionary.Add(false, "Female");
             cbDentistGender.DataSource = GenderDictionary.ToList();
             cbDentistGender.DisplayMember = "Value";
             cbDentistGender.ValueMember = "Key";
@@ -76,7 +76,7 @@ namespace WinApp
             account.Name = txtDentistName.Text;
             account.Username = txtDentistLoginName.Text;
             account.Password = txtDentistPassword.Text;
-            account.Status = decimal.Parse(cbStatus.SelectedValue.ToString());
+            account.Status = decimal.Parse(cbStatus.SelectedValue.ToString());           
             account.Gender = Boolean.Parse(cbDentistGender.SelectedValue.ToString());
             return account;
         }
@@ -90,7 +90,7 @@ namespace WinApp
 
                     if (Insert == true)
                     {
-                        DialogResult result = MessageBox.Show("Do you want to Save", "Add doctor", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Do you want to Save", "Add Dentist", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         if (result == DialogResult.OK)
                         {
                             AccountRepository.AddDentistAccount(Dentist);
@@ -100,7 +100,7 @@ namespace WinApp
                     }
                     if (Insert == false)
                     {
-                        DialogResult result = MessageBox.Show("Do you want to Save", "Update doctor", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Do you want to Save", "Update Dentist", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         if (result == DialogResult.OK)
                         {
                             AccountRepository.UpdateDentistAccount(Dentist);
@@ -109,10 +109,7 @@ namespace WinApp
                         }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Validation error");
-                }
+               
             } catch(Exception ex)
             {
                 throw new Exception(ex.Data.ToString());
@@ -121,15 +118,38 @@ namespace WinApp
 
         private bool Validate()
         {
-            if (
-                string.IsNullOrEmpty(txtDentistName.Text)||txtDentistName.TextLength < 8 ||
-                string.IsNullOrEmpty(txtDentistLoginName.Text)||txtDentistLoginName.TextLength < 8 ||
-                string.IsNullOrEmpty(txtDentistPassword.Text)
-                )
+            bool check = true;
+            string error = "";
+            if (string.IsNullOrEmpty(txtDentistName.Text)||txtDentistName.TextLength < 8)
             {
-                return false;
+                error += "Dentist name must be > 8 character ";
+                check = false;
             }
-            return true;
+            if (string.IsNullOrEmpty(txtDentistLoginName.Text) || txtDentistLoginName.TextLength < 8)
+            {
+                error += ", \nDentist Login name must be > 8 character ";
+                check = false;
+            }
+            if (string.IsNullOrEmpty(txtDentistPassword.Text) || txtDentistPassword.TextLength < 8)
+            {
+                error += ", \nDentist password must be > 8 character ";
+                check = false;
+            }
+            if (!check)
+            {
+                MessageBox.Show(error);
+            }
+
+            return check;
+
+
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
