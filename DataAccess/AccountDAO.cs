@@ -67,7 +67,7 @@ namespace DataAccess
                 {
                     return context.Accounts.Where(a => a.Role == 3).ToList();
 
-                    return context.Accounts.Where(a => a.Role == 3).ToList();
+                  
                 }
             }
             catch (Exception ex)
@@ -97,24 +97,36 @@ namespace DataAccess
             }
         }
 
-        public void AddDentistAccount(Account account)
+        public void AddAccount(Account account)
         {
 
             try
             {
                 using (var context = new DBSContext())
                 {
+                    var a = context.Accounts.Where(x => x.Username.Equals(account.Username) && x.Id != account.Id).FirstOrDefault();
+                   
+                        if (a == null)
+                    {
+                        if (account.Role == 1)
+                        {
+                            throw new Exception("Do not allow");
 
-                    account.Role = 3;
-                    context.Add(account);
-                    context.SaveChanges();
+                        }
+                        context.Add(account);
+                        context.SaveChanges();
 
+                    }
+                    else
+                    {
+                        throw new Exception("This accoutt already exits");
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception(ex.Message);
             }
         }
 
@@ -136,7 +148,7 @@ namespace DataAccess
                     }
                     else
                     {
-                        throw new Exception("Username alraedy in use");
+                        throw new Exception("Username already in use");
                     }
 
                 }
@@ -156,16 +168,29 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-                    account.Role = 3;
-                    context.Entry<Account>(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                    context.SaveChanges();
+                    var a = context.Accounts.Where(x => x.Username.Equals(account.Username) && x.Id != account.Id).FirstOrDefault();
+                    if (a == null)
+                    {
+                        if (account.Role == 1)
+                        {
+                            throw new Exception("Do not allow");
 
+                        }
+                      
+                        context.Entry<Account>(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                        context.SaveChanges();
+
+                    }
+                    else
+                    {
+                        throw new Exception("Username already in use");
+                    }
                 }
 
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Data.ToString());
+                throw new Exception(ex.Message);
             }
         }
 
@@ -178,14 +203,18 @@ namespace DataAccess
 
                 using (var context = new DBSContext())
                 {
-                    var query = from a in context.Accounts.Where(a => a.Role == 3) select a;
+                    var query = from a in context.Accounts select a;
                     if (!string.IsNullOrEmpty(account.Name))
                     {
                         query = query.Where(a => a.Name.Contains(account.Name));
                     }
-                    if (!string.IsNullOrEmpty(account.Status.ToString()) || account.Status != 0)
+                    if (!string.IsNullOrEmpty(account.Status.ToString()) && account.Status != 0)
                     {
                         query = query.Where(a => a.Status == account.Status);
+                    }
+                    if (!string.IsNullOrEmpty(account.Role.ToString()) && account.Role != 0)
+                    {
+                        query = query.Where(a => a.Role == account.Role);
                     }
                     accounts = query.ToList();
 
@@ -198,6 +227,23 @@ namespace DataAccess
             }
             return accounts;
 
+        }
+
+        public List<Account> GetAccounts()
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Accounts.Where(a => a.Role == 3 || a.Role == 2).ToList();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
         }
     }
 }

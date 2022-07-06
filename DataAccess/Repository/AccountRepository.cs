@@ -18,7 +18,7 @@ namespace DataAccess
 
         public void UpdateAccount(Account account) => AccountDAO.Instance.UpdateAccount(account);   
 
-        public void AddDentistAccount(Account account) => AccountDAO.Instance.AddDentistAccount(account);
+        public void AddAccount(Account account) => AccountDAO.Instance.AddAccount(account);
 
         public List<Account> GetALLDentistList() => AccountDAO.Instance.GetALLDentistList();
 
@@ -26,5 +26,9 @@ namespace DataAccess
         public void UpdateDentistAccount(Account account) => AccountDAO.Instance.UpdateDentistAccount(account);
 
         public List<Account> filterDentist(Account account) => AccountDAO.Instance.filterDentist(account);
+
+        public List<Account> GetAccounts() => AccountDAO.Instance.GetAccounts();
+
+
     }
 }
