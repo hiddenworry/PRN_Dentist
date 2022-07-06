@@ -88,38 +88,40 @@ namespace WinApp
 
         private void frmServiceDetail_Load(object sender, EventArgs e)
         {
-
-            var StatusDictionary = new Dictionary<int, string>();
-            StatusDictionary.Add(1, "Active");
-            StatusDictionary.Add(2, "Inactive");
-
-            cbStatus.DataSource = StatusDictionary.ToList();
-            cbStatus.DisplayMember = "Value";
-            cbStatus.ValueMember = "Key";
-            // load service type
-            cbServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
-            cbServiceType.DisplayMember = "name";
-            cbServiceType.ValueMember = "id";
-
-            txtServiceID.Enabled = false;
-
-            if (Insert)
+            try
             {
-                lbServiceDetailID.Visible = false;
-                txtServiceID.Visible = false;
-                Reset();
-               
-            }
-            else
-            {
-                txtServiceID.Text = serviceData.Id.ToString();
-                txtServiceName.Text = serviceData.Name.ToString();
-                cbStatus.Text = serviceData.Status.ToString();
-                cbServiceType.Text = serviceData.ServiceTypeId.ToString();
-                cbEstimatedTime.Text = serviceData.EstimatedTime.ToString();
-                txtDescription.Text = serviceData.Description;
-            }
-            
+
+                var StatusDictionary = new Dictionary<int, string>();
+                StatusDictionary.Add(1, "Active");
+                StatusDictionary.Add(2, "Inactive");
+
+                cbStatus.DataSource = StatusDictionary.ToList();
+                cbStatus.DisplayMember = "Value";
+                cbStatus.ValueMember = "Key";
+                // load service type
+                cbServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
+                cbServiceType.DisplayMember = "name";
+                cbServiceType.ValueMember = "id";
+
+                txtServiceID.Enabled = false;
+
+                if (Insert)
+                {
+                    lbServiceDetailID.Visible = false;
+                    txtServiceID.Visible = false;
+                    Reset();
+
+                }
+                else
+                {
+                    txtServiceID.Text = serviceData.Id.ToString();
+                    txtServiceName.Text = serviceData.Name.ToString();
+                    cbStatus.Text = serviceData.Status.ToString();
+                    cbServiceType.Text = serviceData.ServiceTypeId.ToString();
+                    cbEstimatedTime.Text = serviceData.EstimatedTime.ToString();
+                    txtDescription.Text = serviceData.Description;
+                }
+            } catch(Exception ex) { }
             
 
         }

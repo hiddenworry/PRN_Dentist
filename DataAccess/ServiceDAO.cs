@@ -130,7 +130,7 @@ namespace DataAccess
                     {
                         query = query.Where(s => s.Name.Contains(service.Name));
                     }
-                    if (!string.IsNullOrEmpty(service.ServiceTypeId.ToString()))
+                    if (!string.IsNullOrEmpty(service.ServiceTypeId.ToString()) && service.ServiceTypeId != 0)
                     {
                         query = query.Where(s => s.ServiceTypeId == service.ServiceTypeId);
                     }
