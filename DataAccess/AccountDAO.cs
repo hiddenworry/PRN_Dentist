@@ -58,45 +58,153 @@ namespace DataAccess
             }
         }
 
-        public Account GetAccountById(int id)
+
+        public List<Account> GetALLDentistList()
         {
             try
             {
                 using (var context = new DBSContext())
                 {
-                    return context.Accounts.SingleOrDefault(x => x.Id == id);
+
+                    return context.Accounts.Where(a => a.Role == 3).ToList();
+
+
+
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+
+                throw new Exception();
+            }
+
+
+        }
+
+        public Account GetAccountById(int id)
+
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+
+
+
+                    return context.Accounts.SingleOrDefault(x => x.Id == id);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception();
             }
         }
 
+        public void AddDentistAccount(Account account)
+        {
+
+            try
+            {
+                using (var context = new DBSContext())
+                {
+
+                    account.Role = 3;
+                    context.Add(account);
+                    context.SaveChanges();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
+
+
         public void UpdateAccount(Account account)
+
         {
             try
             {
                 using (var context = new DBSContext())
                 {
                     //check username
-                    var a = context.Accounts.Where( x => x.Username == account.Username && x.Id != account.Id).FirstOrDefault();
-                    if(a == null)
+                    var a = context.Accounts.Where(x => x.Username == account.Username && x.Id != account.Id).FirstOrDefault();
+                    if (a == null)
                     {
                         context.Accounts.Update(account);
                         context.SaveChanges();
                         return;
-                    } else
+                    }
+                    else
                     {
                         throw new Exception("Username alraedy in use");
                     }
-                   
+
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+
         }
+
+
+
+        public void UpdateDentistAccount(Account account)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    account.Role = 3;
+                    context.Entry<Account>(account).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    context.SaveChanges();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Data.ToString());
+            }
+        }
+
+
+        public List<Account> filterDentist(Account account)
+        {
+            List<Account> accounts = new List<Account>();
+            try
+            {
+
+                using (var context = new DBSContext())
+                {
+                    var query = from a in context.Accounts.Where(a => a.Role == 3) select a;
+                    if (!string.IsNullOrEmpty(account.Name))
+                    {
+                        query = query.Where(a => a.Name.Contains(account.Name));
+                    }
+                    if (!string.IsNullOrEmpty(account.Status.ToString()) || account.Status != 0)
+                    {
+                        query = query.Where(a => a.Status == account.Status);
+                    }
+                    accounts = query.ToList();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Data.ToString());
+            }
+            return accounts;
+
+        }
+
+
     }
 }
