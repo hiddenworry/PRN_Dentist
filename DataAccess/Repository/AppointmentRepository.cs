@@ -38,12 +38,7 @@ namespace DataAccess
 
             List<string> availableOptions = new List<string>();
 
-<<<<<<< HEAD
-            //kiểm tra từng nha sĩ
-            foreach(Account account in new AccountRepository().GetActiveDentistList())
-=======
             foreach (Account account in new AccountRepository().GetActiveDentistList())
->>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6
             {
                 start = openTime;
                 List<string> options = new List<string>();
@@ -127,8 +122,6 @@ namespace DataAccess
 
 
         public Appointment GetAppointmentNearest() => AppointmentDAO.Instance.GetAppointmentNearest();
-
-        public void UpdateAppointment(Appointment appointment) => AppointmentDAO.Instance.UpdateAppointment(appointment);
 
         public List<Appointment> Get10FistappointmentDoneCustomerById(int id)
         {

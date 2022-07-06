@@ -404,3 +404,5 @@ D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProf
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources
 >>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
+C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources

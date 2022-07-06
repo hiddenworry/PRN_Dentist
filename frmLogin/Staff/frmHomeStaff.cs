@@ -111,7 +111,7 @@ namespace WinApp
                 Id = 0,
                 Name = "All"
             });
-            dentistList.AddRange(accountRepository.GetDentistList());
+            dentistList.AddRange(accountRepository.GetALLDentistList());
             comboBoxAppointmentDentist.DataSource = dentistList;
             comboBoxAppointmentDentist.DisplayMember = "Name";
             comboBoxAppointmentDentist.ValueMember = "Id";

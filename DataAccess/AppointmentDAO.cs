@@ -195,22 +195,6 @@ namespace DataAccess
                     }
                     
 
-                    public void UpdateAppointment(Appointment appointment)
-        {
-            try
-            {
-                using (var context = new DBSContext())
-                {
-                    context.Appointments.Update(appointment);
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
         public void UpdateAppointmentByDoctor(Appointment appointment)
         {
             try

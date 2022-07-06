@@ -58,40 +58,22 @@ namespace DataAccess
             }
         }
 
-<<<<<<< HEAD
-        public List<Account> GetDentistList()
-=======
 
         public List<Account> GetALLDentistList()
->>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6
         {
             try
             {
                 using (var context = new DBSContext())
                 {
-<<<<<<< HEAD
-                    return context.Accounts.Where(a => a.Role == 3).ToList();
-=======
-
                     return context.Accounts.Where(a => a.Role == 3).ToList();
 
-
-
->>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6
+                    return context.Accounts.Where(a => a.Role == 3).ToList();
                 }
             }
             catch (Exception ex)
             {
-<<<<<<< HEAD
                 throw new Exception();
             }
-        }
-=======
-
-                throw new Exception();
-            }
-
-
         }
 
         public Account GetAccountById(int id)
@@ -217,8 +199,5 @@ namespace DataAccess
             return accounts;
 
         }
-
-
->>>>>>> 42cc2ba450d82ce0b28a1449cbf15841d63a84f6
     }
 }
