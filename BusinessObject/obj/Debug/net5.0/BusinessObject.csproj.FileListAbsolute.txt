@@ -13,6 +13,7 @@ C:\Users\ADMIN\Downloads\GroupPRNPROJECT\BusinessObject\obj\Debug\net5.0\refint\
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+<<<<<<< HEAD
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.json
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.dev.json
@@ -28,3 +29,20 @@ C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\obj\Debu
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
 C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+=======
+D:\Session_5\PRN211\project-dbs\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
+D:\Session_5\PRN211\project-dbs\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.json
+D:\Session_5\PRN211\project-dbs\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.dev.json
+D:\Session_5\PRN211\project-dbs\BusinessObject\bin\Debug\net5.0\BusinessObject.dll
+D:\Session_5\PRN211\project-dbs\BusinessObject\bin\Debug\net5.0\BusinessObject.pdb
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.AssemblyReference.cache
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfoInputs.cache
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.AssemblyInfo.cs
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.csproj.CoreCompileInputs.cache
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.dll
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\refint\BusinessObject.dll
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
+D:\Session_5\PRN211\project-dbs\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+>>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b

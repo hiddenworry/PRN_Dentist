@@ -5836,19 +5836,40 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\ptl01\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\ntrun\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\WinApp.csproj",
       "projectName": "WinApp",
       "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\WinApp.csproj",
       "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\obj\\",
+=======
+      "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
+      "projectName": "WinApp",
+      "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
+      "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\obj\\",
+>>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5862,11 +5883,19 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj": {
               "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj"
             },
             "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj": {
               "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj"
+=======
+            "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
+            },
+            "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj"
+>>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b
             }
           }
         }
@@ -5916,8 +5945,20 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+>>>>>>> cfcc67d4effcb4b309db3dbae6de1ea096104a7b
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Session_5\\PRN211\\project-dbs\\WinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

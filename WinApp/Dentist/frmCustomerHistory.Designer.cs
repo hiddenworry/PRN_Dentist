@@ -79,6 +79,7 @@
             // txtDescription
             // 
             this.txtDescription.AllowDrop = true;
+            this.txtDescription.Enabled = false;
             this.txtDescription.Location = new System.Drawing.Point(385, 348);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";

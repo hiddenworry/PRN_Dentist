@@ -166,7 +166,6 @@
             this.txtDateOfBirth.Size = new System.Drawing.Size(151, 27);
             this.txtDateOfBirth.TabIndex = 29;
             this.txtDateOfBirth.ValidatingType = typeof(System.DateTime);
-            this.txtDateOfBirth.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // label1
             // 
@@ -177,7 +176,6 @@
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Date of birth";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelDentist
             // 

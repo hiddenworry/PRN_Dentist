@@ -382,7 +382,7 @@ namespace WinApp
             frmProfile.ShowDialog();
         }
 
-        private void dataGridViewAppointment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void dataGridViewAppointment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -401,7 +401,7 @@ namespace WinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Get appointment", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             frmAppointmentDetailDoctor frmAppointmentDetailDoctor = new frmAppointmentDetailDoctor()
@@ -425,6 +425,8 @@ namespace WinApp
                     MessageBox.Show(ex.Message, "Get next appointment", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -442,6 +444,16 @@ namespace WinApp
 
         private void btnCheckAbsent_Click(object sender, EventArgs e)
         {
+            DateTime now = DateTime.Now;
+            DateTime workingStart = DateTime.ParseExact(appointmentInfo.WorkingHour.Split('-')[0], "HH:mm", CultureInfo.InvariantCulture);
+
+
+            if (workingStart.AddMinutes(15) > now)
+            {
+                MessageBox.Show("This appointment not more than 15 minutes late", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult dialogResult = MessageBox.Show("Are you to check absent?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if( dialogResult == DialogResult.Yes)
             {
@@ -465,6 +477,7 @@ namespace WinApp
                 customer = null;
             }
         }
+
     }
 }
 
