@@ -224,6 +224,7 @@
             this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
+            this.dataGridViewAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellClick);
             // 
             // buttonAppointment
             // 

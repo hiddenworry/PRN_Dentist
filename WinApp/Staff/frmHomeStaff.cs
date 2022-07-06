@@ -323,7 +323,12 @@ namespace WinApp
             }
         }
 
+        private void dataGridViewAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewAppointment.SelectedRows.Count != 0)
+                buttonAppointmentUpdate.Enabled = true;
 
+        }
     }
 }
 

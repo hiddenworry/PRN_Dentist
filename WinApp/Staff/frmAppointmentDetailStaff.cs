@@ -109,6 +109,10 @@ namespace WinApp
             {
                 dataGridViewDetail.Columns["AppointmentServices"].Visible = false;
             }
+            if (dataGridViewDetail.Columns["Status"] != null)
+            {
+                dataGridViewDetail.Columns["Status"].Visible = false;
+            }
         }
 
         private void comboBoxService_SelectionChangeCommitted(object sender, EventArgs e)

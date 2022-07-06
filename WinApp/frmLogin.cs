@@ -56,6 +56,7 @@ namespace frmLogin
                     };
                     frmHomeDoctor.ShowDialog();
                 }
+                Close();
                 
             }
             else

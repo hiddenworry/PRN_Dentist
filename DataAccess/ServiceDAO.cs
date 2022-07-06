@@ -104,7 +104,7 @@ namespace DataAccess
             {
                 using (var Context = new DBSContext())
                 {
-                    return Context.Services.Where(s => s.Status == 1).ToList();
+                    return Context.Services.Include(s => s.ServiceType).Where(s => s.Status == 1).ToList();
                 }
             }
             catch (Exception ex) { 
