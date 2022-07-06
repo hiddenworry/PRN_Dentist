@@ -232,5 +232,41 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
         }
+
+
+        public List<Appointment> FilterAppointmentForAdmin(DateTime time, string phone, int dentistId, int status)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    var query =  from a in DBSContext.Appointments
+                                          join c in DBSContext.Customers on a.CustomerId equals c.Id
+                                          select a;
+                    if (!string.IsNullOrEmpty(time.ToString()))
+                    {
+                        query = query.Where(a => a.Time.Date == time.Date);
+                    }
+                    if (!string.IsNullOrEmpty(phone))
+                    {
+                        query = query.Where(a => a.Customer.Phone.Contains(phone));
+                    }
+                    if (!string.IsNullOrEmpty(dentistId.ToString()) && dentistId != 0)
+                    {
+                        query = query.Where(a => a.DentistId == dentistId);
+                    }
+                    if (!string.IsNullOrEmpty(status.ToString()) && status != 0)
+                    {
+                        query = query.Where(a => a.Status == status);
+                    }
+
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

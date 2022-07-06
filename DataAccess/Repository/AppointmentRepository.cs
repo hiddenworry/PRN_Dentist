@@ -140,5 +140,8 @@ namespace DataAccess
 
         public void UpdateAppointmentByDoctor(Appointment appointment)
                 => AppointmentDAO.Instance.UpdateAppointmentByDoctor(appointment);
+
+        public List<Appointment> FilterAppointmentForAdmin(DateTime time, string phone, int dentistId, int status) => AppointmentDAO.Instance.FilterAppointmentForAdmin(time,  phone, dentistId, status);
+       
     }
 }

@@ -60,10 +60,7 @@ namespace WinApp
 
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Validate error");
-                }
+                
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -149,12 +146,22 @@ namespace WinApp
         private bool validate(Service service)
         {
             bool check = true;
-            if(string.IsNullOrEmpty(service.Name))
+            string error = "";
+            if(string.IsNullOrEmpty(service.Name) || service.Name.Length < 8)
              
             {
                 check = false;
+                error += "Servcie Name must >= 8 character";
 
             }
+            if (string.IsNullOrEmpty(service.Description))
+            {
+                check = false;
+                error += ", \nServcie description must >= 8 character";
+
+            }
+            if(!check)
+                MessageBox.Show(error);
             return check;
 
         }

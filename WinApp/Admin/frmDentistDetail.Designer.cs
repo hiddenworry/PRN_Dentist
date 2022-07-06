@@ -40,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -136,7 +135,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnSave.Location = new System.Drawing.Point(159, 327);
+            this.btnSave.Location = new System.Drawing.Point(208, 327);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(113, 34);
             this.btnSave.TabIndex = 13;
@@ -147,22 +146,13 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button2.Location = new System.Drawing.Point(311, 327);
+            this.button2.Location = new System.Drawing.Point(391, 327);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 34);
             this.button2.TabIndex = 14;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnReset.Location = new System.Drawing.Point(456, 327);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(113, 34);
-            this.btnReset.TabIndex = 15;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label6
             // 
@@ -191,7 +181,6 @@
             this.ClientSize = new System.Drawing.Size(746, 441);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbStatus);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
@@ -227,7 +216,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbStatus;
     }
