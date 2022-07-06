@@ -17,9 +17,11 @@ namespace WinApp
         List<Panel> panelList = new List<Panel>();
         public Account accountLogin { get; set; }
 
-        ICustomerRepository customerRepository = new CustomerRepository();
-        IAppointmentRepository appointmentRepository = new AppointmentRepository();
-
+        ICustomerRepository customerRepository;
+        IAppointmentRepository appointmentRepository;
+        IAccountRepository accountRepository;
+        IAppointmentServiceRepository appointmentServiceRepository;
+        IServiceRepository serviceRepository;
         BindingSource source;
         BindingSource sourceAppointment;
 
@@ -28,6 +30,10 @@ namespace WinApp
         {
             InitializeComponent();
             customerRepository = new CustomerRepository();
+            appointmentRepository = new AppointmentRepository();
+            accountRepository = new AccountRepository();
+            appointmentServiceRepository = new AppointmentServiceRepository();
+            serviceRepository = new ServiceRepository();
         }
 
         private void LoadListCustomer(List<Customer> list)
@@ -100,21 +106,87 @@ namespace WinApp
             panelAppointment.BringToFront();
             LoadAppointmentList();
             LoadListCustomer(customerRepository.GetAll());
+            List<Account> dentistList = new List<Account>();
+            dentistList.Add(new Account { 
+                Id = 0,
+                Name = "All"
+            });
+            dentistList.AddRange(accountRepository.GetALLDentistList());
+            comboBoxAppointmentDentist.DataSource = dentistList;
+            comboBoxAppointmentDentist.DisplayMember = "Name";
+            comboBoxAppointmentDentist.ValueMember = "Id";
+            comboBoxStatus.SelectedIndex = 0;
         }
 
         private void buttonFindAppointment_Click(object sender, EventArgs e)
         {
-
+            LoadAppointmentList();
         }
 
         public void LoadAppointmentList()
         {
-            dataGridViewAppointment.DataSource = appointmentRepository.GetAppointmentList(DateTime.Now.Date, "", 0, 0);
+            buttonAppointmentUpdate.Enabled = false;
+            int status;
+            switch (comboBoxStatus.Text)
+            {
+                case "All":
+                    {
+                        status = 0;
+                        break;
+                    }
+                case "Waiting":
+                    {
+                        status = 1;
+                        break;
+                    }
+                case "Done":
+                    {
+                        status = 2;
+                        break;
+                    }
+                case "Cancel":
+                    {
+                        status = 3;
+                        break;
+                    }
+                default:
+                    {
+                        status = 0;
+                        break;
+                    }
+            }
+            Account dentist = comboBoxAppointmentDentist.SelectedItem as Account;
+            int dentistId = dentist != null ? dentist.Id : 0;
+            dataGridViewAppointment.DataSource = appointmentRepository.GetAppointmentList(dateTimePickerAppointmentDate.Value, textBoxAppointmentPhone.Text, dentistId, status);
+            if (dataGridViewAppointment.Columns["CustomerId"] != null)
+            {
+                dataGridViewAppointment.Columns["CustomerId"].Visible = false;
+            }
+            if (dataGridViewAppointment.Columns["DentistId"] != null)
+            {
+                dataGridViewAppointment.Columns["DentistId"].Visible = false;
+            }
+            if (dataGridViewAppointment.Columns["AppointmentServices"] != null)
+            {
+                dataGridViewAppointment.Columns["AppointmentServices"].Visible = false;
+            }
         }
 
         private void buttonAppointmentAdd_Click(object sender, EventArgs e)
         {
-
+            frmAppointmentDetailStaff frmAppointmentDetailstaff = new frmAppointmentDetailStaff
+            {
+                appointmentRepository = appointmentRepository,
+                customerRepository = customerRepository,
+                appointmentServiceRepository = appointmentServiceRepository,
+                serviceRepository = serviceRepository,
+                InsertUpdateFlag = true,
+                detailList = new List<Service>()
+            };
+            if (frmAppointmentDetailstaff.ShowDialog() == DialogResult.OK)
+            {
+                LoadAppointmentList();
+            }
         }
 
         private void buttonAppointmentUpdate_Click(object sender, EventArgs e)
@@ -126,11 +198,15 @@ namespace WinApp
                 appointmentRepository = appointmentRepository,
                 customerRepository = customerRepository,
                 appointment = appointment,
+                appointmentServiceRepository = appointmentServiceRepository,
                 InsertUpdateFlag = false,
+                serviceRepository = serviceRepository,
+                detailList = serviceRepository.GetServiceListByAppointmentId(id),
             };
-            Hide();
-            Enabled = false;
-            frmAppointmentDetailstaff.ShowDialog();
+            if (frmAppointmentDetailstaff.ShowDialog() == DialogResult.OK)
+            {
+                LoadAppointmentList();
+            }
         }
         private void buttonCustomerAdd_Click(object sender, EventArgs e)
         {
@@ -175,35 +251,7 @@ namespace WinApp
             customer = customerRepository.GetById(id);
         }
 
-        private void dataGridViewCustomer_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
-            {
-                CustomerRepository = customerRepository,
-                isInsert = false,
-                Text = "Update new Customer",
-                CustomerInfo = customer,
-            };
-            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
-            {
-                LoadListCustomer(customerRepository.GetAll());
-            }
-        }
-
-        private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
-            {
-                CustomerRepository = customerRepository,
-                isInsert = false,
-                Text = "Update new Customer",
-                CustomerInfo = customer,
-            };
-            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
-            {
-                LoadListCustomer(customerRepository.GetAll());
-            }
-        }
+     
 
         private void buttonCustomerFind_Click(object sender, EventArgs e)
         {
@@ -238,20 +286,6 @@ namespace WinApp
             }
         }
 
-        private void dataGridViewCustomer_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //var grid = (DataGridView)sender;
-
-            //if (grid.Columns[e.ColumnIndex].Name == "Gender")
-            //{
-            //    bool x = (bool)e.Value;
-            //    e.Value  = x ? "yes" : "no";
-
-            //    e.FormattingApplied = true;
-            //}
-
-
-        }
 
         private void txtLinkLabelNameAccountLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -263,9 +297,18 @@ namespace WinApp
             frmProfile.ShowDialog();
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
 
+        private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+
+            customer = customerRepository.GetById(id);
+            buttonCustomerUpdate_Click(sender, e);
+        }
+
+        private void dataGridViewAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            buttonAppointmentUpdate.Enabled = true;
         }
     }
 }

@@ -7,8 +7,6 @@ namespace DataAccess
     {
         Account CheckLogin(string username, string password);
         List<Account> GetActiveDentistList();
-
-
         List<Account> GetALLDentistList();
 
         void AddDentistAccount(Account account);
@@ -20,6 +18,5 @@ namespace DataAccess
         void UpdateAccount(Account account);
 
         List<Account> filterDentist(Account account);
-
     }
 }

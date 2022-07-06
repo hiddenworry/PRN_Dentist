@@ -32,7 +32,7 @@
             this.labelAppointment = new System.Windows.Forms.Label();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.buttonFindAppointment = new System.Windows.Forms.Button();
             this.textBoxAppointmentPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             // groupBoxFilter
             // 
             this.groupBoxFilter.Controls.Add(this.label2);
-            this.groupBoxFilter.Controls.Add(this.comboBox1);
+            this.groupBoxFilter.Controls.Add(this.comboBoxStatus);
             this.groupBoxFilter.Controls.Add(this.buttonFindAppointment);
             this.groupBoxFilter.Controls.Add(this.textBoxAppointmentPhone);
             this.groupBoxFilter.Controls.Add(this.label3);
@@ -118,13 +118,19 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Status";
             // 
-            // comboBox1
+            // comboBoxStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 28);
-            this.comboBox1.TabIndex = 11;
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "All",
+            "Waiting",
+            "Done",
+            "Cancel"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(77, 126);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(127, 28);
+            this.comboBoxStatus.TabIndex = 11;
             // 
             // buttonFindAppointment
             // 
@@ -180,6 +186,7 @@
             // 
             // comboBoxAppointmentDentist
             // 
+            this.comboBoxAppointmentDentist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentDentist.FormattingEnabled = true;
             this.comboBoxAppointmentDentist.Location = new System.Drawing.Point(77, 92);
             this.comboBoxAppointmentDentist.Name = "comboBoxAppointmentDentist";
@@ -212,11 +219,13 @@
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
             this.dataGridViewAppointment.MultiSelect = false;
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
+            this.dataGridViewAppointment.ReadOnly = true;
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
             this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
+            this.dataGridViewAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellClick);
             // 
             // buttonAppointment
             // 
@@ -251,11 +260,7 @@
             this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
             this.dataGridViewCustomer.TabIndex = 7;
-            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
-            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
-            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
             this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
-            this.dataGridViewCustomer.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewCustomer_CellFormatting);
             // 
             // buttonCustomerAdd
             // 
@@ -388,7 +393,6 @@
             this.label8.Size = new System.Drawing.Size(94, 25);
             this.label8.TabIndex = 24;
             this.label8.Text = "Welcome, ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // frmHomeStaff
             // 
@@ -438,7 +442,7 @@
         private System.Windows.Forms.GroupBox groupBoxFilter;
         private System.Windows.Forms.Label labelAppointment;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.DataGridView dataGridViewCustomer;
         private System.Windows.Forms.Button buttonCustomerAdd;
         private System.Windows.Forms.Button buttonCustomerUpdate;

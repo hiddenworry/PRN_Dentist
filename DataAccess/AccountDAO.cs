@@ -65,20 +65,15 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-
                     return context.Accounts.Where(a => a.Role == 3).ToList();
 
-
-
+                    return context.Accounts.Where(a => a.Role == 3).ToList();
                 }
             }
             catch (Exception ex)
             {
-
                 throw new Exception();
             }
-
-
         }
 
         public Account GetAccountById(int id)
@@ -204,7 +199,5 @@ namespace DataAccess
             return accounts;
 
         }
-
-
     }
 }

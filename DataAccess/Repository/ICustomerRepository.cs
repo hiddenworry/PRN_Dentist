@@ -18,6 +18,6 @@ namespace DataAccess
         List<Customer> SearchCustomerByPhone(string phone);
         List<Customer> SearchCustomerByNameAndPhone(string name, string phone);
 
-        
+        Customer CheckCustomerByPhone(string phone);
     }
 }

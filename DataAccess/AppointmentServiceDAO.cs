@@ -36,5 +36,37 @@ namespace DataAccess
             }
         }
 
+        public void AddAppointmentService(AppointmentService appointmentService)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    DBSContext.AppointmentServices.Add(appointmentService);
+                    DBSContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteAppointmentServiceByAppointmentId(int id)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    List<AppointmentService> tmp = DBSContext.AppointmentServices.Where(ad => ad.AppointmentId == id).ToList();
+                    DBSContext.AppointmentServices.RemoveRange(tmp);
+                    DBSContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

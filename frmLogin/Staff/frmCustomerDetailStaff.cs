@@ -89,6 +89,11 @@ namespace WinApp
             }
             catch (Exception ex)
             {
+                if(ex.Message == "Phone is already in use")
+                {
+                    errorPhone.Text = "Phone is already in use";
+                    errorPhone.Visible = true;
+                }
                 MessageBox.Show(ex.Message, isInsert ? "Add new customer" : "update customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult = DialogResult.None;
             }
@@ -101,7 +106,7 @@ namespace WinApp
                 txtPhone.Text = String.Empty;
                 txtCustomerName.Text = String.Empty;
                 txtDateOfBirth.Text = String.Empty;
-                txtDateOfBirth.Text = String.Empty;
+                cbGender.Text = String.Empty;
             }
             else
             {
@@ -109,7 +114,7 @@ namespace WinApp
                 txtPhone.Text = CustomerInfo.Phone;
                 txtCustomerName.Text = CustomerInfo.Name;
                 txtDateOfBirth.Text = CustomerInfo.Dob.ToString();
-                txtDateOfBirth.Text = CustomerInfo.Gender ? "Male" : "Female";
+                cbGender.Text = CustomerInfo.Gender ? "Male" : "Female";
             }
         }
 
@@ -136,16 +141,20 @@ namespace WinApp
         private bool ValidateAll()
         {
             bool flag = true;
-            if (txtCustomerName.Text.Length < 8 || txtCustomerName.Text.Length > 50)
+            if (txtCustomerName.Text.Length < 8 || txtCustomerName.Text.Length > 30)
             {
                 flag = false;
-                errorName.Text = "Length of name must be from 8 to 50 characters.";
+                errorName.Text = "Length of name must be from 8 to 30 characters.";
                 errorName.Visible = true;
+            } else
+            {
+                errorName.Visible = false;
             }
 
             try
             {
                 DateTime.Parse(txtDateOfBirth.Text);
+                errorDateOfBirth.Visible = false;
             }
             catch
             {
@@ -164,7 +173,10 @@ namespace WinApp
                     errorDateOfBirth.Text = "Please choose right date of birth.";
                     errorDateOfBirth.Visible = true;
                     flag = false;
-                } 
+                } else
+                {
+                    errorDateOfBirth.Visible = false;
+                }
             }
             catch
             {
@@ -187,15 +199,35 @@ namespace WinApp
             {
                 errorPhone.Text = "Phone length must be 10 character";
                 errorPhone.Visible = true;
+            } else
+            {
+                errorPhone.Visible = false;
             }
 
-            if(cbGender.Text != "Male" && cbGender.Text != "Female")
+            if(!(cbGender.Text == "Male" || cbGender.Text == "Female"))
             {
                 errorGender.Text = "Please choose gender";
                 errorGender.Visible = true;
+            } else
+            {
+                errorGender.Visible = false;
             }
 
             return flag;
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+                Close();
+        }
+
+        private void frmCustomerDetailStaff_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = MessageBox.Show("Are you sure to quit ? All change will be delete.", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (DialogResult != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

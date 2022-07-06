@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace DataAccess
                 using(DBSContext DBSContext = new DBSContext())
                 {
                     return (
-                        from a in DBSContext.Appointments
+                        from a in DBSContext.Appointments.Include(a => a.Customer).Include(a => a.Dentist)
                         join c in DBSContext.Customers on a.CustomerId equals c.Id
                         where 
                             a.Time == time && 
@@ -57,7 +58,7 @@ namespace DataAccess
             {
                 using (DBSContext DBSContext = new DBSContext())
                 {
-                    return DBSContext.Appointments.FirstOrDefault(c => c.Id == id);
+                    return DBSContext.Appointments.Include(a => a.Customer).Include(a => a.Dentist).FirstOrDefault(c => c.Id == id);
                 }
             }
             catch (Exception ex)
@@ -80,14 +81,65 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             } }
 
-        public List<string> GetWorkingTimeListByDateAndDentist(DateTime time, int dentistId)
+        public List<string> GetWorkingTimeListByDateAndDentist(DateTime time, int dentistId, Appointment appointment)
         {
             try
             {
                 using (DBSContext DBSContext = new DBSContext())
                 {
-                    return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId)
+                    if(appointment != null )
+                    return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId && a.Id != appointment.Id)
                         .Select(a => a.WorkingHour).ToList();
+                    else return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId)
+                        .Select(a => a.WorkingHour).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Appointment AddAppointment(Appointment appointment)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    DBSContext.Appointments.Add(appointment);
+                    DBSContext.SaveChanges();
+                    return appointment;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateAppointment(Appointment appointment)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    DBSContext.Entry<Appointment>(appointment).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    DBSContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Appointment GetWaitingAppointmentByCustomerId(int id)
+        {
+            try
+            {
+                using (DBSContext DBSContext = new DBSContext())
+                {
+                    return DBSContext.Appointments.FirstOrDefault(a => a.CustomerId == id && a.Status == 1);
                 }
             }
             catch (Exception ex)
@@ -142,22 +194,6 @@ namespace DataAccess
                         }
                     }
                     
-
-                    public void UpdateAppointment(Appointment appointment)
-        {
-            try
-            {
-                using (var context = new DBSContext())
-                {
-                    context.Appointments.Update(appointment);
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
 
         public void UpdateAppointmentByDoctor(Appointment appointment)
         {

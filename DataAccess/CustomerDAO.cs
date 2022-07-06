@@ -34,8 +34,16 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-                    context.Customers.Update(newCustomer);
-                    context.SaveChanges();
+                    var cus = context.Customers.Where(x => x.Phone == newCustomer.Phone && x.Id != newCustomer.Id).FirstOrDefault();
+                    if (cus == null)
+                    {
+                        context.Customers.Update(newCustomer);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("Phone is already in use");
+                    }
                 }
             }
             catch (Exception ex)
@@ -65,8 +73,16 @@ namespace DataAccess
             {
                 using (var context = new DBSContext())
                 {
-                    context.Customers.Add(newCustomer);
-                    context.SaveChanges();
+                    var cus = context.Customers.Where(x => x.Phone == newCustomer.Phone).FirstOrDefault();
+                    if(cus == null)
+                    {
+                        context.Customers.Add(newCustomer);
+                        context.SaveChanges();
+                    } else
+                    {
+                        throw new Exception("Phone is already in use");
+                    }
+                   
                 }
             }
             catch (Exception ex)
@@ -111,6 +127,21 @@ namespace DataAccess
                 using (var context = new DBSContext())
                 {
                     return context.Customers.Where(x => x.Phone.Contains(phone)).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Customer CheckCustomerByPhone(string phone)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Customers.FirstOrDefault(x => x.Phone.Equals(phone));
                 }
             }
             catch (Exception ex)
