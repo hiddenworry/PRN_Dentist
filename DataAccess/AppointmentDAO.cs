@@ -221,7 +221,7 @@ namespace DataAccess
                 using (var context = new DBSContext())
                 {
                    var list = from appointment in context.Appointments
-                              where appointment.CustomerId == customerId && appointment.Status == 5
+                              where appointment.CustomerId == customerId && appointment.Status == 2
                               select appointment;
                     return list.ToList();
 

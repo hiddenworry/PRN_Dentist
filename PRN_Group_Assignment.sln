@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinApp", "frmLogin\WinApp.csproj", "{7E00A45F-BB57-422F-BFCD-F16B46B3A814}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinApp", "WinApp\WinApp.csproj", "{7E00A45F-BB57-422F-BFCD-F16B46B3A814}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObject", "BusinessObject\BusinessObject.csproj", "{D20D542A-C6E6-4FB0-B834-56B687FF66CA}"
 EndProject
