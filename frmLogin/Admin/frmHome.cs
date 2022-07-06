@@ -204,12 +204,12 @@ namespace WinApp
             if (!string.IsNullOrEmpty(comboBoxServiceType.Text))
                 service.ServiceTypeId = Int32.Parse(comboBoxServiceType.SelectedValue.ToString());
 
-            source.DataSource = ServiceRepository.FilterService(service);
+            loadServiceList( ServiceRepository.FilterService(service));
           
                 
            
         }
-
+        
         private void GetAllServiceList()
         {
             loadServiceList(ServiceRepository.GetServices());
@@ -256,26 +256,34 @@ namespace WinApp
 
             if(!string.IsNullOrEmpty(CustomerName) && !string.IsNullOrEmpty(CustomerPhone))
             {
-                source.DataSource = CustomerRepository.SearchCustomerByNameAndPhone(CustomerName, CustomerPhone);
+                dataGridViewCustomer.DataSource = CustomerRepository.SearchCustomerByNameAndPhone(CustomerName, CustomerPhone);
             }
             else  if (string.IsNullOrEmpty(CustomerName) && !string.IsNullOrEmpty(CustomerPhone)) {
-                source.DataSource = CustomerRepository.SearchCustomerByPhone(CustomerPhone);
+                dataGridViewCustomer.DataSource = CustomerRepository.SearchCustomerByPhone(CustomerPhone);
             }
             else if (!string.IsNullOrEmpty(CustomerName) && string.IsNullOrEmpty(CustomerPhone))
             {
-                source.DataSource = CustomerRepository.SearchCustomerByName(CustomerName);
+                dataGridViewCustomer.DataSource = CustomerRepository.SearchCustomerByName(CustomerName);
             }
         }
 
+        private void LoadAllAppointmentList()
+        {
+            LoadAppointmentList( AppointmentRepository.GetAppointmentsForAdmin());
 
+        }
+        private void LoadAppointmentList(List<Appointment> appointments)
+        {
+            source = new BindingSource();
+            source.DataSource = appointments;
+
+        }
 
         // Load appointment list
 
         private void btnLoadAppointmentList_Click(object sender, EventArgs e)
         {
-            source = new BindingSource();
-            source.DataSource = AppointmentRepository.GetAppointmentsForAdmin();
-            dataGridViewAppointment.DataSource = source;
+            LoadAllAppointmentList();
         }
 
         private void panelAppointment_Paint(object sender, PaintEventArgs e)
@@ -295,11 +303,131 @@ namespace WinApp
 
 
         // Dentist
-        private void panelDentist_Paint(object sender, PaintEventArgs e)
+        private void panelDentist_Paint_1(object sender, PaintEventArgs e)
         {
-            source = new BindingSource();
-            source.DataSource = AccountRepository.GetALLDentistList();
+            // LoadDentistList();
+            var StatusDictionary = new Dictionary<decimal, string>();
+            StatusDictionary.Add(1, "Active");
+            StatusDictionary.Add(2, "Inactive");
+            comboDentistStatus.DataSource = StatusDictionary.ToArray();
+            comboDentistStatus.DisplayMember = "Value";
+            comboDentistStatus.ValueMember = "Key";
+
+            if (dataGridViewDentist.Columns["Appointments"] != null)
+                dataGridViewDentist.Columns["Appointments"].Visible = false;
+            if (dataGridViewDentist.Columns["Role"] != null)
+                dataGridViewDentist.Columns["Role"].Visible = false;
         }
 
+        private void buttonDentistAdd_Click(object sender, EventArgs e)
+        {
+            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            {
+                AccountRepository = this.AccountRepository,
+                Insert = true
+
+            };
+            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadDentistList();
+            }
+        }
+
+        private void btnDentistLoad_Click(object sender, EventArgs e)
+        {
+            LoadDentistList();
+
+        }
+
+        private void GetAllDentists(List<Account> Dentists)
+        {
+            source = new BindingSource();
+            source.DataSource = Dentists;
+            dataGridViewDentist.DataSource = source;
+
+        }
+
+        private void LoadDentistList()
+        {
+
+            GetAllDentists(AccountRepository.GetALLDentistList());
+        }
+
+        private void buttonDentistUpdate_Click(object sender, EventArgs e)
+        {
+            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            {
+                AccountRepository = this.AccountRepository,
+                Insert = false,
+                accountData = account
+
+            };
+            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadDentistList();
+            }
+
+        }
+
+        private void dataGridViewDentist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            {
+                AccountRepository = this.AccountRepository,
+                Insert = false,
+                accountData = account
+
+            };
+            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+            {
+                LoadDentistList();
+            }
+        }
+
+        private void filterDentist_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string dentistName = textDentistName.Text;
+               
+                List<Account> DentistList = new List<Account>();
+                Account account = new Account();
+
+                if (!string.IsNullOrEmpty(dentistName))
+                {
+                    account.Name = dentistName;
+                }
+                if (!string.IsNullOrEmpty(comboDentistStatus.Text))
+                {
+                    account.Status = decimal.Parse(comboDentistStatus.SelectedValue.ToString());
+                  
+                }
+               
+                DentistList = AccountRepository.filterDentist(account);
+               
+                GetAllDentists(DentistList);
+                
+
+            } catch(Exception ex)
+            {
+                throw new Exception(ex.Data.ToString());
+            }
+         
+        }
+
+        private void btnDisableDentist_Click(object sender, EventArgs e)
+        {
+            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+
+            account.Status = 2;
+            DialogResult result = MessageBox.Show("Do you want to disable doctor?", "Yes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result.Equals(DialogResult.OK))
+            {
+                AccountRepository.UpdateAccount(account);
+            }
+            LoadDentistList();
+        }
     }
 }
