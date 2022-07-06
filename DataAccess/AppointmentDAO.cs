@@ -159,6 +159,25 @@ namespace DataAccess
             }
         }
 
+        public void UpdateAppointmentByDoctor(Appointment appointment)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    var a = context.Appointments.SingleOrDefault(x => x.Id == appointment.Id);
+                    a.Description = appointment.Description;
+                    a.Status = appointment.Status;
+                    context.Appointments.Update(a);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<Appointment> GetListAppointmentByCustomerId(int customerId)
         {
             try

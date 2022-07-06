@@ -34,9 +34,10 @@
             this.buttonFindAppointment = new System.Windows.Forms.Button();
             this.textBoxAppointmentPhone = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
-            this.btnNextAppointment = new System.Windows.Forms.Button();
             this.dataGridViewAppointment = new System.Windows.Forms.DataGridView();
             this.panelUpdateAppointment = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnCheckAbsent = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvService = new System.Windows.Forms.DataGridView();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -68,7 +69,6 @@
             this.panelAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAppointment.Controls.Add(this.labelAppointment);
             this.panelAppointment.Controls.Add(this.groupBoxFilter);
-            this.panelAppointment.Controls.Add(this.btnNextAppointment);
             this.panelAppointment.Controls.Add(this.dataGridViewAppointment);
             this.panelAppointment.Location = new System.Drawing.Point(12, 48);
             this.panelAppointment.Name = "panelAppointment";
@@ -123,18 +123,9 @@
             this.labelPhone.TabIndex = 4;
             this.labelPhone.Text = "Phone";
             // 
-            // btnNextAppointment
-            // 
-            this.btnNextAppointment.Location = new System.Drawing.Point(313, 159);
-            this.btnNextAppointment.Name = "btnNextAppointment";
-            this.btnNextAppointment.Size = new System.Drawing.Size(139, 29);
-            this.btnNextAppointment.TabIndex = 9;
-            this.btnNextAppointment.Text = "Next";
-            this.btnNextAppointment.UseVisualStyleBackColor = true;
-            this.btnNextAppointment.Click += new System.EventHandler(this.btnNextAppointment_Click);
-            // 
             // dataGridViewAppointment
             // 
+            this.dataGridViewAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAppointment.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
@@ -143,11 +134,14 @@
             this.dataGridViewAppointment.RowTemplate.Height = 29;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(775, 244);
             this.dataGridViewAppointment.TabIndex = 7;
+            this.dataGridViewAppointment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellDoubleClick);
             // 
             // panelUpdateAppointment
             // 
             this.panelUpdateAppointment.BackColor = System.Drawing.Color.LightBlue;
             this.panelUpdateAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUpdateAppointment.Controls.Add(this.btnBack);
+            this.panelUpdateAppointment.Controls.Add(this.btnCheckAbsent);
             this.panelUpdateAppointment.Controls.Add(this.label7);
             this.panelUpdateAppointment.Controls.Add(this.dgvService);
             this.panelUpdateAppointment.Controls.Add(this.txtPhone);
@@ -164,10 +158,30 @@
             this.panelUpdateAppointment.Controls.Add(this.txtCustomerName);
             this.panelUpdateAppointment.Controls.Add(this.btnFinish);
             this.panelUpdateAppointment.Controls.Add(this.Name);
-            this.panelUpdateAppointment.Location = new System.Drawing.Point(12, 47);
+            this.panelUpdateAppointment.Location = new System.Drawing.Point(849, 48);
             this.panelUpdateAppointment.Name = "panelUpdateAppointment";
             this.panelUpdateAppointment.Size = new System.Drawing.Size(775, 450);
             this.panelUpdateAppointment.TabIndex = 17;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(164, 399);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(131, 29);
+            this.btnBack.TabIndex = 27;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnCheckAbsent
+            // 
+            this.btnCheckAbsent.Location = new System.Drawing.Point(472, 399);
+            this.btnCheckAbsent.Name = "btnCheckAbsent";
+            this.btnCheckAbsent.Size = new System.Drawing.Size(131, 29);
+            this.btnCheckAbsent.TabIndex = 27;
+            this.btnCheckAbsent.Text = "Check Absent";
+            this.btnCheckAbsent.UseVisualStyleBackColor = true;
+            this.btnCheckAbsent.Click += new System.EventHandler(this.btnCheckAbsent_Click);
             // 
             // label7
             // 
@@ -345,14 +359,13 @@
             this.label8.Size = new System.Drawing.Size(94, 25);
             this.label8.TabIndex = 22;
             this.label8.Text = "Welcome, ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // frmHomeDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(806, 514);
+            this.ClientSize = new System.Drawing.Size(1741, 514);
             this.Controls.Add(this.txtLinkLabelNameAccountLogin);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panelUpdateAppointment);
@@ -380,7 +393,6 @@
         private System.Windows.Forms.Button buttonFindAppointment;
         private System.Windows.Forms.TextBox textBoxAppointmentPhone;
         private System.Windows.Forms.Label labelPhone;
-        private System.Windows.Forms.Button btnNextAppointment;
         private System.Windows.Forms.DataGridView dataGridViewAppointment;
         private System.Windows.Forms.Panel panelUpdateAppointment;
         private System.Windows.Forms.Label label1;
@@ -401,5 +413,7 @@
         private System.Windows.Forms.Label Name;
         private System.Windows.Forms.LinkLabel txtLinkLabelNameAccountLogin;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnCheckAbsent;
     }
 }

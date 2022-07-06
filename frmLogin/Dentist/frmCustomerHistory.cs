@@ -18,7 +18,6 @@ namespace WinApp.Dentist
         public ICustomerRepository CustomerRepository { get; set; }
         public IAppointmentRepository AppointmentRepository { get; set; }
         public IServiceRepository ServiceRepository { get; set; }
-
         public IAccountRepository AccountRepository { get; set; }
         BindingSource source;
         public frmCustomerHistory()
@@ -60,7 +59,7 @@ namespace WinApp.Dentist
                     {
                         IdHistory = history.Id,
                         Time = history.Time,
-                        WorkinhHour = history.WorkingHour,
+                        WorkingHour = history.WorkingHour,
                         DotorName = AccountRepository.GetAccountById(history.DentistId).Name,
                         Description = history.Description,
                     };
@@ -145,7 +144,7 @@ public class AppointmentHistory
     public DateTime Time { get; set; }
     public string DotorName { get; set; }
 
-    public string WorkinhHour { get; set; }
+    public string WorkingHour { get; set; }
 
     public string Description { get; set; }
 }

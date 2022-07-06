@@ -88,5 +88,7 @@ namespace DataAccess
             return appointmentList;
         }
 
+        public void UpdateAppointmentByDoctor(Appointment appointment)
+                => AppointmentDAO.Instance.UpdateAppointmentByDoctor(appointment);
     }
 }
