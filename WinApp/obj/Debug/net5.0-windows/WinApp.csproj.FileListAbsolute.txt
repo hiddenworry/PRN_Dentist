@@ -149,6 +149,7 @@ C:\Users\ptl01\Desktop\Syllabus\Semester5\PR\project\fix\WinApp\obj\Debug\net5.0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\Session_5\PRN211\project-dbs\WinApp\bin\Debug\net5.0-windows\WinApp.exe
 D:\Session_5\PRN211\project-dbs\WinApp\bin\Debug\net5.0-windows\WinApp.deps.json
 D:\Session_5\PRN211\project-dbs\WinApp\bin\Debug\net5.0-windows\WinApp.runtimeconfig.json
@@ -224,6 +225,8 @@ D:\Session_5\PRN211\project-dbs\WinApp\obj\Debug\net5.0-windows\WinApp.pdb
 D:\Session_5\PRN211\project-dbs\WinApp\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cache
 D:\Session_5\PRN211\project-dbs\WinApp\obj\Debug\net5.0-windows\ref\WinApp.dll
 =======
+=======
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
@@ -304,6 +307,9 @@ C:\Users\ADMIN\Downloads\GroupPRNPROJECT\WinApp\obj\Debug\net5.0-windows\WinApp.
 C:\Users\ADMIN\Downloads\GroupPRNPROJECT\WinApp\obj\Debug\net5.0-windows\ref\WinApp.dll
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
 =======
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
