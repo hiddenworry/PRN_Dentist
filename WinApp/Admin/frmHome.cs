@@ -173,6 +173,7 @@ namespace WinApp
 
             var StatusDictionary = new Dictionary<int, string>();
 
+            StatusDictionary.Add(0, "ALL");
             StatusDictionary.Add(1, "Active");
             StatusDictionary.Add(2, "Inactive");
           
@@ -184,7 +185,9 @@ namespace WinApp
             {
                 buttonServiceAdd.Enabled = false;
             }
-            comboBoxServiceType.DataSource = ServiceTypeRepository.GetServiceTypeList();
+            List<ServiceType> serviceTypes = ServiceTypeRepository.GetServiceTypeList();
+            serviceTypes.Add(new ServiceType { Id = 0, Name = "ALL"});
+            comboBoxServiceType.DataSource = serviceTypes;
             comboBoxServiceType.DisplayMember = "name";
             comboBoxServiceType.ValueMember = "id";
 
@@ -202,40 +205,48 @@ namespace WinApp
 
         private void dataGridViewService_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridViewService.CurrentRow != null)
+            try
             {
-                Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
-                frmServiceDetail frmService = new frmServiceDetail
+                if (dataGridViewService.CurrentRow != null)
                 {
-                    ServiceRepository = this.ServiceRepository,
-                    serviceData = service,
-                    Insert = false
+                    Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+                    frmServiceDetail frmService = new frmServiceDetail
+                    {
+                        ServiceRepository = this.ServiceRepository,
+                        serviceData = service,
+                        Insert = false
 
 
-                };
-               if (frmService.ShowDialog() == DialogResult.OK)
-                {
-                    GetAllServiceList();
+                    };
+                    if (frmService.ShowDialog() == DialogResult.OK)
+                    {
+                        GetAllServiceList();
+                    }
                 }
+            } catch(Exception ex)
+            {
+
             }
         }
 
-        private void btnServiceLoad_Click(object sender, EventArgs e)
-        {
-            loadServiceList(ServiceRepository.GetServices());
-        }
-
+    
         private void buttonServiceFind_Click(object sender, EventArgs e)
         {
             Service service = new Service();
+            service.Status = 0;
+            service.ServiceTypeId = 0;
             if (!string.IsNullOrEmpty(textBoxServiceName.Text))
                 service.Name = textBoxServiceName.Text;
-            if(!string.IsNullOrEmpty(comboBoxServiceStatus.Text))
+            if(!string.IsNullOrEmpty(comboBoxServiceStatus.Text) && !comboBoxServiceStatus.Text.Equals("ALL"))
                 service.Status = Int32.Parse(comboBoxServiceStatus.SelectedValue.ToString());
-            if (!string.IsNullOrEmpty(comboBoxServiceType.Text))
+            if (!string.IsNullOrEmpty(comboBoxServiceType.Text) && !comboBoxServiceType.Text.Equals("ALL"))
                 service.ServiceTypeId = Int32.Parse(comboBoxServiceType.SelectedValue.ToString());
 
-            loadServiceList( ServiceRepository.FilterService(service));
+            List<Service> services = ServiceRepository.FilterService(service);
+            if (services.Count == 0)
+                MessageBox.Show("Not found");
+            else
+                loadServiceList(services );
           
                 
            
@@ -244,7 +255,7 @@ namespace WinApp
         private void GetAllServiceList()
         {
             
-            loadServiceList(ServiceRepository.GetActiveServiceList());
+            loadServiceList(ServiceRepository.GetServices());
         }
 
         private void buttonServiceDisable_Click(object sender, EventArgs e)
@@ -343,7 +354,7 @@ namespace WinApp
         private void panelAppointment_Paint(object sender, PaintEventArgs e)
         {
             var StatusDictionary = new Dictionary<int, string>();
-            StatusDictionary.Add(0, "All");
+            StatusDictionary.Add(0, "ALL");
             StatusDictionary.Add(1, "Waiting");
             StatusDictionary.Add(2, "Done");
             StatusDictionary.Add(3, "Cancel");
@@ -353,12 +364,12 @@ namespace WinApp
             
 
             var DentistList = AccountRepository.GetALLDentistList();
-            comboBoxAppointmentDentist.SelectedIndex = -1;
+            
             if (DentistList.ToList().Count > 0)
             {
 
-                
-                comboBoxAppointmentDentist.DataSource = AccountRepository.GetALLDentistList();
+                DentistList.Add(new Account { Id = 0, Name = "ALL" });
+                comboBoxAppointmentDentist.DataSource = DentistList.ToList();
                 comboBoxAppointmentDentist.DisplayMember = "Name";
                 comboBoxAppointmentDentist.ValueMember = "Id";
               
@@ -383,9 +394,16 @@ namespace WinApp
         private void panelDentist_Paint_1(object sender, PaintEventArgs e)
         {
 
-          
+            var RoleDictionary = new Dictionary<int, string>();
+            RoleDictionary.Add(0, "ALL");
+            RoleDictionary.Add(2, "Doctor");
+            RoleDictionary.Add(3, "Staff");
+            cbRole.DataSource = RoleDictionary.ToList();
+            cbRole.DisplayMember = "Value";
+            cbRole.ValueMember = "Key";
 
             var StatusDictionary = new Dictionary<decimal, string>();
+            StatusDictionary.Add(0, "ALL");
             StatusDictionary.Add(1, "Active");
             StatusDictionary.Add(2, "Inactive");
             comboDentistStatus.DataSource = StatusDictionary.ToArray();
@@ -402,7 +420,7 @@ namespace WinApp
 
         private void buttonDentistAdd_Click(object sender, EventArgs e)
         {
-            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            frmAccountDetail frmDentistDetail = new frmAccountDetail
             {
                 AccountRepository = this.AccountRepository,
                 Insert = true
@@ -414,21 +432,7 @@ namespace WinApp
             }
         }
 
-        private void btnDentistLoad_Click(object sender, EventArgs e)
-        {
-            if (AccountRepository.GetALLDentistList().Count == 0 || dataGridViewDentist.Rows.Count == 0)
-            {
-                buttonDentistUpdate.Enabled = false;
-                btnDisableDentist.Enabled = false;
-            }
-            else
-            {
-                buttonDentistUpdate.Enabled = true;
-                btnDisableDentist.Enabled = true;
-            }
-            LoadDentistList();
-
-        }
+      
 
         private void GetAllDentists(List<Account> Dentists)
         {
@@ -453,13 +457,13 @@ namespace WinApp
         private void LoadDentistList()
         {
 
-            GetAllDentists(AccountRepository.GetActiveDentistList());
+            GetAllDentists(AccountRepository.GetAccounts());
         }
 
         private void buttonDentistUpdate_Click(object sender, EventArgs e)
         {
             Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
-            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            frmAccountDetail frmDentistDetail = new frmAccountDetail
             {
                 AccountRepository = this.AccountRepository,
                 Insert = false,
@@ -475,18 +479,21 @@ namespace WinApp
 
         private void dataGridViewDentist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
-            frmDentistDetail frmDentistDetail = new frmDentistDetail
+            try
             {
-                AccountRepository = this.AccountRepository,
-                Insert = false,
-                accountData = account
+                Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+                frmAccountDetail frmDentistDetail = new frmAccountDetail
+                {
+                    AccountRepository = this.AccountRepository,
+                    Insert = false,
+                    accountData = account
 
-            };
-            if (frmDentistDetail.ShowDialog() == DialogResult.OK)
-            {
-                LoadDentistList();
-            }
+                };
+                if (frmDentistDetail.ShowDialog() == DialogResult.OK)
+                {
+                    LoadDentistList();
+                }
+            } catch(Exception ex) { }
         }
 
         private void filterDentist_Click(object sender, EventArgs e)
@@ -497,20 +504,28 @@ namespace WinApp
                
                 List<Account> DentistList = new List<Account>();
                 Account account = new Account();
-
+                account.Status = 0;
+                account.Role = 0;
                 if (!string.IsNullOrEmpty(dentistName))
                 {
                     account.Name = dentistName;
                 }
-                if (!string.IsNullOrEmpty(comboDentistStatus.Text))
+                if (!string.IsNullOrEmpty(comboDentistStatus.Text) && !comboDentistStatus.Text.Equals("ALL"))
                 {
                     account.Status = decimal.Parse(comboDentistStatus.SelectedValue.ToString());
                   
                 }
-               
+                if (!string.IsNullOrEmpty(cbRole.Text) && !cbRole.Text.Equals("ALL"))
+                {
+                    account.Role = decimal.Parse(cbRole.SelectedValue.ToString());
+
+                }
+
                 DentistList = AccountRepository.filterDentist(account);
-               
-                GetAllDentists(DentistList);
+                if (DentistList.Count == 0)
+                    MessageBox.Show("Not found");
+               else
+                    GetAllDentists(DentistList);
                 
 
             } catch(Exception ex)
@@ -540,12 +555,12 @@ namespace WinApp
             int dentistId = 0;
             int status = 0;
 
-            if (!string.IsNullOrEmpty(comboBoxAppointmentDentist.Text)) {
+            if (!string.IsNullOrEmpty(comboBoxAppointmentDentist.Text) && !comboBoxAppointmentDentist.Text.Equals("ALL")) {
                 dentistId = Int32.Parse(comboBoxAppointmentDentist.SelectedValue.ToString());
             }
         
 
-            if (!string.IsNullOrEmpty(comboxAppointmentStatus.Text) || Int32.Parse(comboxAppointmentStatus.SelectedValue.ToString()) != 0){
+            if (!string.IsNullOrEmpty(comboxAppointmentStatus.Text) && !comboxAppointmentStatus.Text.Equals("ALL")){
                 status = Int32.Parse(comboxAppointmentStatus.SelectedValue.ToString());
             }
 
@@ -562,20 +577,37 @@ namespace WinApp
 
         private void dataGridViewService_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
-            if(service.Status ==2)
-                buttonServiceDisable.Enabled = false;
-            else
-                buttonServiceDisable.Enabled = true;
+            try
+            {
+                if (dataGridViewService.CurrentRow.DataBoundItem != null)
+                {
+
+
+                    Service service = (Service)dataGridViewService.CurrentRow.DataBoundItem;
+                    if (service == null) MessageBox.Show(service.ToString());
+                    if (service.Status == 2)
+                        buttonServiceDisable.Enabled = false;
+                    else
+                        buttonServiceDisable.Enabled = true;
+                }
+            } catch(Exception ex) {
+                throw new Exception(ex.Data.ToString());
+            }
         }
 
         private void dataGridViewDentist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
-            if (account.Status == 2)
-                btnDisableDentist.Enabled = false;
-            else
-                btnDisableDentist.Enabled = true; ;
-        }
+            try {
+                if (dataGridViewDentist.CurrentRow == null) throw new Exception();
+                
+                    Account account = (Account)dataGridViewDentist.CurrentRow.DataBoundItem;
+                    if (account == null) throw new Exception();
+                    if (account.Status == 2)
+                        btnDisableDentist.Enabled = false;
+                    else
+                        btnDisableDentist.Enabled = true; 
+                
+            } catch(Exception ex) { }
+            }
     }
 }

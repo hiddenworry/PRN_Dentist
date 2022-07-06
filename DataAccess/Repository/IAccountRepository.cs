@@ -9,7 +9,7 @@ namespace DataAccess
         List<Account> GetActiveDentistList();
         List<Account> GetALLDentistList();
 
-        void AddDentistAccount(Account account);
+        void AddAccount(Account account);
 
         void UpdateDentistAccount(Account account);
 
@@ -18,5 +18,7 @@ namespace DataAccess
         void UpdateAccount(Account account);
 
         List<Account> filterDentist(Account account);
+
+        List<Account> GetAccounts();
     }
 }
