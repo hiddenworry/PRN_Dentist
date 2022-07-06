@@ -399,3 +399,5 @@ E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.genruntimeconfig.cac
 E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\ref\WinApp.dll
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
 D:\Session_5\PRN211\project-dbs\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources
+E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.Dentist.frmCustomerHistory.resources
+E:\GroupPRNPROJECT\frmLogin\obj\Debug\net5.0-windows\WinApp.frmProfile.resources

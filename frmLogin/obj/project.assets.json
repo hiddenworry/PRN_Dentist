@@ -5836,24 +5836,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ntrun\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\frmLogin\\WinApp.csproj",
+      "projectUniqueName": "E:\\GroupPRNPROJECT\\frmLogin\\WinApp.csproj",
       "projectName": "WinApp",
-      "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\frmLogin\\WinApp.csproj",
-      "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
-      "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\frmLogin\\obj\\",
+      "projectPath": "E:\\GroupPRNPROJECT\\frmLogin\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "E:\\GroupPRNPROJECT\\frmLogin\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5867,11 +5862,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
+            "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "E:\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
             },
-            "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj"
+            "E:\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -5921,7 +5916,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }
