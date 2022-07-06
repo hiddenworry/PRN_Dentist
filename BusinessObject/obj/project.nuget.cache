@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "BDCX2Xty+S2x6R3yzowcFX+79ZKeB0U8WlBrC7cI5bAuDqSn63NSmLWGyLtXttL3GDJSUcgy+caNcdYzppHcdQ==",
   "success": true,
   "projectFilePath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj",
@@ -107,6 +108,12 @@
   "success": true,
   "projectFilePath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
   "expectedPackageFiles": [
+=======
+  "dgSpecHash": "W0YpXjpZYsImZ66znGyUnDGIOzqgxKZj95ZeAsVz821UV4XsHhGpWujUzctKkd3jJsLwPkhLSsPqudPhyg9CDQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj",
+  "expectedPackageFiles": [
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
@@ -204,6 +211,9 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+<<<<<<< HEAD
+>>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
+=======
 >>>>>>> d916333f99592c7e3c103b8bc58f93aa73e73750
   ],
   "logs": []
