@@ -5836,19 +5836,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+    "C:\\Users\\ntrun\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj",
+      "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
       "projectName": "WinApp",
-      "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\WinApp.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\obj\\",
+      "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
+      "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5862,11 +5867,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\BusinessObject\\BusinessObject.csproj"
+            "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
             },
-            "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\DataAccess\\DataAccess.csproj"
+            "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -5916,16 +5921,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\ADMIN\\Downloads\\GroupPRNPROJECT\\WinApp\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
