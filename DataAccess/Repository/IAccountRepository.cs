@@ -7,5 +7,6 @@ namespace DataAccess
     {
         Account CheckLogin(string username, string password);
         List<Account> GetActiveDentistList();
+        List<Account> GetDentistList();
     }
 }

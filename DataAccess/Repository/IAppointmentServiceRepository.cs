@@ -10,5 +10,7 @@ namespace DataAccess
     public interface IAppointmentServiceRepository
     {
         List<AppointmentService> GetAppointmentServiceListByAppointmentId(int id);
+        void AddAppointmentService(AppointmentService appointmentService);
+        void DeleteAppointmentServiceByAppointmentId(int id);
     }
 }

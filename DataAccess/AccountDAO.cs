@@ -57,5 +57,20 @@ namespace DataAccess
                 throw new Exception();
             }
         }
+
+        public List<Account> GetDentistList()
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Accounts.Where(a => a.Role == 3).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+        }
     }
 }

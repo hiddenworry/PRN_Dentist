@@ -119,6 +119,21 @@ namespace DataAccess
             }
         }
 
+        public Customer CheckCustomerByPhone(string phone)
+        {
+            try
+            {
+                using (var context = new DBSContext())
+                {
+                    return context.Customers.FirstOrDefault(x => x.Phone.Equals(phone));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<Customer> GetCustomerByNameAndPhone(string name, string phone)
         {
             try

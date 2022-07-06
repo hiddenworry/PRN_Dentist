@@ -16,5 +16,10 @@ namespace BusinessObject.Models
         public string Name { get; set; }
 
         public virtual ICollection<Service> Services { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

@@ -12,6 +12,10 @@ namespace DataAccess
         List<Appointment> GetAppointmentList(DateTime date, string phone, int dentistId, int status);
         List<Appointment> GetAppointmentByStatus( int status);
         Appointment GetAppointmentById(int id);
-        List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList);
+        List<string> GetTimeOptionByDate(DateTime time, List<Service> serviceList, Appointment appointment);
+        Appointment AddAppointment(Appointment appointment);
+        void UpdateAppointment(Appointment appointment);
+        int GetGetSuitableDentistByDate(DateTime time, List<Service> serviceList, string newWorkingHour, Appointment appointment);
+        Appointment GetWaitingAppointmentByCustomerId(int id);
     }
 }

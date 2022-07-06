@@ -8,6 +8,8 @@ namespace DataAccess
 {
     public class CustomerRepository : ICustomerRepository
     {
+        public Customer CheckCustomerByPhone(string phone) => CustomerDAO.Instance.CheckCustomerByPhone(phone);
+
         void ICustomerRepository.AddNewCustomer(Customer newCustomer) => CustomerDAO.Instance.AddCustomer(newCustomer);
 
         List<Customer> ICustomerRepository.GetAll() => CustomerDAO.Instance.GetAllCustomer();

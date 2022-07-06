@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -155,7 +156,7 @@ namespace DataAccess
 
 
                 return (
-                    from s in Context.Services
+                    from s in Context.Services.Include(s => s.ServiceType)
                     join ad in Context.AppointmentServices on s.Id equals ad.ServiceId
                     where
                         ad.AppointmentId == id

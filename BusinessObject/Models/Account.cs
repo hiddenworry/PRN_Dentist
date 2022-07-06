@@ -21,5 +21,10 @@ namespace BusinessObject.Models
         public decimal Status { get; set; }
 
         public virtual ICollection<Appointment> Appointments { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

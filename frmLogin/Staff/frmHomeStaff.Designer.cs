@@ -32,7 +32,7 @@
             this.labelAppointment = new System.Windows.Forms.Label();
             this.groupBoxFilter = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.buttonFindAppointment = new System.Windows.Forms.Button();
             this.textBoxAppointmentPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,11 +50,11 @@
             this.buttonCustomerUpdate = new System.Windows.Forms.Button();
             this.buttonDetailCustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelNameCustomer = new System.Windows.Forms.Label();
-            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
-            this.buttonCustomerFind = new System.Windows.Forms.Button();
-            this.labelCustomerPhone = new System.Windows.Forms.Label();
             this.textBoxCustomerPhone = new System.Windows.Forms.TextBox();
+            this.labelCustomerPhone = new System.Windows.Forms.Label();
+            this.buttonCustomerFind = new System.Windows.Forms.Button();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
+            this.labelNameCustomer = new System.Windows.Forms.Label();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panelCustomer = new System.Windows.Forms.Panel();
             this.panelAppointment.SuspendLayout();
@@ -92,7 +92,7 @@
             // groupBoxFilter
             // 
             this.groupBoxFilter.Controls.Add(this.label2);
-            this.groupBoxFilter.Controls.Add(this.comboBox1);
+            this.groupBoxFilter.Controls.Add(this.comboBoxStatus);
             this.groupBoxFilter.Controls.Add(this.buttonFindAppointment);
             this.groupBoxFilter.Controls.Add(this.textBoxAppointmentPhone);
             this.groupBoxFilter.Controls.Add(this.label3);
@@ -116,13 +116,19 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Status";
             // 
-            // comboBox1
+            // comboBoxStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 126);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 28);
-            this.comboBox1.TabIndex = 11;
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "All",
+            "Waiting",
+            "Done",
+            "Cancel"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(77, 126);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(127, 28);
+            this.comboBoxStatus.TabIndex = 11;
             // 
             // buttonFindAppointment
             // 
@@ -178,6 +184,7 @@
             // 
             // comboBoxAppointmentDentist
             // 
+            this.comboBoxAppointmentDentist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAppointmentDentist.FormattingEnabled = true;
             this.comboBoxAppointmentDentist.Location = new System.Drawing.Point(77, 92);
             this.comboBoxAppointmentDentist.Name = "comboBoxAppointmentDentist";
@@ -210,11 +217,13 @@
             this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
             this.dataGridViewAppointment.MultiSelect = false;
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
+            this.dataGridViewAppointment.ReadOnly = true;
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
             this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
             this.dataGridViewAppointment.TabIndex = 7;
+            this.dataGridViewAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellClick);
             // 
             // buttonAppointment
             // 
@@ -298,21 +307,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
             // 
-            // labelNameCustomer
+            // textBoxCustomerPhone
             // 
-            this.labelNameCustomer.AutoSize = true;
-            this.labelNameCustomer.Location = new System.Drawing.Point(18, 34);
-            this.labelNameCustomer.Name = "labelNameCustomer";
-            this.labelNameCustomer.Size = new System.Drawing.Size(49, 20);
-            this.labelNameCustomer.TabIndex = 4;
-            this.labelNameCustomer.Text = "Name";
+            this.textBoxCustomerPhone.Location = new System.Drawing.Point(85, 64);
+            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
+            this.textBoxCustomerPhone.Size = new System.Drawing.Size(127, 27);
+            this.textBoxCustomerPhone.TabIndex = 12;
             // 
-            // textBoxCustomerName
+            // labelCustomerPhone
             // 
-            this.textBoxCustomerName.Location = new System.Drawing.Point(85, 31);
-            this.textBoxCustomerName.Name = "textBoxCustomerName";
-            this.textBoxCustomerName.Size = new System.Drawing.Size(127, 27);
-            this.textBoxCustomerName.TabIndex = 6;
+            this.labelCustomerPhone.AutoSize = true;
+            this.labelCustomerPhone.Location = new System.Drawing.Point(18, 67);
+            this.labelCustomerPhone.Name = "labelCustomerPhone";
+            this.labelCustomerPhone.Size = new System.Drawing.Size(50, 20);
+            this.labelCustomerPhone.TabIndex = 11;
+            this.labelCustomerPhone.Text = "Phone";
             // 
             // buttonCustomerFind
             // 
@@ -324,21 +333,21 @@
             this.buttonCustomerFind.UseVisualStyleBackColor = true;
             this.buttonCustomerFind.Click += new System.EventHandler(this.buttonCustomerFind_Click);
             // 
-            // labelCustomerPhone
+            // textBoxCustomerName
             // 
-            this.labelCustomerPhone.AutoSize = true;
-            this.labelCustomerPhone.Location = new System.Drawing.Point(18, 67);
-            this.labelCustomerPhone.Name = "labelCustomerPhone";
-            this.labelCustomerPhone.Size = new System.Drawing.Size(50, 20);
-            this.labelCustomerPhone.TabIndex = 11;
-            this.labelCustomerPhone.Text = "Phone";
+            this.textBoxCustomerName.Location = new System.Drawing.Point(85, 31);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(127, 27);
+            this.textBoxCustomerName.TabIndex = 6;
             // 
-            // textBoxCustomerPhone
+            // labelNameCustomer
             // 
-            this.textBoxCustomerPhone.Location = new System.Drawing.Point(85, 64);
-            this.textBoxCustomerPhone.Name = "textBoxCustomerPhone";
-            this.textBoxCustomerPhone.Size = new System.Drawing.Size(127, 27);
-            this.textBoxCustomerPhone.TabIndex = 12;
+            this.labelNameCustomer.AutoSize = true;
+            this.labelNameCustomer.Location = new System.Drawing.Point(18, 34);
+            this.labelNameCustomer.Name = "labelNameCustomer";
+            this.labelNameCustomer.Size = new System.Drawing.Size(49, 20);
+            this.labelNameCustomer.TabIndex = 4;
+            this.labelNameCustomer.Text = "Name";
             // 
             // labelCustomer
             // 
@@ -410,7 +419,7 @@
         private System.Windows.Forms.GroupBox groupBoxFilter;
         private System.Windows.Forms.Label labelAppointment;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.DataGridView dataGridViewCustomer;
         private System.Windows.Forms.Button buttonCustomerAdd;
         private System.Windows.Forms.Button buttonCustomerUpdate;
