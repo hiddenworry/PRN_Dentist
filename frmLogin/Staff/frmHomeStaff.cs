@@ -192,17 +192,7 @@ namespace WinApp
 
         private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
-            {
-                CustomerRepository = customerRepository,
-                isInsert = false,
-                Text = "Update new Customer",
-                CustomerInfo = customer,
-            };
-            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
-            {
-                LoadListCustomer(customerRepository.GetAll());
-            }
+
         }
 
         private void buttonCustomerFind_Click(object sender, EventArgs e)
