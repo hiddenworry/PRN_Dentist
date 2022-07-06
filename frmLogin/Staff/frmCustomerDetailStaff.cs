@@ -218,11 +218,7 @@ namespace WinApp
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("Are you sure to quit ? All change will be delete.", "Quit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(DialogResult == DialogResult.Yes)
-            {
                 Close();
-            }
         }
 
         private void frmCustomerDetailStaff_FormClosing(object sender, FormClosingEventArgs e)

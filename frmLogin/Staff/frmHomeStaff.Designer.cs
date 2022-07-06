@@ -251,10 +251,7 @@
             this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
             this.dataGridViewCustomer.TabIndex = 7;
-            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
-            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
-            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
-            this.dataGridViewCustomer.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewCustomer_CellFormatting);
+            this.dataGridViewCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellDoubleClick);
             // 
             // buttonCustomerAdd
             // 
@@ -387,7 +384,6 @@
             this.label8.Size = new System.Drawing.Size(94, 25);
             this.label8.TabIndex = 24;
             this.label8.Text = "Welcome, ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // frmHomeStaff
             // 

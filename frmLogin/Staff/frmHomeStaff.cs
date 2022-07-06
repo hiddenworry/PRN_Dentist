@@ -175,25 +175,7 @@ namespace WinApp
             customer = customerRepository.GetById(id);
         }
 
-        private void dataGridViewCustomer_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmCustomerDetailStaff frmCustomerDetailStaff = new frmCustomerDetailStaff()
-            {
-                CustomerRepository = customerRepository,
-                isInsert = false,
-                Text = "Update new Customer",
-                CustomerInfo = customer,
-            };
-            if (frmCustomerDetailStaff.ShowDialog() == DialogResult.OK)
-            {
-                LoadListCustomer(customerRepository.GetAll());
-            }
-        }
-
-        private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void buttonCustomerFind_Click(object sender, EventArgs e)
         {
@@ -228,20 +210,6 @@ namespace WinApp
             }
         }
 
-        private void dataGridViewCustomer_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //var grid = (DataGridView)sender;
-
-            //if (grid.Columns[e.ColumnIndex].Name == "Gender")
-            //{
-            //    bool x = (bool)e.Value;
-            //    e.Value  = x ? "yes" : "no";
-
-            //    e.FormattingApplied = true;
-            //}
-
-
-        }
 
         private void txtLinkLabelNameAccountLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -253,9 +221,13 @@ namespace WinApp
             frmProfile.ShowDialog();
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
 
+        private void dataGridViewCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = int.Parse(dataGridViewCustomer.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+
+            customer = customerRepository.GetById(id);
+            buttonCustomerUpdate_Click(sender, e);
         }
     }
 }
