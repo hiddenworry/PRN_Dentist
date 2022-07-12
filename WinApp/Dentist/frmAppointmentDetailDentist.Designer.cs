@@ -68,7 +68,7 @@
             // btnCheck
             // 
             this.btnCheck.BackColor = System.Drawing.Color.Lavender;
-            this.btnCheck.Location = new System.Drawing.Point(272, 443);
+            this.btnCheck.Location = new System.Drawing.Point(272, 406);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(112, 32);
             this.btnCheck.TabIndex = 4;
@@ -193,7 +193,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(662, 513);
+            this.ClientSize = new System.Drawing.Size(662, 457);
             this.Controls.Add(this.dgvService);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -208,7 +208,7 @@
             this.Controls.Add(this.txtWorkingHour);
             this.Controls.Add(this.txtPhone);
             this.Name = "frmAppointmentDetailDentist";
-            this.Text = "Appointment Detail";
+            this.Text = "Appointment information";
             this.Load += new System.EventHandler(this.frmAppointmentDetailDoctor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.ResumeLayout(false);

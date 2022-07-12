@@ -256,7 +256,7 @@
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.txtCustomerName);
             this.Name = "frmCustomerDetailStaff";
-            this.Text = "frmCustomerDetail";
+            this.Text = "Customer information";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomerDetailStaff_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomerDetailStaff_Load);
             this.ResumeLayout(false);

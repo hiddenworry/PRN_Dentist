@@ -52,7 +52,7 @@
             // 
             // txtDentistName
             // 
-            this.txtDentistName.Location = new System.Drawing.Point(327, 205);
+            this.txtDentistName.Location = new System.Drawing.Point(260, 198);
             this.txtDentistName.Name = "txtDentistName";
             this.txtDentistName.Size = new System.Drawing.Size(190, 27);
             this.txtDentistName.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbID.Location = new System.Drawing.Point(159, 53);
+            this.lbID.Location = new System.Drawing.Point(92, 46);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(25, 20);
             this.lbID.TabIndex = 1;
@@ -71,28 +71,28 @@
             // 
             this.cbDentistGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDentistGender.FormattingEnabled = true;
-            this.cbDentistGender.Location = new System.Drawing.Point(327, 249);
+            this.cbDentistGender.Location = new System.Drawing.Point(260, 242);
             this.cbDentistGender.Name = "cbDentistGender";
             this.cbDentistGender.Size = new System.Drawing.Size(190, 28);
             this.cbDentistGender.TabIndex = 2;
             // 
             // txtDentistPassword
             // 
-            this.txtDentistPassword.Location = new System.Drawing.Point(327, 132);
+            this.txtDentistPassword.Location = new System.Drawing.Point(260, 125);
             this.txtDentistPassword.Name = "txtDentistPassword";
             this.txtDentistPassword.Size = new System.Drawing.Size(190, 27);
             this.txtDentistPassword.TabIndex = 5;
             // 
             // txtDentistLoginName
             // 
-            this.txtDentistLoginName.Location = new System.Drawing.Point(327, 88);
+            this.txtDentistLoginName.Location = new System.Drawing.Point(260, 81);
             this.txtDentistLoginName.Name = "txtDentistLoginName";
             this.txtDentistLoginName.Size = new System.Drawing.Size(190, 27);
             this.txtDentistLoginName.TabIndex = 6;
             // 
             // txtDentistID
             // 
-            this.txtDentistID.Location = new System.Drawing.Point(327, 50);
+            this.txtDentistID.Location = new System.Drawing.Point(260, 43);
             this.txtDentistID.Name = "txtDentistID";
             this.txtDentistID.ReadOnly = true;
             this.txtDentistID.Size = new System.Drawing.Size(190, 27);
@@ -102,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(159, 91);
+            this.label2.Location = new System.Drawing.Point(92, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 8;
@@ -112,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(156, 132);
+            this.label3.Location = new System.Drawing.Point(89, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 9;
@@ -122,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(159, 212);
+            this.label4.Location = new System.Drawing.Point(92, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 10;
@@ -132,7 +132,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(150, 257);
+            this.label5.Location = new System.Drawing.Point(83, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 11;
@@ -141,7 +141,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnSave.Location = new System.Drawing.Point(174, 439);
+            this.btnSave.Location = new System.Drawing.Point(107, 432);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(113, 34);
             this.btnSave.TabIndex = 13;
@@ -152,7 +152,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button2.Location = new System.Drawing.Point(379, 439);
+            this.button2.Location = new System.Drawing.Point(312, 432);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 34);
             this.button2.TabIndex = 14;
@@ -164,7 +164,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(159, 306);
+            this.label6.Location = new System.Drawing.Point(92, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 17;
@@ -174,7 +174,7 @@
             // 
             this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(327, 298);
+            this.cbStatus.Location = new System.Drawing.Point(260, 291);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(190, 28);
             this.cbStatus.TabIndex = 16;
@@ -183,7 +183,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(150, 172);
+            this.label1.Location = new System.Drawing.Point(83, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 20);
             this.label1.TabIndex = 19;
@@ -191,7 +191,7 @@
             // 
             // txtCofirmPassword
             // 
-            this.txtCofirmPassword.Location = new System.Drawing.Point(327, 169);
+            this.txtCofirmPassword.Location = new System.Drawing.Point(260, 162);
             this.txtCofirmPassword.Name = "txtCofirmPassword";
             this.txtCofirmPassword.Size = new System.Drawing.Size(190, 27);
             this.txtCofirmPassword.TabIndex = 18;
@@ -199,7 +199,7 @@
             // checkShowPassword
             // 
             this.checkShowPassword.AutoSize = true;
-            this.checkShowPassword.Location = new System.Drawing.Point(532, 138);
+            this.checkShowPassword.Location = new System.Drawing.Point(465, 131);
             this.checkShowPassword.Name = "checkShowPassword";
             this.checkShowPassword.Size = new System.Drawing.Size(67, 24);
             this.checkShowPassword.TabIndex = 20;
@@ -210,7 +210,7 @@
             // checkShowConfirmPassword
             // 
             this.checkShowConfirmPassword.AutoSize = true;
-            this.checkShowConfirmPassword.Location = new System.Drawing.Point(532, 171);
+            this.checkShowConfirmPassword.Location = new System.Drawing.Point(465, 164);
             this.checkShowConfirmPassword.Name = "checkShowConfirmPassword";
             this.checkShowConfirmPassword.Size = new System.Drawing.Size(67, 24);
             this.checkShowConfirmPassword.TabIndex = 21;
@@ -222,7 +222,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(159, 364);
+            this.label7.Location = new System.Drawing.Point(92, 357);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 20);
             this.label7.TabIndex = 23;
@@ -232,7 +232,7 @@
             // 
             this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(327, 356);
+            this.cbRole.Location = new System.Drawing.Point(260, 349);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(190, 28);
             this.cbRole.TabIndex = 22;
@@ -242,7 +242,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(746, 562);
+            this.ClientSize = new System.Drawing.Size(561, 506);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbRole);
             this.Controls.Add(this.checkShowConfirmPassword);
@@ -265,7 +265,7 @@
             this.Controls.Add(this.txtDentistName);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmAccountDetail";
-            this.Text = "frmDentistDetail";
+            this.Text = "Dentist information";
             this.Load += new System.EventHandler(this.frmDentistDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

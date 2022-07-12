@@ -80,16 +80,16 @@
             // 
             this.txtDescription.AllowDrop = true;
             this.txtDescription.Enabled = false;
-            this.txtDescription.Location = new System.Drawing.Point(385, 348);
+            this.txtDescription.Location = new System.Drawing.Point(391, 348);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(385, 139);
+            this.txtDescription.Size = new System.Drawing.Size(367, 139);
             this.txtDescription.TabIndex = 29;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(385, 325);
+            this.label2.Location = new System.Drawing.Point(391, 325);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 28;
@@ -124,14 +124,14 @@
             this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(-1, 148);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 148);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersVisible = false;
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 29;
             this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(775, 155);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(767, 155);
             this.dataGridViewCustomer.TabIndex = 26;
             this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
             this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
@@ -245,10 +245,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 605);
+            this.ClientSize = new System.Drawing.Size(845, 605);
             this.Controls.Add(this.panelCustomer);
             this.Name = "frmCustomerHistory";
-            this.Text = "frmCustomerHistory";
+            this.Text = "Customer\'s history";
             this.Load += new System.EventHandler(this.frmCustomerHistory_Load);
             this.panelCustomer.ResumeLayout(false);
             this.panelCustomer.PerformLayout();

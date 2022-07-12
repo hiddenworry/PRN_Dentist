@@ -114,8 +114,9 @@
             // 
             // dataGridViewDetail
             // 
+            this.dataGridViewDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDetail.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDetail.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewDetail.Location = new System.Drawing.Point(24, 170);
             this.dataGridViewDetail.MultiSelect = false;
             this.dataGridViewDetail.Name = "dataGridViewDetail";
@@ -208,7 +209,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerTime);
             this.Name = "frmAppointmentDetailStaff";
-            this.Text = "frmAppointmentDetail";
+            this.Text = "Appointment information";
             this.Load += new System.EventHandler(this.frmAppointmentDetailStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).EndInit();
             this.ResumeLayout(false);

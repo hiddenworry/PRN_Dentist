@@ -46,14 +46,14 @@
             // 
             // txtServiceName
             // 
-            this.txtServiceName.Location = new System.Drawing.Point(112, 75);
+            this.txtServiceName.Location = new System.Drawing.Point(100, 66);
             this.txtServiceName.Name = "txtServiceName";
             this.txtServiceName.Size = new System.Drawing.Size(207, 27);
             this.txtServiceName.TabIndex = 2;
             // 
             // txtServiceID
             // 
-            this.txtServiceID.Location = new System.Drawing.Point(112, 21);
+            this.txtServiceID.Location = new System.Drawing.Point(100, 12);
             this.txtServiceID.Name = "txtServiceID";
             this.txtServiceID.Size = new System.Drawing.Size(54, 27);
             this.txtServiceID.TabIndex = 3;
@@ -62,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(29, 82);
+            this.label2.Location = new System.Drawing.Point(17, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 5;
@@ -72,7 +72,7 @@
             // 
             this.cbServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbServiceType.FormattingEnabled = true;
-            this.cbServiceType.Location = new System.Drawing.Point(447, 28);
+            this.cbServiceType.Location = new System.Drawing.Point(435, 19);
             this.cbServiceType.Name = "cbServiceType";
             this.cbServiceType.Size = new System.Drawing.Size(151, 28);
             this.cbServiceType.TabIndex = 6;
@@ -81,7 +81,7 @@
             // 
             this.lbServiceType.AutoSize = true;
             this.lbServiceType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbServiceType.Location = new System.Drawing.Point(334, 36);
+            this.lbServiceType.Location = new System.Drawing.Point(322, 27);
             this.lbServiceType.Name = "lbServiceType";
             this.lbServiceType.Size = new System.Drawing.Size(96, 20);
             this.lbServiceType.TabIndex = 7;
@@ -94,7 +94,7 @@
             this.cbStatus.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cbStatus.Location = new System.Drawing.Point(447, 82);
+            this.cbStatus.Location = new System.Drawing.Point(435, 73);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(151, 28);
             this.cbStatus.TabIndex = 8;
@@ -103,7 +103,7 @@
             // 
             this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbStatus.Location = new System.Drawing.Point(367, 82);
+            this.lbStatus.Location = new System.Drawing.Point(355, 73);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(53, 20);
             this.lbStatus.TabIndex = 9;
@@ -111,7 +111,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(99, 202);
+            this.txtDescription.Location = new System.Drawing.Point(60, 167);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(508, 170);
             this.txtDescription.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(143, 391);
+            this.btnSave.Location = new System.Drawing.Point(118, 356);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 29);
             this.btnSave.TabIndex = 11;
@@ -129,7 +129,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(283, 391);
+            this.btnReset.Location = new System.Drawing.Point(258, 356);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(94, 29);
             this.btnReset.TabIndex = 12;
@@ -139,7 +139,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(417, 391);
+            this.btnClose.Location = new System.Drawing.Point(392, 356);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 29);
             this.btnClose.TabIndex = 13;
@@ -151,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(312, 132);
+            this.label1.Location = new System.Drawing.Point(300, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 15;
@@ -170,7 +170,7 @@
             "3",
             "3.5",
             "4"});
-            this.cbEstimatedTime.Location = new System.Drawing.Point(447, 129);
+            this.cbEstimatedTime.Location = new System.Drawing.Point(435, 120);
             this.cbEstimatedTime.Name = "cbEstimatedTime";
             this.cbEstimatedTime.Size = new System.Drawing.Size(151, 28);
             this.cbEstimatedTime.TabIndex = 14;
@@ -179,7 +179,7 @@
             // 
             this.lbServiceDetailID.AutoSize = true;
             this.lbServiceDetailID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbServiceDetailID.Location = new System.Drawing.Point(29, 28);
+            this.lbServiceDetailID.Location = new System.Drawing.Point(17, 19);
             this.lbServiceDetailID.Name = "lbServiceDetailID";
             this.lbServiceDetailID.Size = new System.Drawing.Size(25, 20);
             this.lbServiceDetailID.TabIndex = 4;
@@ -190,7 +190,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(667, 465);
+            this.ClientSize = new System.Drawing.Size(633, 397);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbEstimatedTime);
             this.Controls.Add(this.btnClose);
@@ -206,7 +206,7 @@
             this.Controls.Add(this.txtServiceID);
             this.Controls.Add(this.txtServiceName);
             this.Name = "frmServiceDetail";
-            this.Text = "frmServiceDetail";
+            this.Text = "Service information";
             this.Load += new System.EventHandler(this.frmServiceDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

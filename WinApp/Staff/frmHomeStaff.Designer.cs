@@ -75,7 +75,7 @@
             this.panelAppointment.Controls.Add(this.buttonAppointmentUpdate);
             this.panelAppointment.Controls.Add(this.buttonAppointmentAdd);
             this.panelAppointment.Controls.Add(this.dataGridViewAppointment);
-            this.panelAppointment.Location = new System.Drawing.Point(3, 47);
+            this.panelAppointment.Location = new System.Drawing.Point(12, 47);
             this.panelAppointment.Name = "panelAppointment";
             this.panelAppointment.Size = new System.Drawing.Size(775, 450);
             this.panelAppointment.TabIndex = 0;
@@ -214,23 +214,24 @@
             // 
             // dataGridViewAppointment
             // 
+            this.dataGridViewAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAppointment.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAppointment.Location = new System.Drawing.Point(-1, 205);
+            this.dataGridViewAppointment.Location = new System.Drawing.Point(3, 205);
             this.dataGridViewAppointment.MultiSelect = false;
             this.dataGridViewAppointment.Name = "dataGridViewAppointment";
             this.dataGridViewAppointment.ReadOnly = true;
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
             this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAppointment.Size = new System.Drawing.Size(758, 232);
+            this.dataGridViewAppointment.Size = new System.Drawing.Size(767, 240);
             this.dataGridViewAppointment.TabIndex = 7;
             this.dataGridViewAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellClick);
             // 
             // buttonAppointment
             // 
             this.buttonAppointment.BackColor = System.Drawing.Color.LightBlue;
-            this.buttonAppointment.Location = new System.Drawing.Point(49, 12);
+            this.buttonAppointment.Location = new System.Drawing.Point(12, 12);
             this.buttonAppointment.Name = "buttonAppointment";
             this.buttonAppointment.Size = new System.Drawing.Size(139, 29);
             this.buttonAppointment.TabIndex = 1;
@@ -240,7 +241,7 @@
             // 
             // buttonCustomer
             // 
-            this.buttonCustomer.Location = new System.Drawing.Point(230, 12);
+            this.buttonCustomer.Location = new System.Drawing.Point(157, 12);
             this.buttonCustomer.Name = "buttonCustomer";
             this.buttonCustomer.Size = new System.Drawing.Size(139, 29);
             this.buttonCustomer.TabIndex = 2;
@@ -253,13 +254,13 @@
             this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 176);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(3, 204);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 29;
             this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(754, 257);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(767, 240);
             this.dataGridViewCustomer.TabIndex = 7;
             this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick_1);
             this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick_1);
@@ -360,7 +361,7 @@
             this.panelCustomer.Controls.Add(this.buttonCustomerUpdate);
             this.panelCustomer.Controls.Add(this.buttonCustomerAdd);
             this.panelCustomer.Controls.Add(this.dataGridViewCustomer);
-            this.panelCustomer.Location = new System.Drawing.Point(802, 48);
+            this.panelCustomer.Location = new System.Drawing.Point(12, 47);
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(775, 450);
             this.panelCustomer.TabIndex = 13;
@@ -369,7 +370,7 @@
             // 
             this.txtLinkLabelNameAccountLogin.AutoSize = true;
             this.txtLinkLabelNameAccountLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(665, 12);
+            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(698, 12);
             this.txtLinkLabelNameAccountLogin.Name = "txtLinkLabelNameAccountLogin";
             this.txtLinkLabelNameAccountLogin.Size = new System.Drawing.Size(90, 25);
             this.txtLinkLabelNameAccountLogin.TabIndex = 25;
@@ -381,7 +382,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(582, 12);
+            this.label8.Location = new System.Drawing.Point(615, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 25);
             this.label8.TabIndex = 24;
@@ -392,7 +393,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1581, 510);
+            this.ClientSize = new System.Drawing.Size(800, 509);
             this.Controls.Add(this.txtLinkLabelNameAccountLogin);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panelCustomer);
@@ -400,7 +401,7 @@
             this.Controls.Add(this.buttonAppointment);
             this.Controls.Add(this.panelAppointment);
             this.Name = "frmHomeStaff";
-            this.Text = "Home";
+            this.Text = "RaDe - Dental information management system";
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelAppointment.ResumeLayout(false);
             this.panelAppointment.PerformLayout();
