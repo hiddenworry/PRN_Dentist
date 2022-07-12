@@ -136,6 +136,7 @@
             this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(775, 244);
             this.dataGridViewAppointment.TabIndex = 7;
+            this.dataGridViewAppointment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellContentClick);
             this.dataGridViewAppointment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAppointment_CellDoubleClick);
             // 
             // panelUpdateAppointment
@@ -364,7 +365,7 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Welcome, ";
             // 
-            // frmHomeDoctor
+            // frmHomeDentist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

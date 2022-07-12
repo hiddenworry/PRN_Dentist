@@ -478,6 +478,10 @@ namespace WinApp
             }
         }
 
+        private void dataGridViewAppointment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

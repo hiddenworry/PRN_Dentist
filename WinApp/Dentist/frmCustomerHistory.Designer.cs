@@ -249,6 +249,7 @@
             this.Controls.Add(this.panelCustomer);
             this.Name = "frmCustomerHistory";
             this.Text = "frmCustomerHistory";
+            this.Load += new System.EventHandler(this.frmCustomerHistory_Load);
             this.panelCustomer.ResumeLayout(false);
             this.panelCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListService)).EndInit();

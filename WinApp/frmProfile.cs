@@ -254,5 +254,10 @@ namespace WinApp
             Application.Exit();
             Application.Restart();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

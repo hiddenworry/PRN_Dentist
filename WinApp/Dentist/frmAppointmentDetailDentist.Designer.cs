@@ -33,7 +33,6 @@
             this.btnCheck = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtService = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,6 +40,8 @@
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.dgvService = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPhone
@@ -95,18 +96,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(178, 27);
             this.txtName.TabIndex = 2;
-            // 
-            // txtService
-            // 
-            this.txtService.AllowDrop = true;
-            this.txtService.BackColor = System.Drawing.Color.White;
-            this.txtService.Enabled = false;
-            this.txtService.ForeColor = System.Drawing.Color.Black;
-            this.txtService.Location = new System.Drawing.Point(128, 149);
-            this.txtService.Multiline = true;
-            this.txtService.Name = "txtService";
-            this.txtService.Size = new System.Drawing.Size(474, 109);
-            this.txtService.TabIndex = 2;
             // 
             // label1
             // 
@@ -183,12 +172,29 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Status";
             // 
-            // frmAppointmentDetailDoctor
+            // dgvService
+            // 
+            this.dgvService.AllowUserToAddRows = false;
+            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvService.BackgroundColor = System.Drawing.Color.White;
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Location = new System.Drawing.Point(128, 138);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.ReadOnly = true;
+            this.dgvService.RowHeadersVisible = false;
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.RowTemplate.Height = 29;
+            this.dgvService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvService.Size = new System.Drawing.Size(474, 127);
+            this.dgvService.TabIndex = 7;
+            // 
+            // frmAppointmentDetailDentist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(662, 513);
+            this.Controls.Add(this.dgvService);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
@@ -197,14 +203,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtService);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtWorkingHour);
             this.Controls.Add(this.txtPhone);
-            this.Name = "frmAppointmentDetailDoctor";
-            this.Text = "frmAppointmentDetail";
+            this.Name = "frmAppointmentDetailDentist";
+            this.Text = "Appointment Detail";
             this.Load += new System.EventHandler(this.frmAppointmentDetailDoctor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +222,6 @@
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtService;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label5;
@@ -224,5 +229,6 @@
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dgvService;
     }
 }

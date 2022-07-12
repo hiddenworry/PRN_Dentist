@@ -69,6 +69,10 @@ namespace WinApp
             {
                 dataGridViewCustomer.Columns["Appointments"].Visible = false;
             }
+            if (dataGridViewCustomer.Columns["Id"] != null)
+            {
+                dataGridViewCustomer.Columns["Id"].Visible = false;
+            }
 
             if (dataGridViewCustomer.Columns["Dob"] != null)
             {
