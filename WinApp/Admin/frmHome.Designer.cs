@@ -112,7 +112,7 @@
             this.panelService.Name = "panelService";
             this.panelService.Size = new System.Drawing.Size(775, 450);
             this.panelService.TabIndex = 14;
-            this.panelService.Paint += new System.Windows.Forms.PaintEventHandler(this.panelService_Paint);
+           
             // 
             // labelService
             // 
@@ -354,7 +354,7 @@
             this.panelDentist.Name = "panelDentist";
             this.panelDentist.Size = new System.Drawing.Size(775, 450);
             this.panelDentist.TabIndex = 15;
-            this.panelDentist.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDentist_Paint_1);
+          
             // 
             // btnDisableDentist
             // 
@@ -501,7 +501,7 @@
             this.panelAppointment.Name = "panelAppointment";
             this.panelAppointment.Size = new System.Drawing.Size(775, 450);
             this.panelAppointment.TabIndex = 16;
-            this.panelAppointment.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAppointment_Paint);
+          
             // 
             // labelAppointment
             // 

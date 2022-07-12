@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WinApp",
+    "\\WinApp\\Dentist"
   ],
-  "SelectedNode": "\\PRN_Group_Assignment.sln",
+  "SelectedNode": "\\WinApp\\Dentist\\frmAppointmentDetailDentist.cs",
   "PreviewInSolutionExplorer": false
 }

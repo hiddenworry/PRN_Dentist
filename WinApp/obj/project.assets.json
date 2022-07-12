@@ -5836,19 +5836,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ptl01\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\WinApp.csproj",
+      "projectUniqueName": "E:\\PRN_FIX\\WinApp\\WinApp.csproj",
       "projectName": "WinApp",
-      "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\WinApp.csproj",
-      "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\obj\\",
+      "projectPath": "E:\\PRN_FIX\\WinApp\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "E:\\PRN_FIX\\WinApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5862,11 +5862,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj"
+            "E:\\PRN_FIX\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "E:\\PRN_FIX\\BusinessObject\\BusinessObject.csproj"
             },
-            "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj"
+            "E:\\PRN_FIX\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\PRN_FIX\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -5916,7 +5916,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

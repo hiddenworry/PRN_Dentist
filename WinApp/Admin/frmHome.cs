@@ -39,7 +39,11 @@ namespace WinApp
             buttonDentist.BackColor = Color.Lavender;
             buttonService.BackColor = Color.Lavender;
             buttonCustomer.BackColor = Color.Lavender;
-            LoadAllAppointmentList();
+            LoadAppointmentForm();
+            buttonFindAppointment.Click += buttonFindAppointment_Click;
+
+
+
         }
 
         private void buttonCustomer_Click(object sender, EventArgs e)
@@ -66,6 +70,8 @@ namespace WinApp
             buttonService.BackColor = Color.LightBlue;
             buttonCustomer.BackColor = Color.Lavender;
             GetAllServiceList();
+            LoadServiceComponentForm();
+
         }
 
         private void buttonDentist_Click(object sender, EventArgs e)
@@ -78,12 +84,15 @@ namespace WinApp
             buttonDentist.BackColor = Color.LightBlue;
             buttonService.BackColor = Color.Lavender;
             buttonCustomer.BackColor = Color.Lavender;
+            
             LoadDentistList();
+            LoadAllDentistComponentForm();
         }
 
       
         private void loadServiceList(List<Service> services)
         {
+          
             buttonServiceDisable.Enabled = false;
             if (services.Count == 0) {
                 buttonServiceUpdate.Enabled = false;
@@ -104,10 +113,11 @@ namespace WinApp
         private void frmHome_Load(object sender, EventArgs e)
         {
             panelAppointment.BringToFront();
-            LoadDentistList();
-            GetAllServiceList();
-            LoadCustomerList(CustomerRepository.GetAll());
             LoadAllAppointmentList();
+            LoadAppointmentForm();
+
+
+
 
             txtLinkLabelNameAccountLogin.Text = accountLogin.Name;
 
@@ -167,41 +177,38 @@ namespace WinApp
                 }
             }
         }
-
-        private void panelService_Paint(object sender, PaintEventArgs e)
+        private void LoadServiceComponentForm()
         {
-
             var StatusDictionary = new Dictionary<int, string>();
 
             StatusDictionary.Add(0, "ALL");
             StatusDictionary.Add(1, "Active");
             StatusDictionary.Add(2, "Inactive");
-          
+
             comboBoxServiceStatus.DataSource = StatusDictionary.ToList();
             comboBoxServiceStatus.DisplayMember = "Value";
             comboBoxServiceStatus.ValueMember = "Key";
 
-            if(ServiceTypeRepository.GetServiceTypeList().Count == 0)
+            if (ServiceTypeRepository.GetServiceTypeList().Count == 0)
             {
                 buttonServiceAdd.Enabled = false;
             }
             List<ServiceType> serviceTypes = ServiceTypeRepository.GetServiceTypeList();
-            serviceTypes.Add(new ServiceType { Id = 0, Name = "ALL"});
+            serviceTypes.Add(new ServiceType { Id = 0, Name = "ALL" });
             comboBoxServiceType.DataSource = serviceTypes;
             comboBoxServiceType.DisplayMember = "name";
             comboBoxServiceType.ValueMember = "id";
+            comboBoxServiceType.SelectedValue = 0;
 
-          
+
 
             if (dataGridViewService.Columns["ServiceTypeId"] != null)
                 dataGridViewService.Columns["ServiceTypeId"].Visible = false;
 
             if (dataGridViewService.Columns["AppointmentServices"] != null)
                 dataGridViewService.Columns["AppointmentServices"].Visible = false;
-
-
-
         }
+       
 
         private void dataGridViewService_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -290,23 +297,29 @@ namespace WinApp
         }
         private void LoadCustomerList(List<Customer> customers)
         {
-            source = new BindingSource();
-            List<CustomerChange> changeList = new List<CustomerChange>();
-            foreach (Customer customer in customers)
+            if(customers.Count == 0)
             {
-                CustomerChange change = new CustomerChange()
-                {
-                    Id = customer.Id,
-                    Name = customer.Name,
-                    Phone = customer.Phone,
-                    Gender = customer.Gender ? "Male" : "Female",
-                    Dob = customer.Dob,
-                };
-                changeList.Add(change);
-
+                MessageBox.Show("Not found");
             }
-            source.DataSource = changeList;
-            dataGridViewCustomer.DataSource = source;
+            else {
+                source = new BindingSource();
+                List<CustomerChange> changeList = new List<CustomerChange>();
+                foreach (Customer customer in customers)
+                {
+                    CustomerChange change = new CustomerChange()
+                    {
+                        Id = customer.Id,
+                        Name = customer.Name,
+                        Phone = customer.Phone,
+                        Gender = customer.Gender ? "Male" : "Female",
+                        Dob = customer.Dob,
+                    };
+                    changeList.Add(change);
+
+                }
+                source.DataSource = changeList;
+                dataGridViewCustomer.DataSource = source;
+            }
         }
 
         // filter customer by name and phone
@@ -331,17 +344,23 @@ namespace WinApp
 
         private void LoadAllAppointmentList()
         {
-            LoadAppointmentList( AppointmentRepository.GetAppointmentsForAdmin());
+            LoadAppointmentList( AppointmentRepository.FilterAppointmentForAdmin(dateTimePickerAppointmentDate.Value.Date, null,0,0));
 
 
         }
         private void LoadAppointmentList(List<Appointment> appointments)
         {
-           
+          
+          
                 source = new BindingSource();
                 source.DataSource = appointments;
                 dataGridViewAppointment.DataSource = source;
             
+        
+             
+
+
+
 
         }
 
@@ -349,10 +368,11 @@ namespace WinApp
 
         private void btnLoadAppointmentList_Click(object sender, EventArgs e)
         {
-            LoadAllAppointmentList();
+                
         }
 
-        private void panelAppointment_Paint(object sender, PaintEventArgs e)
+       
+        private void LoadAppointmentForm()
         {
             var StatusDictionary = new Dictionary<int, string>();
             StatusDictionary.Add(0, "ALL");
@@ -362,10 +382,10 @@ namespace WinApp
             comboxAppointmentStatus.DataSource = StatusDictionary.ToArray();
             comboxAppointmentStatus.DisplayMember = "Value";
             comboxAppointmentStatus.ValueMember = "Key";
-            
+
 
             var DentistList = AccountRepository.GetALLDentistList();
-            
+
             if (DentistList.ToList().Count > 0)
             {
 
@@ -373,9 +393,11 @@ namespace WinApp
                 comboBoxAppointmentDentist.DataSource = DentistList.ToList();
                 comboBoxAppointmentDentist.DisplayMember = "Name";
                 comboBoxAppointmentDentist.ValueMember = "Id";
-              
+                comboBoxAppointmentDentist.SelectedValue = 0;
+
 
             }
+            
 
             if (dataGridViewAppointment.Columns["CustomerId"] != null)
                 dataGridViewAppointment.Columns["CustomerId"].Visible = false;
@@ -385,23 +407,18 @@ namespace WinApp
 
             if (dataGridViewAppointment.Columns["AppointmentServices"] != null)
                 dataGridViewAppointment.Columns["AppointmentServices"].Visible = false;
-
         }
 
-
-
-
-        // Dentist
-        private void panelDentist_Paint_1(object sender, PaintEventArgs e)
+        private void LoadAllDentistComponentForm()
         {
-
             var RoleDictionary = new Dictionary<int, string>();
             RoleDictionary.Add(0, "ALL");
-            RoleDictionary.Add(2, "Doctor");
-            RoleDictionary.Add(3, "Staff");
+            RoleDictionary.Add(2, "Staff");
+            RoleDictionary.Add(3, "Doctor");
             cbRole.DataSource = RoleDictionary.ToList();
             cbRole.DisplayMember = "Value";
             cbRole.ValueMember = "Key";
+            cbRole.SelectedValue = 0;
 
             var StatusDictionary = new Dictionary<decimal, string>();
             StatusDictionary.Add(0, "ALL");
@@ -415,10 +432,13 @@ namespace WinApp
                 dataGridViewDentist.Columns["Appointments"].Visible = false;
             if (dataGridViewDentist.Columns["Role"] != null)
                 dataGridViewDentist.Columns["Role"].Visible = false;
+            if (dataGridViewDentist.Columns["Password"] != null)
+                dataGridViewDentist.Columns["Password"].Visible = false;
 
-           
         }
 
+        // Dentist
+      
         private void buttonDentistAdd_Click(object sender, EventArgs e)
         {
             frmAccountDetail frmDentistDetail = new frmAccountDetail

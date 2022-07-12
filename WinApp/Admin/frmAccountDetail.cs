@@ -52,8 +52,8 @@ namespace WinApp
 
 
                 var RoleDictionary = new Dictionary<int, string>();
-                RoleDictionary.Add(2, "Doctor");
-                RoleDictionary.Add(3, "Staff");
+                RoleDictionary.Add(2, "Staff");
+                RoleDictionary.Add(3, "Doctor");
                 cbRole.DataSource = RoleDictionary.ToList();
                 cbRole.DisplayMember = "Value";
                 cbRole.ValueMember = "Key";
@@ -165,7 +165,7 @@ namespace WinApp
             }
             if (string.IsNullOrEmpty(txtDentistPassword.Text) || txtDentistPassword.TextLength < 8)
             {
-                error += "Dentist password must be > 8 character";
+                error += "Dentist password must be > 8 character\n";
                 check = false;
             }
             if (!txtDentistPassword.Text.Equals(txtCofirmPassword.Text))
