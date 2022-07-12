@@ -375,7 +375,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panelUpdateAppointment);
             this.Controls.Add(this.panelAppointment);
-            this.Name = "frmHomeDentist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaDe - Dental information management system";
             this.Load += new System.EventHandler(this.frmHome_Load);
