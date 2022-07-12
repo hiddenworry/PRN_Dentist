@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using BusinessObject.Models;
 namespace WinApp
 {
-    public partial class frmAppointmentDetailDoctor : Form
+    public partial class frmAppointmentDetailDentist : Form
     {
         public AppointmentChange appointmentChange { get; set; }
         public Appointment Appointment { get; set; }    
 
         public List<Service> listServiccInAppointment { get; set; }
-        public frmAppointmentDetailDoctor()
+        public frmAppointmentDetailDentist()
         {
             InitializeComponent();
         }

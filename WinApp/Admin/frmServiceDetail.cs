@@ -36,7 +36,12 @@ namespace WinApp
                 {
                     if (Insert)
                     {
-                        DialogResult result = MessageBox.Show("Do You Want to Save?", "Add", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if(ServiceRepository.GetServiceByName(service.Name) != null)
+                        {
+                            MessageBox.Show("Service's name is already used");
+                            return;
+                        }
+                        DialogResult result = MessageBox.Show("Sure to add this service?", "Add service", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         if (result.Equals(DialogResult.OK))
                         {
                             ServiceRepository.SaveService(service);
@@ -48,7 +53,16 @@ namespace WinApp
                     }
                     else
                     {
-                        DialogResult result = MessageBox.Show("Do You Want to Save?", "Update", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (ServiceRepository.GetServiceByName(service.Name) != null)
+                        {
+                            if (ServiceRepository.GetServiceByName(service.Name).Id != service.Id)
+                            {
+                                MessageBox.Show("Service's name is already used");
+                                return;
+                            }
+                            
+                        }
+                        DialogResult result = MessageBox.Show("Sure to update this service?", "Update service", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         if (result.Equals(DialogResult.OK))
                         {
                             ServiceRepository.UpdateService(service);
@@ -153,13 +167,13 @@ namespace WinApp
              
             {
                 check = false;
-                error += "Servcie Name must >= 8 character";
+                error += "Servcie Name must >= 8 character\n";
 
             }
             if (string.IsNullOrEmpty(service.Description))
             {
                 check = false;
-                error += ", \nServcie description must >= 8 character";
+                error += "Servcie description must >= 8 character";
 
             }
             if(!check)

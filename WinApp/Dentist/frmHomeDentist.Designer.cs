@@ -1,6 +1,6 @@
 ﻿namespace WinApp
 {
-    partial class frmHomeDoctor
+    partial class frmHomeDentist
     {
         /// <summary>
         /// Required designer variable.

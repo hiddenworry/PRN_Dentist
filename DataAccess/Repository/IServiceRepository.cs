@@ -22,6 +22,8 @@ namespace DataAccess
 
         List<Service> GetServiceListByAppointmentId(int id);
 
+        Service GetServiceByName(string name);
+
     }
 
 }

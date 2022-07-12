@@ -123,7 +123,7 @@ namespace WinApp
 
                     if (Insert == true)
                     {
-                        DialogResult result = MessageBox.Show("Do you want to Save", "Add Account", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Sure to add this account?", "Add account", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         if (result == DialogResult.OK)
                         {
                             AccountRepository.AddAccount(Dentist);
@@ -133,7 +133,7 @@ namespace WinApp
                     }
                     if (Insert == false)
                     {
-                        DialogResult result = MessageBox.Show("Do you want to Save", "Update Account", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("Sure to update this account?", "Update Account", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         if (result == DialogResult.OK)
                         {
                             AccountRepository.UpdateAccount(Dentist);
@@ -155,27 +155,27 @@ namespace WinApp
             string error = "";
             if (string.IsNullOrEmpty(txtDentistName.Text)||txtDentistName.TextLength < 8)
             {
-                error += "Dentist name must be > 8 character ";
+                error += "Dentist name must be > 8 character\n";
                 check = false;
             }
             if (string.IsNullOrEmpty(txtDentistLoginName.Text) || txtDentistLoginName.TextLength < 8)
             {
-                error += ", \nDentist Login name must be > 8 character ";
+                error += "Dentist Login name must be > 8 character\n";
                 check = false;
             }
             if (string.IsNullOrEmpty(txtDentistPassword.Text) || txtDentistPassword.TextLength < 8)
             {
-                error += ", \nDentist password must be > 8 character ";
+                error += "Dentist password must be > 8 character";
                 check = false;
             }
             if (!txtDentistPassword.Text.Equals(txtCofirmPassword.Text))
             {
-                error += ", \n password is not match";
+                error += "Password is not match\n";
                 check = false;
             }
             if (string.IsNullOrEmpty(cbRole.Text))
             {
-                error += ", \n Role not valid";
+                error += "Role not valid";
                 check = false;
             }
 

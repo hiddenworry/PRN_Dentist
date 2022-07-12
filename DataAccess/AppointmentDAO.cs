@@ -88,9 +88,9 @@ namespace DataAccess
                 using (DBSContext DBSContext = new DBSContext())
                 {
                     if(appointment != null )
-                    return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId && a.Id != appointment.Id)
+                    return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId && a.Id != appointment.Id && a.Status == 1)
                         .Select(a => a.WorkingHour).ToList();
-                    else return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId)
+                    else return DBSContext.Appointments.Where(a => a.Time == time && a.DentistId == dentistId && a.Status == 1)
                         .Select(a => a.WorkingHour).ToList();
                 }
             }
@@ -156,7 +156,7 @@ namespace DataAccess
             {
                 using (DBSContext DBSContext = new DBSContext())
                 {
-                    return DBSContext.Appointments.ToList();
+                    return DBSContext.Appointments.Include(a => a.Customer).Include(a => a.Dentist).ToList();
                 }
             } catch (Exception ex)
             {
@@ -240,7 +240,7 @@ namespace DataAccess
             {
                 using (DBSContext DBSContext = new DBSContext())
                 {
-                    var query =  from a in DBSContext.Appointments
+                    var query =  from a in DBSContext.Appointments.Include(a => a.Customer).Include(a => a.Dentist)
                                           join c in DBSContext.Customers on a.CustomerId equals c.Id
                                           select a;
                     if (!string.IsNullOrEmpty(time.ToString()))

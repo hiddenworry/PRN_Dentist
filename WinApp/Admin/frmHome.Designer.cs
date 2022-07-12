@@ -55,6 +55,8 @@
             this.btnDisableDentist = new System.Windows.Forms.Button();
             this.labelDentist = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbRole = new System.Windows.Forms.ComboBox();
             this.labelDentistStatus = new System.Windows.Forms.Label();
             this.comboDentistStatus = new System.Windows.Forms.ComboBox();
             this.filterDentist = new System.Windows.Forms.Button();
@@ -82,8 +84,6 @@
             this.buttonDentist = new System.Windows.Forms.Button();
             this.txtLinkLabelNameAccountLogin = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbRole = new System.Windows.Forms.ComboBox();
             this.panelService.SuspendLayout();
             this.groupBoxFilterService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewService)).BeginInit();
@@ -336,6 +336,7 @@
             this.dataGridViewCustomer.ReadOnly = true;
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 29;
+            this.dataGridViewCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCustomer.Size = new System.Drawing.Size(749, 229);
             this.dataGridViewCustomer.TabIndex = 7;
             // 
@@ -390,6 +391,24 @@
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filter";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Role";
+            // 
+            // cbRole
+            // 
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Location = new System.Drawing.Point(77, 92);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(127, 28);
+            this.cbRole.TabIndex = 15;
             // 
             // labelDentistStatus
             // 
@@ -465,6 +484,7 @@
             this.dataGridViewDentist.ReadOnly = true;
             this.dataGridViewDentist.RowHeadersWidth = 51;
             this.dataGridViewDentist.RowTemplate.Height = 29;
+            this.dataGridViewDentist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDentist.Size = new System.Drawing.Size(725, 229);
             this.dataGridViewDentist.TabIndex = 7;
             this.dataGridViewDentist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDentist_CellClick);
@@ -599,6 +619,7 @@
             this.dataGridViewAppointment.ReadOnly = true;
             this.dataGridViewAppointment.RowHeadersWidth = 51;
             this.dataGridViewAppointment.RowTemplate.Height = 29;
+            this.dataGridViewAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointment.Size = new System.Drawing.Size(710, 206);
             this.dataGridViewAppointment.TabIndex = 7;
             // 
@@ -665,24 +686,6 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Welcome, ";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Role";
-            // 
-            // cbRole
-            // 
-            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(77, 92);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(127, 28);
-            this.cbRole.TabIndex = 15;
             // 
             // frmHome
             // 

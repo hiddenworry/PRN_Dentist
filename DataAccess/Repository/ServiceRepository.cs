@@ -24,5 +24,6 @@ namespace DataAccess
 
         public List<Service> GetServiceListByAppointmentId(int id) => ServiceDAO.Instance.GetServiceListByAppointmentId(id);
 
+        public Service GetServiceByName(string name) => ServiceDAO.Instance.GetServiceByName(name); 
     }
 }

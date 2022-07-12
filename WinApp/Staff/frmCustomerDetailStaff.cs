@@ -49,7 +49,7 @@ namespace WinApp
                     DialogResult = DialogResult.None;
                     return;
                 }
-                DialogResult result = MessageBox.Show("Are you sure to save?", isInsert ? "Add new customer" : "Update Customer", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show(isInsert ? "Sure to add customer" : "Sure to update customer", isInsert ? "Add customer" : "Update customer", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 
                 if(result == DialogResult.No)
                 {
@@ -86,12 +86,12 @@ namespace WinApp
             }
             catch (Exception ex)
             {
-                if(ex.Message == "Phone is already in use")
+                if(ex.Message == "Phone is already used")
                 {
-                    errorPhone.Text = "Phone is already in use";
+                    errorPhone.Text = "Phone is already used";
                     errorPhone.Visible = true;
                 }
-                MessageBox.Show(ex.Message, isInsert ? "Add new customer" : "update customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, isInsert ? "Add customer" : "Update customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult = DialogResult.None;
             }
         }
