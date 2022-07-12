@@ -128,6 +128,7 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // labelHeader
             // 
@@ -137,7 +138,7 @@
             this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelHeader.Location = new System.Drawing.Point(0, 0);
             this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(687, 56);
+            this.labelHeader.Size = new System.Drawing.Size(701, 56);
             this.labelHeader.TabIndex = 0;
             this.labelHeader.Text = "label1";
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,7 +149,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(687, 56);
+            this.panel1.Size = new System.Drawing.Size(701, 56);
             this.panel1.TabIndex = 3;
             // 
             // labelUsernameError
@@ -572,7 +573,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(687, 662);
+            this.ClientSize = new System.Drawing.Size(701, 662);
             this.Controls.Add(this.panelUpdateProfile);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelProfile);

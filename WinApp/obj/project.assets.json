@@ -5836,19 +5836,40 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ptl01\\.nuget\\packages\\": {}
+<<<<<<< HEAD
+    "C:\\Users\\ntrun\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\WinApp.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
       "projectName": "WinApp",
-      "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\WinApp.csproj",
-      "packagesPath": "C:\\Users\\ptl01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\WinApp\\obj\\",
+      "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
+      "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\obj\\",
+=======
+      "projectUniqueName": "E:\\PRN_FIX\\WinApp\\WinApp.csproj",
+      "projectName": "WinApp",
+      "projectPath": "E:\\PRN_FIX\\WinApp\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "E:\\PRN_FIX\\WinApp\\obj\\",
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ptl01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+        "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5862,11 +5883,19 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\BusinessObject\\BusinessObject.csproj"
+<<<<<<< HEAD
+            "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
             },
-            "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\ptl01\\Desktop\\Syllabus\\Semester5\\PR\\project\\fix\\DataAccess\\DataAccess.csproj"
+            "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj"
+=======
+            "E:\\PRN_FIX\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "E:\\PRN_FIX\\BusinessObject\\BusinessObject.csproj"
+            },
+            "E:\\PRN_FIX\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\PRN_FIX\\DataAccess\\DataAccess.csproj"
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
             }
           }
         }
@@ -5916,7 +5945,11 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
       }
     }
   }

@@ -140,6 +140,11 @@ namespace WinApp.Dentist
                 MessageBox.Show(ex.Message, "Load service", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void frmCustomerHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -16,6 +16,8 @@ namespace WinApp
         public Appointment Appointment { get; set; }    
 
         public List<Service> listServiccInAppointment { get; set; }
+
+        BindingSource source;
         public frmAppointmentDetailDentist()
         {
             InitializeComponent();
@@ -43,10 +45,9 @@ namespace WinApp
             this.Text = "View";
             txtName.Text = appointmentChange.CustomerName;
             txtStatus.Text = appointmentChange.Status;
-            foreach(Service service in listServiccInAppointment)
-            {
-                txtService.Text += service.Name + '\n';
-            }
+            
+            LoadListServicesInAppointment(listServiccInAppointment);
+
             txtWorkingHour.Text = appointmentChange.WorkingHour;
             txtDescription.Text = Appointment.Description;
             txtPhone.Text = appointmentChange.Phone;
@@ -58,6 +59,33 @@ namespace WinApp
             else
             {
                 btnCheck.Text = "Pick appointment";
+            }
+        }
+
+
+        private void LoadListServicesInAppointment(List<Service> list)
+        {
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = list;
+                dgvService.DataSource = null;
+                dgvService.DataSource = source;
+
+                foreach (DataGridViewColumn column in dgvService.Columns)
+                {
+                    if (column.Name != "Name")
+                    {
+                        column.Visible = false;
+                    }
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load list service", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
