@@ -5836,24 +5836,40 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\ntrun\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
       "projectName": "WinApp",
       "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\WinApp.csproj",
       "packagesPath": "C:\\Users\\ntrun\\.nuget\\packages\\",
       "outputPath": "D:\\Session_5\\PRN211\\project-dbs\\WinApp\\obj\\",
+=======
+      "projectUniqueName": "E:\\PRN_FIX\\WinApp\\WinApp.csproj",
+      "projectName": "WinApp",
+      "projectPath": "E:\\PRN_FIX\\WinApp\\WinApp.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "E:\\PRN_FIX\\WinApp\\obj\\",
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\ntrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5867,11 +5883,19 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj": {
               "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\BusinessObject\\BusinessObject.csproj"
             },
             "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj": {
               "projectPath": "D:\\Session_5\\PRN211\\project-dbs\\DataAccess\\DataAccess.csproj"
+=======
+            "E:\\PRN_FIX\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "E:\\PRN_FIX\\BusinessObject\\BusinessObject.csproj"
+            },
+            "E:\\PRN_FIX\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\PRN_FIX\\DataAccess\\DataAccess.csproj"
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
             }
           }
         }
@@ -5921,7 +5945,11 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+>>>>>>> 7fa00ebe83524415c2394b8895a2eee0e6e9b2a0
       }
     }
   }
