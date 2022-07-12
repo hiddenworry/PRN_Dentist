@@ -347,7 +347,7 @@
             // 
             this.txtLinkLabelNameAccountLogin.AutoSize = true;
             this.txtLinkLabelNameAccountLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(698, 12);
+            this.txtLinkLabelNameAccountLogin.Location = new System.Drawing.Point(95, 9);
             this.txtLinkLabelNameAccountLogin.Name = "txtLinkLabelNameAccountLogin";
             this.txtLinkLabelNameAccountLogin.Size = new System.Drawing.Size(90, 25);
             this.txtLinkLabelNameAccountLogin.TabIndex = 23;
@@ -359,7 +359,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(615, 12);
+            this.label8.Location = new System.Drawing.Point(12, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 25);
             this.label8.TabIndex = 22;
