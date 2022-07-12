@@ -401,6 +401,7 @@
             this.Controls.Add(this.buttonAppointment);
             this.Controls.Add(this.panelAppointment);
             this.Name = "frmHomeStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaDe - Dental information management system";
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelAppointment.ResumeLayout(false);

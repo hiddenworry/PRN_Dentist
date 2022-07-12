@@ -265,6 +265,7 @@
             this.Controls.Add(this.txtDentistName);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmAccountDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dentist information";
             this.Load += new System.EventHandler(this.frmDentistDetail_Load);
             this.ResumeLayout(false);

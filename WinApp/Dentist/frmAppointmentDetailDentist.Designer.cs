@@ -208,6 +208,7 @@
             this.Controls.Add(this.txtWorkingHour);
             this.Controls.Add(this.txtPhone);
             this.Name = "frmAppointmentDetailDentist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment information";
             this.Load += new System.EventHandler(this.frmAppointmentDetailDoctor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();

@@ -578,6 +578,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelProfile);
             this.Name = "frmProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile ";
             this.Load += new System.EventHandler(this.frmProfile_Load);
             this.panel1.ResumeLayout(false);

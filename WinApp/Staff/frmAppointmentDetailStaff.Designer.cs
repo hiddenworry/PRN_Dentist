@@ -209,6 +209,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerTime);
             this.Name = "frmAppointmentDetailStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment information";
             this.Load += new System.EventHandler(this.frmAppointmentDetailStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).EndInit();

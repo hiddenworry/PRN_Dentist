@@ -206,6 +206,7 @@
             this.Controls.Add(this.txtServiceID);
             this.Controls.Add(this.txtServiceName);
             this.Name = "frmServiceDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Service information";
             this.Load += new System.EventHandler(this.frmServiceDetail_Load);
             this.ResumeLayout(false);

@@ -256,6 +256,7 @@
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.txtCustomerName);
             this.Name = "frmCustomerDetailStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer information";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomerDetailStaff_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomerDetailStaff_Load);

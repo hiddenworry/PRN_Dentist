@@ -709,6 +709,7 @@
             this.Controls.Add(this.panelService);
             this.Controls.Add(this.panelDentist);
             this.Name = "frmHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaDe - Dental information management system";
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelService.ResumeLayout(false);

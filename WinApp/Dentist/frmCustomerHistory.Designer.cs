@@ -248,6 +248,7 @@
             this.ClientSize = new System.Drawing.Size(845, 605);
             this.Controls.Add(this.panelCustomer);
             this.Name = "frmCustomerHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer\'s history";
             this.Load += new System.EventHandler(this.frmCustomerHistory_Load);
             this.panelCustomer.ResumeLayout(false);
